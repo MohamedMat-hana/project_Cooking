@@ -13,7 +13,7 @@ export class App extends React.Component {
     return (
 
 
-<Text>ffffdf</Text>
+<Text>flf</Text>
     );
   }
 }
