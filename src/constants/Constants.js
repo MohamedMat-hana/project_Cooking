@@ -2,15 +2,20 @@ import {Dimensions} from 'react-native';
 import {RFValue} from 'react-native-responsive-fontsize';
 const {width, height} = Dimensions.get('window');
 export const COLORS = {
-  primary: '#FF7A7A',
+  orange: '#d68516',
+  orange50:'#d68516b0',
   background: '#f4f4f4',
   white: '#fff',
   black: '#111111',
-  error: '#f86e87',
+  red:"#f00",
   warning: '#fdac71',
   success: '#6adaa4',
   gray: '#aaaaaaba',
-  black50:'#040205'
+  black50:'#040205',
+  ButtonWhite: "#dce4e6",
+  grayFont:"#535357",
+  grayICon: "#bfbfc0"
+
 };
 
 export const PADDING = {
@@ -21,6 +26,7 @@ export const PADDING = {
   xlPadding: 25,
 };
 export const MARGIN = {
+  xxsMargin:5,
   xsMargin: 10,
   smMargin: 20,
   mdMargin: 25,
@@ -34,6 +40,12 @@ export const RADIUS = {
   mdRadius: 20,
   lgRadius: 25,
   xlRadius: 30,
+  xxlRadius: 45,
+  x3lRadius: 50,
+  x4lRadius: 55,
+  x5lRadius: 60,
+  x6lRadius: 65,
+
 };
 
 export const FONTS = {
@@ -46,7 +58,7 @@ export const FONTS = {
   h7: 18,
 };
 
-export const ICONS = {
+export const ICONSSIZE = {
   smIcon: 15,
   mIcon: 20,
   lIcon: 25,

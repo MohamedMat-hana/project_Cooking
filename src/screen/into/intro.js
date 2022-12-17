@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
-import { COLORS } from '../../constants/Constants';
+import { COLORS, PADDING, MARGIN, RADIUS, FONTS, ICONSSIZE } from '../../constants/Constants';
 const { width, height } = Dimensions.get('window');
 
 const slides = [
@@ -19,19 +19,16 @@ const slides = [
         key: 1,
         text: 'اهلا ومرحبا بك',
         image: require('../../img/food.jpg'),
-        backgroundColor: '#59b2ab',
     },
     {
         key: 2,
         text: 'اصنع أكلاتك بنفسك',
         image: require('../../img/dessert3.jpg'),
-        backgroundColor: '#febe29',
     },
     {
         key: 3,
         text: 'اخرج مواهبك في الطبخ',
         image: require('../../img/coffee.jpg'),
-        backgroundColor: '#22bcb5',
     }
 ];
 
@@ -84,44 +81,35 @@ export default class Intro extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    each_screen_container_style: {
-        alignItems: 'center',
-        justifyContent: "flex-start"
-    },
-    each_img_style: {
-        height: '50%',
-        width: '95%',
-        marginBottom: RFValue(20),
-    },
     text_under_each_img_style: {
-        color: COLORS.black50,
-        fontSize: RFValue(20),
+        color: COLORS.white,
+        fontSize: FONTS.h4,
     },
     slider_active_dot_style: {
-        backgroundColor: COLORS.black50,
-        width: RFValue(25),
+        backgroundColor: COLORS.orange,
+        width: width / 15,
     },
     botton_style: {
-        padding: RFValue(1),
-        backgroundColor: COLORS.gray,
-        borderRadius: RFValue(15),
-        width: RFValue(70),
-        height: RFValue(40),
+        padding: 1,
+        backgroundColor: COLORS.orange,
+        borderRadius: RADIUS.smRadius,
+        width: width / 5,
+        height: height / 18,
         alignItems: 'center',
         justifyContent: 'center',
     },
     text_style: {
-        color: COLORS.black50,
-        fontSize: 22,
+        color: COLORS.white,
+        fontSize: FONTS.h4,
     },
     view_for_text_under_img_style: {
         justifyContent: 'center',
-        marginTop: 8,
-        backgroundColor: COLORS.gray,
+        marginTop: MARGIN.xsMargin,
+        backgroundColor: COLORS.orange50,
         alignItems: 'center',
         alignSelf: "center",
-        borderRadius: 20,
-        padding: 15
+        borderRadius: RADIUS.mdRadius,
+        padding: PADDING.mdPadding
 
     },
 });

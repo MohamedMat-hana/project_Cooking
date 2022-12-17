@@ -8,11 +8,11 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-import Intro from './src/screen/into/intro';
+import Dessert from './src/screen/Dessert';
 export class App extends React.Component {
   render() {
     return (
-      <Intro />
+      <Dessert />
     );
   }
 }
