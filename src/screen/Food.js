@@ -10,65 +10,59 @@ import {
     Dimensions,
     TextInput,
     ScrollView,
- } from 'react-native';
+} from 'react-native';
 import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 import { COLORS, PADDING, MARGIN, RADIUS, FONTS, ICONSSIZE } from '../constants/Constants'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import Octicons from 'react-native-vector-icons/Octicons'
-// import { Animatable } from 'react-native-animatable';
-const { width, height } = Dimensions.get('window');
+ const { width, height } = Dimensions.get('window');
 import * as Animatable from 'react-native-animatable';
-// MyCustomComponent = Animatable.createAnimatableComponent(MyCustomComponent);
+ 
 
-
-export default class Dessert extends React.Component {
-    // handleViewRef = ref => this.view = ref;
-  
-    // bounce = () => this.view.bounce(800).then(endState => console.log(endState.finished ? 'bounce finished' : 'bounce cancelled'));
-  
-    constructor() {
+export default class Food extends React.Component {
+     constructor() {
         super(); {
             this.state = {
                 Common: [
                     {
-                        Image: require("../img/dessert3.jpg"),
-                        name: "ice cream",
+                        Image: require("../img/pizza.png"),
+                        name: "Pizza",
                         view: true
                     },
                     {
-                        Image: require("../img/dessert4.jpg"),
-                        name: "cemo",
+                        Image: require("../img/burger.png"),
+                        name: "Burger",
                         view: true
                     },
                     {
-                        Image: require("../img/dessert2.jpg"),
-                        name: "moh",
+                        Image: require("../img/food.jpg"),
+                        name: "Cop",
                         view: true
                     },
                     {
-                        Image: require("../img/dessert.jpg"),
+                        Image: require("../img/food2.jpg"),
                         name: "ايس كريم",
                         view: true
                     },
                     {
-                        Image: require("../img/dessert5.jpg"),
+                        Image: require("../img/food3.jpg"),
                         name: "ايس كريم",
                         view: true
                     },
                     {
-                        Image: require("../img/dessert3.jpg"),
+                        Image: require("../img/food4.jpg"),
                         name: "ايس كريم",
                         view: true
                     },
                     {
-                        Image: require("../img/dessert3.jpg"),
+                        Image: require("../img/steak_food.png"),
                         name: "ايس كريم",
                         view: true
                     },
 
                 ],
                 IconSearch: true,
- 
+
             }
         }
     }
@@ -84,14 +78,21 @@ export default class Dessert extends React.Component {
         }
         this.setState({ Common: list })
     }
- 
+    // Delete() {
+    //     let list = this.state.Common
+    //     list.view=!list.view
+    //     if (list.view==false) {
+    //         this.setState({ Common: list })
+    //     }
+    // }
+
     render() {
         return (
             <>
                 <View style={styles.Header}>
                     <View style={styles.nameStackView}>
                         <Text style={styles.textnameStackView}>
-                            الحلويات
+                            أكلاتك
                         </Text>
                     </View>
 
@@ -100,9 +101,9 @@ export default class Dessert extends React.Component {
                             <View style={styles.DessercommonHeader}>
                                 <View style={{ flexDirection: "row" }}>
                                     <Text style={styles.TextCommon}>
-                                        الحلويات الشائعة
+                                        الأكلات الشائعة
                                     </Text>
-                                    <Image source={require("../img/dessert22.png")} style={styles.Image} />
+                                    <Image source={require("../img/food33.png")} style={styles.Image} />
                                 </View>
                                 <View style={styles.Dessercommon2}>
                                     <Ionicons name='arrow-back-circle' size={ICONSSIZE.xlIcon} color={COLORS.orange} />
@@ -113,7 +114,7 @@ export default class Dessert extends React.Component {
                                     {this.state.Common.map((item, index) => (
                                         <View style={styles.ButtonTabs}>
                                             <Image source={item.Image} style={styles.ImageTabs}
-                                                resizeMode={"center"} />
+                                                resizeMode={"cover"} />
                                             <Text style={styles.TextTabs}>
                                                 {item.name}
                                             </Text>
@@ -159,17 +160,17 @@ export default class Dessert extends React.Component {
                         {/* search */}
 
 
-                         <View style={styles.SearchView}>
+                        <View style={styles.SearchView}>
                             <View style={{ flexDirection: "row" }}>
                                 <Text style={styles.SearchTextheader}>
-                                    دور علي حلوياتك
+                                    دور علي أكلك
                                 </Text>
-                                <Image source={require("../img/ice_cream.png")} style={styles.Image} />
+                                <Image source={require("../img/food22.png")} style={styles.Image} />
                             </View>
                             {this.state.IconSearch ? (
                                 <>
-                                    <Animatable.View  
-                                         animation='slideInLeft' >
+                                    <Animatable.View
+                                        animation='slideInLeft' >
                                         <TouchableOpacity
                                             onPress={() => {
                                                 this.setState({ IconSearch: false })
@@ -212,7 +213,7 @@ export default class Dessert extends React.Component {
                                 </Animatable.View>
                             )}
                         </View>
-                         {/* end search */}
+                        {/* end search */}
 
 
 
@@ -233,9 +234,9 @@ export default class Dessert extends React.Component {
                             <View style={styles.DessercommonHeader1}>
                                 <View style={{ flexDirection: "row" }}>
                                     <Text style={styles.TextCommon}>
-                                        التحلية
+                                        الوجبات
                                     </Text>
-                                    <Image source={require("../img/dessert22.png")} style={styles.Image} />
+                                    <Image source={require("../img/spaghetti2.png")} style={styles.Image} />
                                 </View>
                                 <View style={styles.Dessercommon2}>
                                     <Ionicons name='arrow-back-circle' size={ICONSSIZE.xlIcon} color={COLORS.orange} />
@@ -361,8 +362,8 @@ const styles = StyleSheet.create({
         alignSelf: "flex-start"
     },
     Image: {
-        width: 30,
-        height: 30
+        width: 35,
+        height: 35
     },
     Dessercommon2: {
         width: width / 2,
