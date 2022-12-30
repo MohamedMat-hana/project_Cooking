@@ -15,12 +15,12 @@ import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 import { COLORS, PADDING, MARGIN, RADIUS, FONTS, ICONSSIZE } from '../constants/Constants'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import Octicons from 'react-native-vector-icons/Octicons'
- const { width, height } = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
 import * as Animatable from 'react-native-animatable';
- 
+
 
 export default class Food extends React.Component {
-     constructor() {
+    constructor() {
         super(); {
             this.state = {
                 Common: [
@@ -242,43 +242,48 @@ export default class Food extends React.Component {
                                     <Ionicons name='arrow-back-circle' size={ICONSSIZE.xlIcon} color={COLORS.orange} />
                                 </View>
                             </View>
-                            {this.state.Common.map((item, index) => (
+                            <View style={{ flexDirection: "row", flexWrap:"wrap",}}>
 
-                                item.view ? (
-                                    <View style={styles.DessertMain}>
+                                {this.state.Common.map((item, index) => (
 
-                                        <Image source={item.Image} style={styles.ImageTabs2}
-                                            resizeMode={"center"} />
-                                        <Text style={styles.TextTabs2}>
-                                            {item.name}
-                                        </Text>
-                                        <View style={styles.TabsofTabs2}>
-                                            <Text style={[styles.TextTabs2, { color: COLORS.black }]}>
-                                                الخطوات
+                                    item.view ? (
+                                        <View style={styles.DessertMain}>
+
+                                            <Image source={item.Image} style={styles.ImageTabs2}
+                                                resizeMode={"center"} />
+                                            <Text style={styles.TextTabs2}>
+                                                {item.name}
                                             </Text>
-                                            <View style={styles.ViewBoth2}>
-                                                <TouchableOpacity style={styles.the_Two_button2}>
-                                                    <Text style={[styles.TextTabs2, { marginRight: MARGIN.xxsMargin }]}>
-                                                        فيديو
-                                                    </Text>
-                                                    <Octicons name='video' size={ICONSSIZE.mIcon} color={COLORS.white} />
+                                            <View style={styles.TabsofTabs2}>
+                                                <Text style={[styles.TextTabs2, { color: COLORS.black }]}>
+                                                    الخطوات
+                                                </Text>
+                                                <View style={styles.ViewBoth2}>
+                                                    <TouchableOpacity style={styles.the_Two_button2}>
+                                                        <Text style={[styles.TextTabs2, { marginRight: MARGIN.xxsMargin }]}>
+                                                            فيديو
+                                                        </Text>
+                                                        <Octicons name='video' size={ICONSSIZE.smIcon} color={COLORS.white} />
 
 
-                                                </TouchableOpacity>
-                                                <TouchableOpacity style={styles.the_Two_button2}>
-                                                    <Text style={styles.TextTabs2}>
-                                                        الطريقة
-                                                    </Text>
+                                                    </TouchableOpacity>
+                                                    <TouchableOpacity style={styles.the_Two_button2}>
+                                                        <Text style={styles.TextTabs2}>
+                                                            الطريقة
+                                                        </Text>
 
 
-                                                </TouchableOpacity>
+                                                    </TouchableOpacity>
+                                                </View>
                                             </View>
                                         </View>
-                                    </View>
-                                ) : (null)
+                                    ) : (null)
 
-                            ))}
+                                ))}
+                            </View>
+
                         </View>
+                        <View style={{height:40}}></View>
                     </ScrollView>
                 </View>
             </>
@@ -354,7 +359,8 @@ const styles = StyleSheet.create({
     },
     DessercommonHeader: {
         flexDirection: "row",
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+        // backgroundColor:"#000"
     },
     TextCommon: {
         fontSize: FONTS.h3,
@@ -371,44 +377,50 @@ const styles = StyleSheet.create({
         alignItems: "flex-end"
     },
     DessertCommon: {
-        height: height / 2.5,
-        width: width / 1.05,
-        // backgroundColor: COLORS.red
+        height: height / 2.4,
+        width: width ,
+        // backgroundColor: COLORS.red,
+        justifyContent:"center"
     },
     ButtonTabs: {
-        width: width / 1.7,
+        width: width / 2,
         height: height / 2.5,
         backgroundColor: COLORS.orange50,
-        borderRadius: RADIUS.x5lRadius,
-        justifyContent: "space-between",
+        borderColor:COLORS.ButtonWhite,
+        borderEndWidth:5,
+        borderRadius: RADIUS.xlRadius,
+        // justifyContent: "space-evenly",
         alignItems: "center",
         marginHorizontal: MARGIN.xsMargin,
     },
     ImageTabs: {
-        width: width / 1.7,
+        width: width / 2.1,
         height: height / 5,
-        borderTopRightRadius: RADIUS.x5lRadius,
-        borderTopLeftRadius: RADIUS.x5lRadius,
+        borderTopRightRadius: RADIUS.xlRadius,
+        borderTopLeftRadius: RADIUS.xlRadius,
     },
     TextTabs: {
-        fontSize: FONTS.h3,
+        fontSize: FONTS.h4,
         color: COLORS.white,
     },
     TabsofTabs: {
-        width: width / 1.7,
-        height: height / 7,
-        backgroundColor: COLORS.gray,
+        width: width / 2,
+        height: height / 6,
+        // backgroundColor: COLORS.gray,
         // flexDirection: "row",
-        justifyContent: "space-around",
+        justifyContent: "space-evenly",
         alignItems: "center",
         borderRadius: RADIUS.x5lRadius,
+        // marginTop:5,backgroundColor:"#000",
+
     },
     the_Two_button: {
         backgroundColor: COLORS.orange,
-        borderRadius: RADIUS.xxlRadius,
+        borderRadius: RADIUS.xsRadius,
         flexDirection: "row",
-        width: 90,
-        height: 50,
+        // width: width/5,
+        padding:PADDING.xsPadding,
+        // height: height/16,
         alignItems: 'center',
         justifyContent: "center",
     },
@@ -422,7 +434,7 @@ const styles = StyleSheet.create({
         width: width / 1.05,
         // height: height,
         // backgroundColor: COLORS.gray,
-        alignItems: "center"
+        alignItems: "center",
     },
     DessercommonHeader1: {
         flexDirection: "row",
@@ -431,39 +443,39 @@ const styles = StyleSheet.create({
 
     },
     DessertMain: {
-        margin: MARGIN.smMargin,
-        width: width / 1.3,
-        height: height / 1.9,
+        margin: MARGIN.xsMargin,
+        width: width / 2.4,
+        height: height / 2.5,
         backgroundColor: COLORS.grayFont,
         justifyContent: "flex-start",
         alignItems: "center",
         borderRadius: RADIUS.lgRadius,
     },
     ImageTabs2: {
-        width: width / 1.3,
-        height: height / 2.8,
+        width: width / 2.4,
+        height: height / 4.5,
         borderTopRightRadius: RADIUS.lgRadius,
         borderTopLeftRadius: RADIUS.lgRadius,
     },
     TextTabs2: {
-        fontSize: FONTS.h3,
+        fontSize: FONTS.h6,
         color: COLORS.white,
     },
     TabsofTabs2: {
-        width: width / 1.7,
-        height: height / 8,
+        width: width / 2.6,
+        height: height / 7.5,
         backgroundColor: COLORS.gray,
         // flexDirection: "row",
-        justifyContent: "space-around",
+        justifyContent: "center",
         alignItems: "center",
-        borderRadius: RADIUS.x5lRadius,
+        borderRadius: RADIUS.xlRadius,
     },
     the_Two_button2: {
         backgroundColor: COLORS.orange,
-        borderRadius: RADIUS.xxlRadius,
+        borderRadius: RADIUS.xlRadius,
         flexDirection: "row",
-        width: 90,
-        height: 50,
+        width: width / 6,
+        height: height / 18,
         alignItems: 'center',
         justifyContent: "center",
     },
@@ -471,7 +483,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-around",
         alignItems: "center",
-        width: width / 2,
+        width: width / 2.6,
     },
 
 });

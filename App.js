@@ -9,19 +9,13 @@ import {
   View,
 } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
+import Photo_page from './src/screen/Photo_page'
 import Navigation from './src/navigation/Navigation';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-const Stack = createNativeStackNavigator();
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-const Tab = createMaterialBottomTabNavigator();
-
    const App =()=>{
     return (
       <>
-      <NavigationContainer>
-      <Navigation />
-      </NavigationContainer>
-      </>
+       <Photo_page />
+       </>
     );
   }
  const styles = StyleSheet.create({});
