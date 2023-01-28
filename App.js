@@ -14,7 +14,9 @@ import Navigation from './src/navigation/Navigation';
    const App =()=>{
     return (
       <>
-       <Photo_page />
+       <NavigationContainer>
+        <Navigation />
+       </NavigationContainer>
        </>
     );
   }

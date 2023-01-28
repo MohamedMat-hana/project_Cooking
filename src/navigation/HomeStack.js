@@ -7,6 +7,7 @@ import { COLORS } from '../constants';
 import Dessert from '../screen/Dessert'
 import Drink from '../screen/Drink'
 import Food from '../screen/Food'
+import Photo_page from '../screen/Photo_page'
 import Index from '../screen/index'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 const Tab = createBottomTabNavigator();

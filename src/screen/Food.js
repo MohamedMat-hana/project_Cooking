@@ -17,11 +17,14 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
 import Octicons from 'react-native-vector-icons/Octicons'
 const { width, height } = Dimensions.get('window');
 import * as Animatable from 'react-native-animatable';
+import Photo_page from '../screen/Photo_page'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
 export default class Food extends React.Component {
-    constructor() {
-        super(); {
+    constructor(props) {
+        super(props); {
             this.state = {
                 Common: [
                     {
@@ -131,7 +134,13 @@ export default class Food extends React.Component {
 
 
                                                     </TouchableOpacity>
-                                                    <TouchableOpacity style={styles.the_Two_button}>
+                                                    <TouchableOpacity
+                                                            onPress={() => this.props.navigation.navigate('DetelsStack', { screen: 'Photo_page' })}
+
+                                                        // onPress={() => {
+                                                        //     this.props.navigation.navigate('Photo_page');
+                                                        // }}
+                                                        style={styles.the_Two_button}>
                                                         <Text style={styles.TextTabs}>
                                                             الطريقة
                                                         </Text>
@@ -242,7 +251,7 @@ export default class Food extends React.Component {
                                     <Ionicons name='arrow-back-circle' size={ICONSSIZE.xlIcon} color={COLORS.orange} />
                                 </View>
                             </View>
-                            <View style={{ flexDirection: "row", flexWrap:"wrap",}}>
+                            <View style={{ flexDirection: "row", flexWrap: "wrap", }}>
 
                                 {this.state.Common.map((item, index) => (
 
@@ -283,7 +292,7 @@ export default class Food extends React.Component {
                             </View>
 
                         </View>
-                        <View style={{height:40}}></View>
+                        <View style={{ height: 40 }}></View>
                     </ScrollView>
                 </View>
             </>
@@ -378,16 +387,16 @@ const styles = StyleSheet.create({
     },
     DessertCommon: {
         height: height / 2.4,
-        width: width ,
+        width: width,
         // backgroundColor: COLORS.red,
-        justifyContent:"center"
+        justifyContent: "center"
     },
     ButtonTabs: {
         width: width / 2,
         height: height / 2.5,
         backgroundColor: COLORS.orange50,
-        borderColor:COLORS.ButtonWhite,
-        borderEndWidth:5,
+        borderColor: COLORS.ButtonWhite,
+        borderEndWidth: 5,
         borderRadius: RADIUS.xlRadius,
         // justifyContent: "space-evenly",
         alignItems: "center",
@@ -419,7 +428,7 @@ const styles = StyleSheet.create({
         borderRadius: RADIUS.xsRadius,
         flexDirection: "row",
         // width: width/5,
-        padding:PADDING.xsPadding,
+        padding: PADDING.xsPadding,
         // height: height/16,
         alignItems: 'center',
         justifyContent: "center",

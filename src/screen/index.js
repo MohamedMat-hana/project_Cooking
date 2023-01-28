@@ -5,5 +5,6 @@
 export default {
 Dessert:"Dessert",
 Food:"Food",
-Drink:"Drink"
+Drink:"Drink",
+Photo_page:"Photo_page"
 };
