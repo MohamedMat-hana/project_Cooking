@@ -1,0 +1,53 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Generator Black.ttf",
+      "sha1": "b9c9de4cdbb5bb98c81a0387d836660a7d9360c2"
+    },
+    {
+      "path": "assets/fonts/Katibeh-Regular.ttf",
+      "sha1": "0bcc60ebd4ff96486f0669d983c2a469799abac7"
+    },
+    {
+      "path": "assets/fonts/Vazirmatn-Black.ttf",
+      "sha1": "574a65bfb2274f39ea07f5bc0b1d4f2c2ae669ee"
+    },
+    {
+      "path": "assets/fonts/Vazirmatn-Bold.ttf",
+      "sha1": "8617484d143b3e58c2d7f2ad4526799f1ddbfa73"
+    },
+    {
+      "path": "assets/fonts/Vazirmatn-ExtraBold.ttf",
+      "sha1": "4115734ebf109d522f68ef3dd584ef53a2d7e8f7"
+    },
+    {
+      "path": "assets/fonts/Vazirmatn-ExtraLight.ttf",
+      "sha1": "86bc591605d36c8030619178db83709e2415e5f8"
+    },
+    {
+      "path": "assets/fonts/Vazirmatn-Light.ttf",
+      "sha1": "aff0947118f6be82089f5606b2b89a9c668d0932"
+    },
+    {
+      "path": "assets/fonts/Vazirmatn-Medium.ttf",
+      "sha1": "e69691337d1d669287eb6c06186da752e1b05bd9"
+    },
+    {
+      "path": "assets/fonts/Vazirmatn-Regular.ttf",
+      "sha1": "ca26235a766a90d41d1aa79e42365946b79f0d67"
+    },
+    {
+      "path": "assets/fonts/Vazirmatn-SemiBold.ttf",
+      "sha1": "c8b37526aca9872ad15076496666d6bd35dd998f"
+    },
+    {
+      "path": "assets/fonts/Vazirmatn-Thin.ttf",
+      "sha1": "7c1f49316d717b5ba8662bdba83556a7bdcb93dd"
+    },
+    {
+      "path": "assets/fonts/Vazirmatn-VariableFont_wght.ttf",
+      "sha1": "d6dd56548a6fd077390dea4dca5b6605b3e43ed8"
+    }
+  ]
+}

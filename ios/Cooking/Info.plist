@@ -36,7 +36,7 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -51,5 +51,20 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Vazirmatn-Black.ttf</string>
+		<string>Vazirmatn-Bold.ttf</string>
+		<string>Vazirmatn-ExtraBold.ttf</string>
+		<string>Vazirmatn-ExtraLight.ttf</string>
+		<string>Vazirmatn-Light.ttf</string>
+		<string>Vazirmatn-Medium.ttf</string>
+		<string>Vazirmatn-Regular.ttf</string>
+		<string>Vazirmatn-SemiBold.ttf</string>
+		<string>Vazirmatn-Thin.ttf</string>
+		<string>Vazirmatn-VariableFont_wght.ttf</string>
+		<string>Generator Black.ttf</string>
+		<string>Katibeh-Regular.ttf</string>
+	</array>
 </dict>
 </plist>

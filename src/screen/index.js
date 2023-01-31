@@ -4,7 +4,8 @@
 
 export default {
 Dessert:"Dessert",
-Food:"Food",
+Food:"أكلاتك",
 Drink:"Drink",
-Photo_page:"Photo_page"
+Photo_page:"Photo_page",
+Common:"أكلاتك"
 };

@@ -17,7 +17,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
 import Octicons from 'react-native-vector-icons/Octicons'
 const { width, height } = Dimensions.get('window');
 import * as Animatable from 'react-native-animatable';
-import Photo_page from '../screen/Photo_page'
+import Common from '../screen/Common'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -93,11 +93,11 @@ export default class Food extends React.Component {
         return (
             <>
                 <View style={styles.Header}>
-                    <View style={styles.nameStackView}>
+                    {/* <View style={styles.nameStackView}>
                         <Text style={styles.textnameStackView}>
                             أكلاتك
                         </Text>
-                    </View>
+                    </View> */}
 
                     <ScrollView>
                         <View style={styles.Dessercommon}>
@@ -310,7 +310,7 @@ const styles = StyleSheet.create({
     nameStackView: {
         // backgroundColor: COLORS.white,
         width: width / 1.05,
-        height: height / 15,
+        height: height / 12,
         alignItems: "flex-start",
         justifyContent: "flex-end",
         marginVertical: MARGIN.xsMargin
@@ -318,7 +318,8 @@ const styles = StyleSheet.create({
     textnameStackView: {
         fontSize: FONTS.h3,
         color: COLORS.orange,
-        fontWeight: "bold"
+        // fontWeight: "bold",
+        fontFamily:"Vazirmatn-VariableFont_wght"
     },
     SearchView: {
         // backgroundColor: COLORS.orange50,
