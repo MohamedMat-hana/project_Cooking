@@ -18,22 +18,15 @@ function Common() {
     return (
 
         <NavigationContainer style={{ backgroundColor: "#0c0c0c" }} independent={true}>
-            {/* <View style={styles.Header}>
-                <View style={styles.nameStackView}>
-                    <Text style={styles.textnameStackView}>
-                        الأكلات
-                    </Text>
-                </View>
-            </View> */}
-            <Tab.Navigator
+             <Tab.Navigator
                 initialRouteName="Feed"
                 screenOptions={{
                     tabBarActiveTintColor: '#fff',
                     tabBarInactiveTintColor: COLORS.black50,
-                    tabBarLabelStyle: { backgroundColor: "#F2A365", borderRadius: 10, paddingHorizontal: 25, paddingVertical: 5, fontSize: 16 },
+                    tabBarLabelStyle: { backgroundColor: COLORS.orange, borderRadius: 10, paddingHorizontal: 25, paddingVertical: 5, fontSize: 20, fontFamily: "Generator Black" },
                     tabBarStyle: {
-                        backgroundColor:COLORS.pramary,
-                         alignSelf: "center",
+                        backgroundColor: COLORS.pramary,
+                        alignSelf: "center",
                         width: "100%",
                     },
                 }}
@@ -44,6 +37,7 @@ function Common() {
                     options={{
                         tabBarLabel: 'الكل',
                         width: 25,
+
                     }}
                 />
                 <Tab.Screen
@@ -51,36 +45,12 @@ function Common() {
                     component={Food}
                     options={{ tabBarLabel: 'الشائع' }}
                 />
-                {/* <Tab.Screen
-        name="Drink"
-        component={Drink}
-        options={{ tabBarLabel: 'Drink' }}
-      /> */}
-            </Tab.Navigator>
+             </Tab.Navigator>
         </NavigationContainer>
     );
 }
 const styles = StyleSheet.create({
-    Header: {
-        backgroundColor: COLORS.black,
-        // marginTop: MARGIN.xxsMargin,
-        alignItems: "center",
-        // height: height
-    },
-    nameStackView: {
-        // backgroundColor: COLORS.white,
-        width: width / 1.05,
-        height: height / 15,
-        alignItems: "center",
-        justifyContent: "center",
-        marginVertical: MARGIN.xsMargin
-    },
-    textnameStackView: {
-        fontSize: FONTS.h3,
-        color: COLORS.ButtonWhite,
-        fontWeight: "bold"
-    },
-
+      
 });
 
 export default Common;

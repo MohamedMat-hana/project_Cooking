@@ -30,37 +30,50 @@ export default class Food extends React.Component {
                     {
                         Image: require("../img/pizza.png"),
                         name: "Pizza",
-                        view: true
+                        view: true,
+                        time: "30 min"
                     },
                     {
                         Image: require("../img/burger.png"),
                         name: "Burger",
-                        view: true
+                        view: true,
+                        time: "30 min"
                     },
                     {
                         Image: require("../img/food.jpg"),
                         name: "Cop",
-                        view: true
+                        view: true,
+                        time: "30 min"
                     },
                     {
                         Image: require("../img/food2.jpg"),
                         name: "ايس كريم",
-                        view: true
+                        view: true,
+                        time: "30 min"
                     },
                     {
                         Image: require("../img/food3.jpg"),
                         name: "ايس كريم",
-                        view: true
+                        view: true,
+                        time: "30 min"
                     },
                     {
                         Image: require("../img/food4.jpg"),
                         name: "ايس كريم",
-                        view: true
+                        view: true,
+                        time: "30 min"
                     },
                     {
                         Image: require("../img/steak_food.png"),
                         name: "ايس كريم",
-                        view: true
+                        view: true,
+                        time: "30 min"
+                    },
+                    {
+                        Image: require("../img/food.jpg"),
+                        name: "Cop",
+                        view: true,
+                        time: "30 min"
                     },
 
                 ],
@@ -92,210 +105,139 @@ export default class Food extends React.Component {
     render() {
         return (
             <>
-                <View style={styles.Header}>
-                    {/* <View style={styles.nameStackView}>
-                        <Text style={styles.textnameStackView}>
-                            أكلاتك
-                        </Text>
-                    </View> */}
-
+                <View style={{ backgroundColor: COLORS.pramary, flex: 1 }}>
                     <ScrollView>
-                        <View style={styles.Dessercommon}>
-                            <View style={styles.DessercommonHeader}>
-                                <View style={{ flexDirection: "row" }}>
-                                    <Text style={styles.TextCommon}>
-                                        الأكلات الشائعة
-                                    </Text>
-                                    <Image source={require("../img/food33.png")} style={styles.Image} />
-                                </View>
-                                <View style={styles.Dessercommon2}>
-                                    <Ionicons name='arrow-back-circle' size={ICONSSIZE.xlIcon} color={COLORS.orange} />
-                                </View>
-                            </View>
-                            <View style={styles.DessertCommon}>
-                                <ScrollView horizontal={true}>
-                                    {this.state.Common.map((item, index) => (
-                                        <View style={styles.ButtonTabs}>
-                                            <Image source={item.Image} style={styles.ImageTabs}
-                                                resizeMode={"cover"} />
-                                            <Text style={styles.TextTabs}>
-                                                {item.name}
-                                            </Text>
-                                            <View style={styles.TabsofTabs}>
-                                                <Text style={[styles.TextTabs, { color: COLORS.black }]}>
-                                                    الخطوات
-                                                </Text>
-                                                <View style={styles.ViewBoth}>
-                                                    <TouchableOpacity style={styles.the_Two_button}>
-                                                        <Text style={[styles.TextTabs, { marginRight: MARGIN.xxsMargin }]}>
-                                                            فيديو
-                                                        </Text>
-                                                        <Octicons name='video' size={ICONSSIZE.mIcon} color={COLORS.white} />
+                        <View style={styles.Header}>
+                            <View>
+                                <View style={{}}>
+                                 </View>
 
+                                {this.state.IconSearch ? (
+                                    <>
+                                        <Animatable.View
+                                            animation='slideInLeft' >
+                                            <TouchableOpacity
+                                                onPress={() => {
+                                                    this.setState({ IconSearch: false })
+                                                    // this.fadeOut
+                                                }}>
+                                                <Ionicons name='ios-search-circle' size={60} color={COLORS.orange} />
+                                            </TouchableOpacity>
 
-                                                    </TouchableOpacity>
-                                                    <TouchableOpacity
-                                                            onPress={() => this.props.navigation.navigate('DetelsStack', { screen: 'Photo_page' })}
+                                        </Animatable.View>
+                                    </>
+                                ) : (
+                                    <Animatable.View style={styles.SearchTextView}
+                                        animation='flipInY' >
+                                        <TextInput style={styles.SearchTextInput}
+                                            placeholder={'البحث عن الأكلات...'}
+                                            placeholderTextColor={COLORS.grayFont}
+                                            onChangeText={(value) => {
+                                                this.makesearch(value)
+                                                this.setState({ search: value })
+                                            }}
+                                            value={this.state.search} />
+                                        <TouchableOpacity onPress={() => {
+                                            this.setState({ IconSearch: true })
+                                         }}>
 
-                                                        // onPress={() => {
-                                                        //     this.props.navigation.navigate('Photo_page');
-                                                        // }}
-                                                        style={styles.the_Two_button}>
-                                                        <Text style={styles.TextTabs}>
-                                                            الطريقة
-                                                        </Text>
-
-
-                                                    </TouchableOpacity>
-                                                </View>
-                                            </View>
-                                        </View>
-                                    ))}
-                                </ScrollView>
-                            </View>
-                        </View>
-
-
-
-
-
-
-
-
-
-
-
-
-                        {/* search */}
-
-
-                        <View style={styles.SearchView}>
-                            <View style={{ flexDirection: "row" }}>
-                                <Text style={styles.SearchTextheader}>
-                                    دور علي أكلك
-                                </Text>
-                                <Image source={require("../img/food22.png")} style={styles.Image} />
-                            </View>
-                            {this.state.IconSearch ? (
-                                <>
-                                    <Animatable.View
-                                        animation='slideInLeft' >
-                                        <TouchableOpacity
-                                            onPress={() => {
-                                                this.setState({ IconSearch: false })
-                                                // this.fadeOut
-                                            }}>
-                                            <Ionicons name='ios-search-circle' size={60} color={COLORS.orange} />
+                                            <Ionicons name='search' size={ICONSSIZE.xlIcon} color={COLORS.pramary} />
                                         </TouchableOpacity>
 
                                     </Animatable.View>
-                                </>
-                            ) : (
-                                <Animatable.View style={styles.SearchTextView}
-                                    animation='flipInY' >
-                                    <TouchableOpacity onPress={() => {
-                                        this.setState({ IconSearch: true })
-                                        // this.fadeIn
-                                    }}>
-
-                                        <Ionicons name='ios-search-circle' size={ICONSSIZE.xlIcon} color={COLORS.orange} />
-                                    </TouchableOpacity>
-                                    <TextInput style={styles.SearchTextInput}
-                                        placeholder={'بحث'}
-                                        placeholderTextColor={COLORS.gray}
-                                        onChangeText={(value) => {
-                                            this.makesearch(value)
-                                            this.setState({ search: value })
-                                        }}
-                                        value={this.state.search} />
-                                    <TouchableOpacity onPress={() => {
-                                        this.setState({
-                                            search: "",
-                                        })
-                                        // this.Delete()
-                                        // this.fadeIn
-                                    }}>
-
-                                        <Ionicons name='close-circle-outline' size={ICONSSIZE.xlIcon} color={COLORS.orange} />
-                                    </TouchableOpacity>
-
-                                </Animatable.View>
-                            )}
-                        </View>
-                        {/* end search */}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        <View style={styles.Dessert}>
-                            <View style={styles.DessercommonHeader1}>
-                                <View style={{ flexDirection: "row" }}>
-                                    <Text style={styles.TextCommon}>
-                                        الوجبات
-                                    </Text>
-                                    <Image source={require("../img/spaghetti2.png")} style={styles.Image} />
-                                </View>
-                                <View style={styles.Dessercommon2}>
-                                    <Ionicons name='arrow-back-circle' size={ICONSSIZE.xlIcon} color={COLORS.orange} />
-                                </View>
+                                )}
                             </View>
-                            <View style={{ flexDirection: "row", flexWrap: "wrap", }}>
+ 
+                            <View style={styles.BoxView}>
 
                                 {this.state.Common.map((item, index) => (
-
                                     item.view ? (
-                                        <View style={styles.DessertMain}>
+                                        // <View style={styles.BoxView}>
 
+                                        <View style={styles.Box}>
                                             <Image source={item.Image} style={styles.ImageTabs2}
                                                 resizeMode={"center"} />
-                                            <Text style={styles.TextTabs2}>
-                                                {item.name}
-                                            </Text>
-                                            <View style={styles.TabsofTabs2}>
-                                                <Text style={[styles.TextTabs2, { color: COLORS.black }]}>
-                                                    الخطوات
+                                            <View style={styles.TextViewBox}>
+                                                <Text style={styles.TextBox}>
+                                                    {item.name}
                                                 </Text>
-                                                <View style={styles.ViewBoth2}>
-                                                    <TouchableOpacity style={styles.the_Two_button2}>
-                                                        <Text style={[styles.TextTabs2, { marginRight: MARGIN.xxsMargin }]}>
-                                                            فيديو
-                                                        </Text>
-                                                        <Octicons name='video' size={ICONSSIZE.smIcon} color={COLORS.white} />
-
-
-                                                    </TouchableOpacity>
-                                                    <TouchableOpacity style={styles.the_Two_button2}>
-                                                        <Text style={styles.TextTabs2}>
-                                                            الطريقة
-                                                        </Text>
-
-
-                                                    </TouchableOpacity>
-                                                </View>
                                             </View>
+                                            <View style={styles.TextTimeBox}>
+                                                <Text style={styles.TimeBox}>
+                                                    {item.time}
+                                                </Text>
+                                                <Ionicons name='md-time' style={{ alignSelf: "center" }} size={ICONSSIZE.smIcon} color={COLORS.ButtonWhite} />
+                                            </View>
+                                            <View style={styles.OptionBox}>
+                                                <TouchableOpacity style={styles.OptionButtonBox}>
+                                                    <Text style={styles.OptionTimeBox}>
+                                                        الطريقة
+                                                    </Text>
+                                                </TouchableOpacity>
+                                                <TouchableOpacity style={styles.OptionButtonBox}>
+                                                    <Text style={styles.OptionTimeBox}>
+                                                        الفيديو
+                                                    </Text>
+                                                </TouchableOpacity>
+
+                                            </View>
+
+
                                         </View>
+                                        // </View>
                                     ) : (null)
 
                                 ))}
                             </View>
+                            <View style={styles.starred}>
+                                <View style={styles.Headerstarred}>
+                                    <Text style={styles.textHeaderstarred}>
+                                        المميزة
+                                    </Text>
+                                    <Text style={styles.textHeaderstarred2}>
+                                        رؤية الكل
+                                    </Text>
+                                </View>
+                                {this.state.Common.map((item, index) => (
+                                    <View style={styles.Boxstarred}>
+                                        <View style={styles.ViewImage}>
+                                            <Image source={item.Image} resizeMode={"contain"} style={styles.Imagestarred} />
+                                        </View>
+                                        <View style={styles.BoxTextStarred}>
+                                            <Text style={[styles.textHeaderstarred, { fontSize: FONTS.h2 }]}>
+                                                {item.name}
+                                            </Text>
+                                            <View style={[styles.TextTimeBox, { justifyContent: "center" }]}>
+                                                <Text style={styles.TimeBox}>
+                                                    {item.time}
+                                                </Text>
+                                                <Ionicons name='md-time' style={{ alignSelf: "center" }} size={ICONSSIZE.smIcon} color={COLORS.ButtonWhite} />
+                                            </View>
+                                            <View style={styles.OptionBox}>
+                                                <TouchableOpacity style={styles.OptionButtonBox}>
+                                                    <Text style={styles.OptionTimeBox}>
+                                                        الطريقة
+                                                    </Text>
+                                                </TouchableOpacity>
+                                                <TouchableOpacity style={styles.OptionButtonBox}>
+                                                    <Text style={styles.OptionTimeBox}>
+                                                        الفيديو
+                                                    </Text>
+                                                </TouchableOpacity>
 
+                                            </View>
+
+                                        </View>
+                                    </View>
+                                ))}
+
+                            </View>
                         </View>
-                        <View style={{ height: 40 }}></View>
+                        <View style={{ height: 55 }}></View>
+
                     </ScrollView>
                 </View>
-            </>
+             </>
         );
     }
 }
@@ -305,7 +247,7 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.pramary,
         // marginTop: MARGIN.xxsMargin,
         alignItems: "center",
-        height: height
+        flex: 1,
     },
     nameStackView: {
         // backgroundColor: COLORS.white,
@@ -319,7 +261,7 @@ const styles = StyleSheet.create({
         fontSize: FONTS.h3,
         color: COLORS.orange,
         // fontWeight: "bold",
-        fontFamily:"Vazirmatn-VariableFont_wght"
+        fontFamily: "Vazirmatn-VariableFont_wght"
     },
     SearchView: {
         // backgroundColor: COLORS.orange50,
@@ -337,14 +279,16 @@ const styles = StyleSheet.create({
     SearchTextView: {
         backgroundColor: COLORS.white,
         width: width / 1.1,
-        height: height / 17,
+        height: height / 15,
         alignItems: "center",
         justifyContent: "center",
-        borderRadius: RADIUS.lgRadius,
-        borderWidth: 2,
-        borderColor: COLORS.orange,
-        paddingHorizontal: PADDING.xsPadding,
-        fontSize: FONTS.h5,
+        borderRadius: RADIUS.smRadius,
+        marginVertical: MARGIN.xxsMargin,
+
+        // borderWidth: 1,
+        // borderColor: COLORS.orange,
+        // paddingHorizontal: PADDING.xsPadding,
+        // fontSize: FONTS.h,
         flexDirection: "row"
 
     },
@@ -352,15 +296,101 @@ const styles = StyleSheet.create({
         // backgroundColor: COLORS.white,
         width: width / 1.4,
         height: height / 17,
-        alignItems: "flex-end",
+        alignItems: "center",
+        alignSelf:"center",
+        // backgroundColor:COLORS.background,
+        color:COLORS.black,
         justifyContent: "flex-end",
+        fontFamily: "Generator Black",
         // borderRadius: RADIUS.lgRadius,
         // borderWidth: 2,
         // borderColor: COLORS.orange,
         paddingHorizontal: PADDING.smPadding,
-        fontSize: FONTS.h5
+        fontSize: FONTS.h4
         // marginVertical: MARGIN.xsMargin
 
+    },
+    BoxView: {
+        width: width,
+        // height:height/12,
+        backgroundColor: COLORS.pramary,
+        flexDirection: "row",
+        flexWrap: "wrap",
+        padding: PADDING.xsPadding,
+        alignItems: "center",
+        justifyContent: "space-around"
+    },
+    Box: {
+        width: width / 2.1,
+        alignItems: "center",
+        // height: height / 15,
+        marginVertical: MARGIN.xxsMargin,
+        padding: PADDING.lgPadding,
+        borderRadius: RADIUS.xxsRadius,
+        backgroundColor: COLORS.pramary50
+    },
+    starred: {
+        width: width,
+        // backgroundColor: COLORS.black
+    },
+    Headerstarred: {
+        width: width / 1.05,
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        alignSelf: "center"
+    },
+    textHeaderstarred: {
+        fontSize: FONTS.h1,
+        color: COLORS.ButtonWhite,
+        // fontWeight: "bold",
+        fontFamily: "Generator Black"
+    },
+    textHeaderstarred2: {
+        fontSize: FONTS.h5,
+        color: COLORS.gray,
+        // fontWeight: "bold",
+        fontFamily: "Generator Black"
+    },
+    Boxstarred: {
+        width: width / 1.05,
+        // height: height / 5,
+        alignSelf: "center",
+        borderRadius: RADIUS.smRadius,
+        backgroundColor: COLORS.pramary50,
+        flexDirection: "row",
+        marginVertical: MARGIN.xsMargin
+    },
+    ViewImage: {
+        width: width / 2.5,
+        height: height / 5,
+        alignItems: "center",
+        justifyContent: "center",
+        // backgroundColor: "#000",
+        borderRadius: RADIUS.xxsRadius
+    },
+    Imagestarred: {
+        width: width / 3,
+        height: height / 6,
+        borderRadius: RADIUS.xxsRadius
+
+    },
+    BoxTextStarred: {
+        width: width / 1.9,
+        height: height / 6,
+        alignSelf: "center",
+        alignItems: "center",
+        justifyContent: "space-between",
+        borderRadius: RADIUS.smRadius,
+        // backgroundColor: COLORS.black,
+        // paddingVertical:54
+
+    },
+    textDetelsstarred: {
+        fontSize: FONTS.h5,
+        color: COLORS.grayICon,
+        // fontWeight: "bold",
+        fontFamily: "Generator Black"
     },
     Dessercommon: {
         height: height / 2.2,
@@ -463,9 +493,53 @@ const styles = StyleSheet.create({
     },
     ImageTabs2: {
         width: width / 2.4,
-        height: height / 4.5,
-        borderTopRightRadius: RADIUS.lgRadius,
-        borderTopLeftRadius: RADIUS.lgRadius,
+        height: height / 5,
+        borderRadius: RADIUS.xxsRadius,
+    },
+    TextViewBox: {
+        // backgroundColor: "#000",
+        width: width / 2.4,
+        alignItems: "flex-start"
+    },
+    TextBox: {
+        fontSize: FONTS.h4,
+        color: COLORS.white,
+        fontFamily: "Generator Black",
+        textAlign: "left"
+    },
+    TextTimeBox: {
+        width: width / 2.4,
+        alignItems: "center",
+        flexDirection: "row",
+        // alignItems:"center",
+    },
+    TimeBox: {
+        fontSize: FONTS.h4,
+        color: COLORS.white,
+        fontFamily: "Generator Black",
+        alignSelf: "center",
+        marginHorizontal: 2
+    },
+    OptionBox: {
+        width: width / 2.4,
+        alignItems: "center",
+        justifyContent: "space-around",
+        flexDirection: "row",
+
+    },
+    OptionButtonBox: {
+        width: width / 6,
+        backgroundColor: COLORS.orange,
+        borderRadius: RADIUS.smRadius,
+        alignItems: "center",
+        justifyContent: "center",
+    },
+    OptionTimeBox: {
+        fontSize: FONTS.h5,
+        color: COLORS.white,
+        fontFamily: "Generator Black",
+        alignSelf: "center",
+        marginHorizontal: 2
     },
     TextTabs2: {
         fontSize: FONTS.h6,

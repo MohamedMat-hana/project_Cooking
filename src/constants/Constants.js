@@ -2,17 +2,17 @@ import {Dimensions} from 'react-native';
 import {RFValue} from 'react-native-responsive-fontsize';
 const {width, height} = Dimensions.get('window');
 export const COLORS = {
-  orange: '#d68516',
+  orange: "#F2A365",
   orange50:'#d68516b0',
   background: '#f4f4f4',
-  white: '#fff',
+  white: '#dce4e6',
   black: '#111111',
   red:"#f00",
   warning: '#fdac71',
   success: '#6adaa4',
   gray: '#aaaaaaba',
   black50:'#040205',
-  ButtonWhite: "#dce4e6",
+  ButtonWhite: "#fff",
   grayFont:"#535357",
   grayICon: "#bfbfc0",
   pramary:'#212832',
@@ -37,6 +37,7 @@ export const MARGIN = {
 };
 
 export const RADIUS = {
+  xxsRadius:8,
   xsRadius: 10,
   smRadius: 15,
   mdRadius: 20,

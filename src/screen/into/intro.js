@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
         color: 'white',
         textAlign: 'center',
         // fontWeight:"bold",
-        fontFamily:"Katibeh-Regular"
+        fontFamily: "Generator Black",
 
     },
     botton_style: {
@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
     text_styleskip: {
         color: COLORS.orange,
         fontSize: FONTS.h4,
-        fontFamily:"Katibeh-Regular"
+        fontFamily: "Generator Black",
 
 
     },
@@ -195,13 +195,13 @@ const styles = StyleSheet.create({
     text_styleback: {
         color: COLORS.orange,
         fontSize: FONTS.h4,
-        fontFamily:"Katibeh-Regular"
+        fontFamily: "Generator Black",
 
     },
     text_style: {
         color: COLORS.white,
         fontSize: FONTS.h4,
-        fontFamily:"Katibeh-Regular"
+        fontFamily: "Generator Black",
 
     },
     slider_active_dot_style: {

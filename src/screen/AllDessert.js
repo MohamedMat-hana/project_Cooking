@@ -287,7 +287,7 @@ export default class AllDessert extends React.Component {
 
 const styles = StyleSheet.create({
     Header: {
-        backgroundColor: COLORS.black,
+        backgroundColor: COLORS.pramary,
         // marginTop: MARGIN.xxsMargin,
         alignItems: "center",
         height: height

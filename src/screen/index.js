@@ -3,10 +3,10 @@
 // import Drink from './Drink';
 
 export default {
-Dessert:"حلويات",
+Dessert:"الحلويات",
 Food:"أكلاتك",
-Drink:"مشروبات",
-Common:"أكلاتك",
+Drink:"المشروبات",
+Common:"الأكلات",
 Favourite:"المفضلات",
 Search:"البحث"
 };

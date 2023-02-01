@@ -30,9 +30,10 @@ function Dessert() {
                 screenOptions={{
                     tabBarActiveTintColor: '#fff',
                     tabBarInactiveTintColor: COLORS.black50,
-                    tabBarLabelStyle: { backgroundColor: "#F2A365", borderRadius: 10, paddingHorizontal: 25, paddingVertical: 5, fontSize: 16 },
+                    tabBarLabelStyle: { backgroundColor: COLORS.orange, borderRadius: 10, paddingHorizontal: 25, paddingVertical: 5, fontSize: 20, fontFamily: "Generator Black" },
                     tabBarStyle: {
-                        backgroundColor: COLORS.black, alignSelf: "center",
+                        backgroundColor: COLORS.pramary,
+                        alignSelf: "center",
                         width: "100%",
                     },
                 }}
@@ -55,26 +56,6 @@ function Dessert() {
     );
 }
 const styles = StyleSheet.create({
-    Header: {
-        backgroundColor: COLORS.black,
-        // marginTop: MARGIN.xxsMargin,
-        alignItems: "center",
-        // height: height
-    },
-    nameStackView: {
-        // backgroundColor: COLORS.white,
-        width: width / 1.05,
-        height: height / 15,
-        alignItems: "center",
-        justifyContent: "center",
-        marginVertical: MARGIN.xsMargin
-    },
-    textnameStackView: {
-        fontSize: FONTS.h3,
-        color: COLORS.ButtonWhite,
-        fontWeight: "bold"
-    },
-
-});
+ });
 
 export default Dessert;
