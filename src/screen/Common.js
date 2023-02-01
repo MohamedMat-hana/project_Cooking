@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Dimensions } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Dessert from './Dessert';
+import FoodCommon from './FoodCommon';
 import Drink from './Drink';
 import Food from './Food';
 import { COLORS, PADDING, MARGIN, RADIUS, FONTS, ICONSSIZE } from '../constants/Constants'
@@ -32,14 +32,15 @@ function Common() {
                     tabBarInactiveTintColor: COLORS.black50,
                     tabBarLabelStyle: { backgroundColor: "#F2A365", borderRadius: 10, paddingHorizontal: 25, paddingVertical: 5, fontSize: 16 },
                     tabBarStyle: {
-                        backgroundColor: COLORS.black, alignSelf: "center",
+                        backgroundColor:COLORS.pramary,
+                         alignSelf: "center",
                         width: "100%",
                     },
                 }}
             >
                 <Tab.Screen
-                    name="Dessert"
-                    component={Dessert}
+                    name="FoodCommon"
+                    component={FoodCommon}
                     options={{
                         tabBarLabel: 'الكل',
                         width: 25,

@@ -10,62 +10,65 @@ import {
     Dimensions,
     TextInput,
     ScrollView,
-} from 'react-native';
+ } from 'react-native';
 import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 import { COLORS, PADDING, MARGIN, RADIUS, FONTS, ICONSSIZE } from '../constants/Constants'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import Octicons from 'react-native-vector-icons/Octicons'
+// import { Animatable } from 'react-native-animatable';
 const { width, height } = Dimensions.get('window');
 import * as Animatable from 'react-native-animatable';
-import Common from '../screen/Common'
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+// MyCustomComponent = Animatable.createAnimatableComponent(MyCustomComponent);
 
 
-export default class Food extends React.Component {
-    constructor(props) {
-        super(props); {
+export default class AllDessert extends React.Component {
+    // handleViewRef = ref => this.view = ref;
+  
+    // bounce = () => this.view.bounce(800).then(endState => console.log(endState.finished ? 'bounce finished' : 'bounce cancelled'));
+  
+    constructor() {
+        super(); {
             this.state = {
                 Common: [
                     {
-                        Image: require("../img/pizza.png"),
-                        name: "Pizza",
+                        Image: require("../img/dessert3.jpg"),
+                        name: "ice cream",
                         view: true
                     },
                     {
-                        Image: require("../img/burger.png"),
-                        name: "Burger",
+                        Image: require("../img/dessert4.jpg"),
+                        name: "cemo",
                         view: true
                     },
                     {
-                        Image: require("../img/food.jpg"),
-                        name: "Cop",
+                        Image: require("../img/dessert2.jpg"),
+                        name: "moh",
                         view: true
                     },
                     {
-                        Image: require("../img/food2.jpg"),
+                        Image: require("../img/dessert.jpg"),
                         name: "ايس كريم",
                         view: true
                     },
                     {
-                        Image: require("../img/food3.jpg"),
+                        Image: require("../img/dessert5.jpg"),
                         name: "ايس كريم",
                         view: true
                     },
                     {
-                        Image: require("../img/food4.jpg"),
+                        Image: require("../img/dessert3.jpg"),
                         name: "ايس كريم",
                         view: true
                     },
                     {
-                        Image: require("../img/steak_food.png"),
+                        Image: require("../img/dessert3.jpg"),
                         name: "ايس كريم",
                         view: true
                     },
 
                 ],
                 IconSearch: true,
-
+ 
             }
         }
     }
@@ -81,32 +84,25 @@ export default class Food extends React.Component {
         }
         this.setState({ Common: list })
     }
-    // Delete() {
-    //     let list = this.state.Common
-    //     list.view=!list.view
-    //     if (list.view==false) {
-    //         this.setState({ Common: list })
-    //     }
-    // }
-
+ 
     render() {
         return (
             <>
                 <View style={styles.Header}>
-                    {/* <View style={styles.nameStackView}>
+                    <View style={styles.nameStackView}>
                         <Text style={styles.textnameStackView}>
-                            أكلاتك
+                            الحلويات
                         </Text>
-                    </View> */}
+                    </View>
 
                     <ScrollView>
                         <View style={styles.Dessercommon}>
                             <View style={styles.DessercommonHeader}>
                                 <View style={{ flexDirection: "row" }}>
                                     <Text style={styles.TextCommon}>
-                                        الأكلات الشائعة
+                                        الحلويات الشائعة
                                     </Text>
-                                    <Image source={require("../img/food33.png")} style={styles.Image} />
+                                    <Image source={require("../img/dessert22.png")} style={styles.Image} />
                                 </View>
                                 <View style={styles.Dessercommon2}>
                                     <Ionicons name='arrow-back-circle' size={ICONSSIZE.xlIcon} color={COLORS.orange} />
@@ -117,7 +113,7 @@ export default class Food extends React.Component {
                                     {this.state.Common.map((item, index) => (
                                         <View style={styles.ButtonTabs}>
                                             <Image source={item.Image} style={styles.ImageTabs}
-                                                resizeMode={"cover"} />
+                                                resizeMode={"center"} />
                                             <Text style={styles.TextTabs}>
                                                 {item.name}
                                             </Text>
@@ -134,13 +130,7 @@ export default class Food extends React.Component {
 
 
                                                     </TouchableOpacity>
-                                                    <TouchableOpacity
-                                                            onPress={() => this.props.navigation.navigate('DetelsStack', { screen: 'Photo_page' })}
-
-                                                        // onPress={() => {
-                                                        //     this.props.navigation.navigate('Photo_page');
-                                                        // }}
-                                                        style={styles.the_Two_button}>
+                                                    <TouchableOpacity style={styles.the_Two_button}>
                                                         <Text style={styles.TextTabs}>
                                                             الطريقة
                                                         </Text>
@@ -169,17 +159,17 @@ export default class Food extends React.Component {
                         {/* search */}
 
 
-                        <View style={styles.SearchView}>
+                         <View style={styles.SearchView}>
                             <View style={{ flexDirection: "row" }}>
                                 <Text style={styles.SearchTextheader}>
-                                    دور علي أكلك
+                                    دور علي حلوياتك
                                 </Text>
-                                <Image source={require("../img/food22.png")} style={styles.Image} />
+                                <Image source={require("../img/ice_cream.png")} style={styles.Image} />
                             </View>
                             {this.state.IconSearch ? (
                                 <>
-                                    <Animatable.View
-                                        animation='slideInLeft' >
+                                    <Animatable.View  
+                                         animation='slideInLeft' >
                                         <TouchableOpacity
                                             onPress={() => {
                                                 this.setState({ IconSearch: false })
@@ -222,7 +212,7 @@ export default class Food extends React.Component {
                                 </Animatable.View>
                             )}
                         </View>
-                        {/* end search */}
+                         {/* end search */}
 
 
 
@@ -243,56 +233,51 @@ export default class Food extends React.Component {
                             <View style={styles.DessercommonHeader1}>
                                 <View style={{ flexDirection: "row" }}>
                                     <Text style={styles.TextCommon}>
-                                        الوجبات
+                                        التحلية
                                     </Text>
-                                    <Image source={require("../img/spaghetti2.png")} style={styles.Image} />
+                                    <Image source={require("../img/dessert22.png")} style={styles.Image} />
                                 </View>
                                 <View style={styles.Dessercommon2}>
                                     <Ionicons name='arrow-back-circle' size={ICONSSIZE.xlIcon} color={COLORS.orange} />
                                 </View>
                             </View>
-                            <View style={{ flexDirection: "row", flexWrap: "wrap", }}>
+                            {this.state.Common.map((item, index) => (
 
-                                {this.state.Common.map((item, index) => (
+                                item.view ? (
+                                    <View style={styles.DessertMain}>
 
-                                    item.view ? (
-                                        <View style={styles.DessertMain}>
-
-                                            <Image source={item.Image} style={styles.ImageTabs2}
-                                                resizeMode={"center"} />
-                                            <Text style={styles.TextTabs2}>
-                                                {item.name}
+                                        <Image source={item.Image} style={styles.ImageTabs2}
+                                            resizeMode={"center"} />
+                                        <Text style={styles.TextTabs2}>
+                                            {item.name}
+                                        </Text>
+                                        <View style={styles.TabsofTabs2}>
+                                            <Text style={[styles.TextTabs2, { color: COLORS.black }]}>
+                                                الخطوات
                                             </Text>
-                                            <View style={styles.TabsofTabs2}>
-                                                <Text style={[styles.TextTabs2, { color: COLORS.black }]}>
-                                                    الخطوات
-                                                </Text>
-                                                <View style={styles.ViewBoth2}>
-                                                    <TouchableOpacity style={styles.the_Two_button2}>
-                                                        <Text style={[styles.TextTabs2, { marginRight: MARGIN.xxsMargin }]}>
-                                                            فيديو
-                                                        </Text>
-                                                        <Octicons name='video' size={ICONSSIZE.smIcon} color={COLORS.white} />
+                                            <View style={styles.ViewBoth2}>
+                                                <TouchableOpacity style={styles.the_Two_button2}>
+                                                    <Text style={[styles.TextTabs2, { marginRight: MARGIN.xxsMargin }]}>
+                                                        فيديو
+                                                    </Text>
+                                                    <Octicons name='video' size={ICONSSIZE.mIcon} color={COLORS.white} />
 
 
-                                                    </TouchableOpacity>
-                                                    <TouchableOpacity style={styles.the_Two_button2}>
-                                                        <Text style={styles.TextTabs2}>
-                                                            الطريقة
-                                                        </Text>
+                                                </TouchableOpacity>
+                                                <TouchableOpacity style={styles.the_Two_button2}>
+                                                    <Text style={styles.TextTabs2}>
+                                                        الطريقة
+                                                    </Text>
 
 
-                                                    </TouchableOpacity>
-                                                </View>
+                                                </TouchableOpacity>
                                             </View>
                                         </View>
-                                    ) : (null)
+                                    </View>
+                                ) : (null)
 
-                                ))}
-                            </View>
-
+                            ))}
                         </View>
-                        <View style={{ height: 40 }}></View>
                     </ScrollView>
                 </View>
             </>
@@ -302,7 +287,7 @@ export default class Food extends React.Component {
 
 const styles = StyleSheet.create({
     Header: {
-        backgroundColor: COLORS.pramary,
+        backgroundColor: COLORS.black,
         // marginTop: MARGIN.xxsMargin,
         alignItems: "center",
         height: height
@@ -310,7 +295,7 @@ const styles = StyleSheet.create({
     nameStackView: {
         // backgroundColor: COLORS.white,
         width: width / 1.05,
-        height: height / 12,
+        height: height / 15,
         alignItems: "flex-start",
         justifyContent: "flex-end",
         marginVertical: MARGIN.xsMargin
@@ -318,8 +303,7 @@ const styles = StyleSheet.create({
     textnameStackView: {
         fontSize: FONTS.h3,
         color: COLORS.orange,
-        // fontWeight: "bold",
-        fontFamily:"Vazirmatn-VariableFont_wght"
+        fontWeight: "bold"
     },
     SearchView: {
         // backgroundColor: COLORS.orange50,
@@ -369,8 +353,7 @@ const styles = StyleSheet.create({
     },
     DessercommonHeader: {
         flexDirection: "row",
-        justifyContent: "space-between",
-        // backgroundColor:"#000"
+        justifyContent: "space-between"
     },
     TextCommon: {
         fontSize: FONTS.h3,
@@ -378,8 +361,8 @@ const styles = StyleSheet.create({
         alignSelf: "flex-start"
     },
     Image: {
-        width: 35,
-        height: 35
+        width: 30,
+        height: 30
     },
     Dessercommon2: {
         width: width / 2,
@@ -387,50 +370,44 @@ const styles = StyleSheet.create({
         alignItems: "flex-end"
     },
     DessertCommon: {
-        height: height / 2.4,
-        width: width,
-        // backgroundColor: COLORS.red,
-        justifyContent: "center"
+        height: height / 2.5,
+        width: width / 1.05,
+        // backgroundColor: COLORS.red
     },
     ButtonTabs: {
-        width: width / 2,
+        width: width / 1.7,
         height: height / 2.5,
         backgroundColor: COLORS.orange50,
-        borderColor: COLORS.ButtonWhite,
-        borderEndWidth: 5,
-        borderRadius: RADIUS.xlRadius,
-        // justifyContent: "space-evenly",
+        borderRadius: RADIUS.x5lRadius,
+        justifyContent: "space-between",
         alignItems: "center",
         marginHorizontal: MARGIN.xsMargin,
     },
     ImageTabs: {
-        width: width / 2.1,
+        width: width / 1.7,
         height: height / 5,
-        borderTopRightRadius: RADIUS.xlRadius,
-        borderTopLeftRadius: RADIUS.xlRadius,
+        borderTopRightRadius: RADIUS.x5lRadius,
+        borderTopLeftRadius: RADIUS.x5lRadius,
     },
     TextTabs: {
-        fontSize: FONTS.h4,
+        fontSize: FONTS.h3,
         color: COLORS.white,
     },
     TabsofTabs: {
-        width: width / 2,
-        height: height / 6,
-        // backgroundColor: COLORS.gray,
+        width: width / 1.7,
+        height: height / 7,
+        backgroundColor: COLORS.gray,
         // flexDirection: "row",
-        justifyContent: "space-evenly",
+        justifyContent: "space-around",
         alignItems: "center",
         borderRadius: RADIUS.x5lRadius,
-        // marginTop:5,backgroundColor:"#000",
-
     },
     the_Two_button: {
         backgroundColor: COLORS.orange,
-        borderRadius: RADIUS.xsRadius,
+        borderRadius: RADIUS.xxlRadius,
         flexDirection: "row",
-        // width: width/5,
-        padding: PADDING.xsPadding,
-        // height: height/16,
+        width: 90,
+        height: 50,
         alignItems: 'center',
         justifyContent: "center",
     },
@@ -444,7 +421,7 @@ const styles = StyleSheet.create({
         width: width / 1.05,
         // height: height,
         // backgroundColor: COLORS.gray,
-        alignItems: "center",
+        alignItems: "center"
     },
     DessercommonHeader1: {
         flexDirection: "row",
@@ -453,39 +430,39 @@ const styles = StyleSheet.create({
 
     },
     DessertMain: {
-        margin: MARGIN.xsMargin,
-        width: width / 2.4,
-        height: height / 2.5,
+        margin: MARGIN.smMargin,
+        width: width / 1.3,
+        height: height / 1.9,
         backgroundColor: COLORS.grayFont,
         justifyContent: "flex-start",
         alignItems: "center",
         borderRadius: RADIUS.lgRadius,
     },
     ImageTabs2: {
-        width: width / 2.4,
-        height: height / 4.5,
+        width: width / 1.3,
+        height: height / 2.8,
         borderTopRightRadius: RADIUS.lgRadius,
         borderTopLeftRadius: RADIUS.lgRadius,
     },
     TextTabs2: {
-        fontSize: FONTS.h6,
+        fontSize: FONTS.h3,
         color: COLORS.white,
     },
     TabsofTabs2: {
-        width: width / 2.6,
-        height: height / 7.5,
+        width: width / 1.7,
+        height: height / 8,
         backgroundColor: COLORS.gray,
         // flexDirection: "row",
-        justifyContent: "center",
+        justifyContent: "space-around",
         alignItems: "center",
-        borderRadius: RADIUS.xlRadius,
+        borderRadius: RADIUS.x5lRadius,
     },
     the_Two_button2: {
         backgroundColor: COLORS.orange,
-        borderRadius: RADIUS.xlRadius,
+        borderRadius: RADIUS.xxlRadius,
         flexDirection: "row",
-        width: width / 6,
-        height: height / 18,
+        width: 90,
+        height: 50,
         alignItems: 'center',
         justifyContent: "center",
     },
@@ -493,7 +470,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-around",
         alignItems: "center",
-        width: width / 2.6,
+        width: width / 2,
     },
 
 });

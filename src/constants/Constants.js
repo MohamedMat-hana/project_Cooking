@@ -14,7 +14,9 @@ export const COLORS = {
   black50:'#040205',
   ButtonWhite: "#dce4e6",
   grayFont:"#535357",
-  grayICon: "#bfbfc0"
+  grayICon: "#bfbfc0",
+  pramary:'#212832',
+  pramary50:'#2b495c',
 
 };
 
