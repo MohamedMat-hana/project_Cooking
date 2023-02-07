@@ -11,15 +11,22 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import Common from './src/screen/Common';
 import Navigation from './src/navigation/Navigation';
-   const App =()=>{
-    return (
-      <>
-       <NavigationContainer>
+import Splash from './src/screen/splash';
+
+
+const App = () => {
+  return (
+    <>
+      <NavigationContainer>
         <Navigation />
        </NavigationContainer>
-       </>
-    );
-  }
- const styles = StyleSheet.create({});
- 
+
+
+      {/* <Splash /> */}
+
+    </>
+  );
+}
+const styles = StyleSheet.create({});
+
 export default App;
