@@ -39,17 +39,17 @@ function Dessert() {
                 }}
             >
                 <Tab.Screen
-                    name="AllDessert"
+                    name="الكل"
                     component={AllDessert}
-                    options={{
-                        tabBarLabel: 'الكل',
-                        width: 25,
-                    }}
+                    // options={{
+                    //     tabBarLabel: 'الكل',
+                    //     width: 25,
+                    // }}
                 />
                 <Tab.Screen
-                    name="CommonDessert"
+                    name="الشائع"
                     component={CommonDessert}
-                    options={{ tabBarLabel: 'الشائع' }}
+                    // options={{ tabBarLabel: 'الشائع' }}
                 />
              </Tab.Navigator>
         </NavigationContainer>

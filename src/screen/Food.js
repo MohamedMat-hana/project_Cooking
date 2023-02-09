@@ -169,7 +169,13 @@ export default class Food extends React.Component {
                                                 <Ionicons name='md-time' style={{ alignSelf: "center" }} size={ICONSSIZE.smIcon} color={COLORS.ButtonWhite} />
                                             </View>
                                             <View style={styles.OptionBox}>
-                                                <TouchableOpacity style={styles.OptionButtonBox}>
+                                                <TouchableOpacity 
+                                                onPress={() => 
+                                                    // this.props.navigation.navigate('DetelsStack',{screen:"Photo_page"})
+                                                    this.props.navigation.navigate('DetelsStack',{ screen: 'Photo_page' })
+
+                                                }
+                                                style={styles.OptionButtonBox}>
                                                     <Text style={styles.OptionTimeBox}>
                                                         الطريقة
                                                     </Text>

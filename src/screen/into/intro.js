@@ -45,7 +45,7 @@ const data = [
 
 
 export default class Intro extends React.Component {
-        constructor() {
+    constructor() {
         super(); {
             this.state = {
                 showRealApp: false
@@ -86,10 +86,10 @@ export default class Intro extends React.Component {
     renderDoneButton = () => {
         return (
             <TouchableOpacity style={styles.botton_style}
-                        onPress={()=>{
-                this.props.navigation.navigate('HomeStack');
-            }}
->
+                onPress={() => {
+                    this.props.navigation.navigate('HomeStack');
+                }}
+            >
                 <Text style={styles.text_style}>تم</Text>
             </TouchableOpacity>
         );
@@ -103,8 +103,8 @@ export default class Intro extends React.Component {
         );
 
     }
- 
-    
+
+
     _keyExtractor = (item) => item.title;
 
     render() {
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
         resizeMode: "cover",
         borderRadius: 30,
         // justifyContent:"flex-start",
-        marginBottom:20
+        marginBottom: 20
     },
     title: {
         fontSize: 22,

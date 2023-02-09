@@ -11,6 +11,7 @@ function AuthStack() {
     <Stack.Navigator
       screenOptions={{headerShown: false}}
       initialRouteName="Intro">
+        
       <Stack.Screen name="Intro" component={Intro} />
     </Stack.Navigator>
   );

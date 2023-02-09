@@ -16,6 +16,7 @@ const Stack = createNativeStackNavigator();
 
 export default DetelsStack = () => {
   return (
+    
     <Stack.Navigator
       screenOptions={{headerShown: false}}
       initialRouteName="Photo_page">

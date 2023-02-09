@@ -16,11 +16,10 @@ const Tab = createBottomTabNavigator();
 export default HomeStack = () => {
   return (
     <Tab.Navigator
+    initialRouteName={Index.Search}
       screenOptions={({ route }) => ({
         headerStyle: styles.headerbar,
         headerTitleStyle: styles.textheader,
-        freezeOnBlur: false,
-
         tabBarActiveTintColor: COLORS.orange,
         tabBarInactiveTintColor: COLORS.ButtonWhite,
         tabBarStyle: styles.tabbar,
@@ -42,6 +41,7 @@ export default HomeStack = () => {
         }
       })}
     >
+      
       <Tab.Screen
         name={Index.Common}
         component={Common}
@@ -77,7 +77,6 @@ export default HomeStack = () => {
 const styles = StyleSheet.create({
   tabbar: {
     position: "absolute",
-
     backgroundColor: "#31475e",
     borderTopWidth: 0,
     borderRadius: 15,
@@ -85,7 +84,6 @@ const styles = StyleSheet.create({
     right: 10,
     left: 10,
     fontFamily: "Generator Black",
-
     marginBottom: 15
   },
   headerbar: {
@@ -96,6 +94,6 @@ const styles = StyleSheet.create({
     color: COLORS.ButtonWhite,
     alignSelf: "center",
     fontFamily: "Generator Black",
-    marginLeft: "50%"
+    marginLeft: "50%",
   }
 })

@@ -9,7 +9,7 @@ import {
   View,
 } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import Common from './src/screen/Common';
+import Photo_page from './src/screen/Photo_page';
 import Navigation from './src/navigation/Navigation';
    const App =()=>{
     return (

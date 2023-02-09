@@ -52,6 +52,7 @@ export const RADIUS = {
 };
 
 export const FONTS = {
+  h0:40,
   h1: 30,
   h2: 25,
   h3: 20,
@@ -66,6 +67,9 @@ export const ICONSSIZE = {
   mIcon: 20,
   lIcon: 25,
   xlIcon: 30,
+  xxlIcon:35,
+  xxxlIcon:40
+
 };
 
 export const ProfilePhoto = {
