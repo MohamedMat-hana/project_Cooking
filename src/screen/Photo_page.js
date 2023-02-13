@@ -129,6 +129,7 @@ export default class Photo_page extends React.Component {
                                             backgroundColor: COLORS.pramary
                                         }} onPress={() => {
                                             this.IconFav()
+                                            // this.props.navigation.navigate('Common')
                                         }}>
                                         <Ionicons name={this.state.IconFavorite ? 'heart-outline' : "heart"}
                                             size={40} color={COLORS.orange} />

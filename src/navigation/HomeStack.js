@@ -6,11 +6,15 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { COLORS, FONTS } from '../constants';
 import Dessert from '../screen/Dessert'
 import Drink from '../screen/Drink'
-import Common from '../screen/Common'
-import Favourite from '../screen/Favourite'
+ import Favourite from '../screen/Favourite'
 import Search from '../screen/Search'
 import Index from '../screen/index'
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import TabHeader from '../screen/TabHeader'
+ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+// import { createStackNavigator } from '@react-navigation/stack';
+
+ 
+
 const Tab = createBottomTabNavigator();
 
 export default HomeStack = () => {
@@ -18,6 +22,7 @@ export default HomeStack = () => {
     <Tab.Navigator
     initialRouteName={Index.Search}
       screenOptions={({ route }) => ({
+        headerShown:false,
         headerStyle: styles.headerbar,
         headerTitleStyle: styles.textheader,
         tabBarActiveTintColor: COLORS.orange,
@@ -44,9 +49,8 @@ export default HomeStack = () => {
       
       <Tab.Screen
         name={Index.Common}
-        component={Common}
-        options={{
-        }}
+        component={TabHeader}
+        options={{}}
       />
       <Tab.Screen
         name={Index.Dessert}

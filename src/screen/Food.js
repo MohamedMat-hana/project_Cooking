@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     StyleSheet,
     View,
@@ -17,73 +17,128 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
 import Octicons from 'react-native-vector-icons/Octicons'
 const { width, height } = Dimensions.get('window');
 import * as Animatable from 'react-native-animatable';
-import Common from '../screen/Common'
-import { NavigationContainer } from '@react-navigation/native';
+import Photo_page from '../screen/Photo_page'
+import { useNavigation, NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+export default function Food() {
+    const [Common, setCommon] = useState(
+        [
+            {
+                Image: require("../img/pizza.png"),
+                name: "Pizza",
+                view: true,
+                time: "30 min"
+            },
+            {
+                Image: require("../img/burger.png"),
+                name: "Burger",
+                view: true,
+                time: "30 min"
+            },
+            {
+                Image: require("../img/food.jpg"),
+                name: "Cop",
+                view: true,
+                time: "30 min"
+            },
+            {
+                Image: require("../img/food2.jpg"),
+                name: "ايس كريم",
+                view: true,
+                time: "30 min"
+            },
+            {
+                Image: require("../img/food3.jpg"),
+                name: "ايس كريم",
+                view: true,
+                time: "30 min"
+            },
+            {
+                Image: require("../img/food4.jpg"),
+                name: "ايس كريم",
+                view: true,
+                time: "30 min"
+            },
+            {
+                Image: require("../img/steak_food.png"),
+                name: "ايس كريم",
+                view: true,
+                time: "30 min"
+            },
+            {
+                Image: require("../img/food.jpg"),
+                name: "Cop",
+                view: true,
+                time: "30 min"
+            },
 
-export default class Food extends React.Component {
-    constructor(props) {
-        super(props); {
-            this.state = {
-                Common: [
-                    {
-                        Image: require("../img/pizza.png"),
-                        name: "Pizza",
-                        view: true,
-                        time: "30 min"
-                    },
-                    {
-                        Image: require("../img/burger.png"),
-                        name: "Burger",
-                        view: true,
-                        time: "30 min"
-                    },
-                    {
-                        Image: require("../img/food.jpg"),
-                        name: "Cop",
-                        view: true,
-                        time: "30 min"
-                    },
-                    {
-                        Image: require("../img/food2.jpg"),
-                        name: "ايس كريم",
-                        view: true,
-                        time: "30 min"
-                    },
-                    {
-                        Image: require("../img/food3.jpg"),
-                        name: "ايس كريم",
-                        view: true,
-                        time: "30 min"
-                    },
-                    {
-                        Image: require("../img/food4.jpg"),
-                        name: "ايس كريم",
-                        view: true,
-                        time: "30 min"
-                    },
-                    {
-                        Image: require("../img/steak_food.png"),
-                        name: "ايس كريم",
-                        view: true,
-                        time: "30 min"
-                    },
-                    {
-                        Image: require("../img/food.jpg"),
-                        name: "Cop",
-                        view: true,
-                        time: "30 min"
-                    },
+        ])
+    const [IconSearch, setIconSearch] = useState(true)
+    const [search, setsearch] = useState("")
+    
+    
+    // constructor(props) {
+    //     super(props); {
+    //         this.state = {
+    //             Common:
+    //                 [
+    //                     {
+    //                         Image: require("../img/pizza.png"),
+    //                         name: "Pizza",
+    //                         view: true,
+    //                         time: "30 min"
+    //                     },
+    //                     {
+    //                         Image: require("../img/burger.png"),
+    //                         name: "Burger",
+    //                         view: true,
+    //                         time: "30 min"
+    //                     },
+    //                     {
+    //                         Image: require("../img/food.jpg"),
+    //                         name: "Cop",
+    //                         view: true,
+    //                         time: "30 min"
+    //                     },
+    //                     {
+    //                         Image: require("../img/food2.jpg"),
+    //                         name: "ايس كريم",
+    //                         view: true,
+    //                         time: "30 min"
+    //                     },
+    //                     {
+    //                         Image: require("../img/food3.jpg"),
+    //                         name: "ايس كريم",
+    //                         view: true,
+    //                         time: "30 min"
+    //                     },
+    //                     {
+    //                         Image: require("../img/food4.jpg"),
+    //                         name: "ايس كريم",
+    //                         view: true,
+    //                         time: "30 min"
+    //                     },
+    //                     {
+    //                         Image: require("../img/steak_food.png"),
+    //                         name: "ايس كريم",
+    //                         view: true,
+    //                         time: "30 min"
+    //                     },
+    //                     {
+    //                         Image: require("../img/food.jpg"),
+    //                         name: "Cop",
+    //                         view: true,
+    //                         time: "30 min"
+    //                     },
 
-                ],
-                IconSearch: true,
+    //                 ],
 
-            }
-        }
-    }
-    makesearch(searchText) {
-        let list = this.state.Common
+    //         }
+    //     }
+    // }
+   const makesearch=(searchText)  => {
+        let list = Common
         for (let i = 0; i < list.length; i++) {
             if (((list[i].name).toUpperCase()).includes(searchText.toUpperCase())) {
                 list[i].view = true
@@ -92,7 +147,7 @@ export default class Food extends React.Component {
                 list[i].view = false
             }
         }
-        this.setState({ Common: list })
+        setCommon(list)
     }
     // Delete() {
     //     let list = this.state.Common
@@ -101,25 +156,35 @@ export default class Food extends React.Component {
     //         this.setState({ Common: list })
     //     }
     // }
+//   function  GoToButton({ screenName }) {
+        const navigation = useNavigation();
 
-    render() {
-        return (
+    //     return (
+    //         <Button
+    //             title={`Go to ${'Photo_page'}`}
+    //             onPress={() => navigation.navigate('Photo_page')}
+    //         />
+    //     );
+    // }
+
+         return (
             <>
                 <View style={{ backgroundColor: COLORS.pramary, flex: 1 }}>
                     <ScrollView>
                         <View style={styles.Header}>
                             <View>
                                 <View style={{}}>
-                                 </View>
+                                </View>
 
-                                {this.state.IconSearch ? (
+                                {IconSearch ? (
                                     <>
                                         <Animatable.View
                                             animation='slideInLeft' >
                                             <TouchableOpacity
                                                 onPress={() => {
-                                                    this.setState({ IconSearch: false })
+                                                    // this.setState({ IconSearch: false })
                                                     // this.fadeOut
+                                                    setIconSearch(false);
                                                 }}>
                                                 <Ionicons name='ios-search-circle' size={60} color={COLORS.orange} />
                                             </TouchableOpacity>
@@ -133,13 +198,22 @@ export default class Food extends React.Component {
                                             placeholder={'البحث عن الأكلات...'}
                                             placeholderTextColor={COLORS.grayFont}
                                             onChangeText={(value) => {
-                                                this.makesearch(value)
-                                                this.setState({ search: value })
+                                                makesearch(value)
+                                                
+                                                setsearch( value )
                                             }}
-                                            value={this.state.search} />
+                                            // onChangeText={value => {
+                                            //     setPhone(value);
+                                            //     if (onChangephone(value)) {
+                                            //       setPhoneError('');
+                                            //     }
+                                            //   }}
+                                  
+                                            value={search} />
                                         <TouchableOpacity onPress={() => {
-                                            this.setState({ IconSearch: true })
-                                         }}>
+                                                    setIconSearch(true);
+                                        //    this.setState({ IconSearch: true })
+                                        }}>
 
                                             <Ionicons name='search' size={ICONSSIZE.xlIcon} color={COLORS.pramary} />
                                         </TouchableOpacity>
@@ -147,10 +221,10 @@ export default class Food extends React.Component {
                                     </Animatable.View>
                                 )}
                             </View>
- 
+
                             <View style={styles.BoxView}>
 
-                                {this.state.Common.map((item, index) => (
+                                {Common.map((item, index) => (
                                     item.view ? (
                                         // <View style={styles.BoxView}>
 
@@ -169,13 +243,14 @@ export default class Food extends React.Component {
                                                 <Ionicons name='md-time' style={{ alignSelf: "center" }} size={ICONSSIZE.smIcon} color={COLORS.ButtonWhite} />
                                             </View>
                                             <View style={styles.OptionBox}>
-                                                <TouchableOpacity 
-                                                onPress={() => 
-                                                    // this.props.navigation.navigate('DetelsStack',{screen:"Photo_page"})
-                                                    this.props.navigation.navigate('DetelsStack',{ screen: 'Photo_page' })
-
-                                                }
-                                                style={styles.OptionButtonBox}>
+                                                <TouchableOpacity
+                                                    onPress={() => {
+                                                        // this.props.navigation.navigate('DetelsStack',{screen:"Photo_page"})
+                                                        // this.props.navigation.navigate('DetelsStack')
+                                                        navigation.navigate("Photo_page")
+                                                    }
+                                                    }
+                                                    style={styles.OptionButtonBox}>
                                                     <Text style={styles.OptionTimeBox}>
                                                         الطريقة
                                                     </Text>
@@ -204,7 +279,7 @@ export default class Food extends React.Component {
                                         رؤية الكل
                                     </Text>
                                 </View>
-                                {this.state.Common.map((item, index) => (
+                                {Common.map((item, index) => (
                                     <View style={styles.Boxstarred}>
                                         <View style={styles.ViewImage}>
                                             <Image source={item.Image} resizeMode={"contain"} style={styles.Imagestarred} />
@@ -243,11 +318,10 @@ export default class Food extends React.Component {
 
                     </ScrollView>
                 </View>
-             </>
+            </>
         );
     }
-}
-
+ 
 const styles = StyleSheet.create({
     Header: {
         backgroundColor: COLORS.pramary,
@@ -303,9 +377,9 @@ const styles = StyleSheet.create({
         width: width / 1.4,
         height: height / 17,
         alignItems: "center",
-        alignSelf:"center",
+        alignSelf: "center",
         // backgroundColor:COLORS.background,
-        color:COLORS.black,
+        color: COLORS.black,
         justifyContent: "flex-end",
         fontFamily: "Generator Black",
         // borderRadius: RADIUS.lgRadius,

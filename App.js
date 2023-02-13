@@ -11,15 +11,18 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import Photo_page from './src/screen/Photo_page';
 import Navigation from './src/navigation/Navigation';
-   const App =()=>{
-    return (
-      <>
-       <NavigationContainer>
+import Home from './src/screen/Home';
+
+
+const App = () => {
+  return (
+    <>
+      <NavigationContainer>
         <Navigation />
-       </NavigationContainer>
-       </>
-    );
-  }
- const styles = StyleSheet.create({});
- 
+      </NavigationContainer>
+    </>
+  );
+}
+const styles = StyleSheet.create({});
+
 export default App;

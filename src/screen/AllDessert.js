@@ -19,13 +19,21 @@ import Octicons from 'react-native-vector-icons/Octicons'
 const { width, height } = Dimensions.get('window');
 import * as Animatable from 'react-native-animatable';
 // MyCustomComponent = Animatable.createAnimatableComponent(MyCustomComponent);
+// import { NavigationContainer, createNavigationContainerRef } from '@react-navigation/native';
+// const navigationRef = createNavigationContainerRef()
 
 
 export default class AllDessert extends React.Component {
     // handleViewRef = ref => this.view = ref;
   
     // bounce = () => this.view.bounce(800).then(endState => console.log(endState.finished ? 'bounce finished' : 'bounce cancelled'));
-  
+//    navigate(name, params) {
+//   if (navigationRef.isReady()) {
+//     navigationRef.navigate(name, params);
+//   }
+// }
+
+
     constructor() {
         super(); {
             this.state = {
@@ -130,7 +138,9 @@ export default class AllDessert extends React.Component {
 
 
                                                     </TouchableOpacity>
-                                                    <TouchableOpacity style={styles.the_Two_button}>
+                                                    <TouchableOpacity 
+                                                    onPress={() => this.props.navigation.navigate('Photo_page')}
+                                                    style={styles.the_Two_button}>
                                                         <Text style={styles.TextTabs}>
                                                             الطريقة
                                                         </Text>

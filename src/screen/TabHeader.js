@@ -2,16 +2,17 @@ import React, { useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions, ScrollView } from "react-native";
 const { width, height } = Dimensions.get('window');
 import Photo_page from './Photo_page';
-import AllDessert from './AllDessert';
-import CommonDessert from './CommonDessert';
+
+import Food from './Food';
+import FoodCommon from './FoodCommon';
 import { COLORS, PADDING, MARGIN, RADIUS, FONTS, ICONSSIZE } from '../constants/Constants'
-function Dessert() {
+function TabHeader() {
     const [activeTab, setActiveTab] = useState("الكل")
     return (
         <View style={{ flex: 1, backgroundColor: COLORS.pramary }}>
             <View style={styles.headerbar}>
                 <Text style={styles.textheader}>
-                الحلويات
+                    الاكلات
                 </Text>
             </View>
             <ScrollView>
@@ -52,7 +53,8 @@ const HeaderButton = (props) => (
             paddingVertical: 6,
             paddingHorizontal: 22,
             borderRadius: RADIUS.xxsRadius,
-             marginHorizontal: 5
+            // height:34,
+            marginHorizontal: 5
         }}
             onPress={() => { props.setActiveTab(props.text) }}>
             <Text
@@ -68,14 +70,14 @@ const HeaderButton = (props) => (
 )
 const Button = (props) => (
     <>
-        <AllDessert />
+        <FoodCommon />
     </>
 
 )
 const Buttonsc = (props) => (
     <>
 
-        <CommonDessert />
+        <Food />
 
     </>
 
@@ -103,14 +105,14 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 export default function Stackscreen() {
     return (
         //   <NavigationContainer independent={true}>
-        <Stack.Navigator initialRouteName="Dessert"
+        <Stack.Navigator initialRouteName="TabHeader"
             screenOptions={({ route }) => ({
                 headerShown: false
             })}
         >
             <Stack.Screen name="Photo_page" component={Photo_page} />
-            <Stack.Screen name="Dessert" component={Dessert} />
-            <Stack.Screen name="CommonDessert" component={CommonDessert} />
+            <Stack.Screen name="TabHeader" component={TabHeader} />
+            <Stack.Screen name="FoodCommon" component={FoodCommon} />
 
         </Stack.Navigator>
         //  </NavigationContainer>
