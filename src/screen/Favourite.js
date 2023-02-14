@@ -8,6 +8,7 @@ import {
     TextInput,
     TouchableOpacity,
     FlatList,
+    ScrollView,
 } from 'react-native';
 import { COLORS, PADDING, MARGIN, RADIUS, FONTS, ICONSSIZE } from '../constants/Constants'
 import Ionicons from 'react-native-vector-icons/Ionicons'
@@ -158,76 +159,78 @@ export default class Favorite extends React.Component {
 
 
                     </View>
-                    {this.state.animation_display ?
-                        (
-                            <>
-                                <View style={{ alignItems: "center", justifyContent: "center", alignSelf: "center", width: width, height: height / 1.5 }}>
-                                    <LottieView
-                                        ref={this.ref}
-                                        source={require("../lottie/search_empty.json")}
-                                        loop={true}
-                                        autoPlay={true}
-                                        speed={1.5}
-                                    // style={{ alignSelf: "center" }}
-                                    />
-                                </View>
-                            </>
-                        )
-                        :
-                        (
-                            <FlatList
-                                data={this.state.favorite_meal}
-                                renderItem={({ item, index }) =>
-                                    item.view ? (
-                                        <View style={styles.meal_view}>
-                                            <Image
-                                                source={item.Image}
-                                                style={styles.meal_IMAGE}
-                                            />
-                                            <View style={{ width: width / 1.8 }}>
-                                                <View style={{ width: width / 2 }}>
-                                                    <Text
+                    <ScrollView showsVerticalScrollIndicator={false}>
+                        {this.state.animation_display ?
+                            (
+                                <>
+                                    <View style={{ alignItems: "center", justifyContent: "center", alignSelf: "center", width: width, height: height / 1.5 }}>
+                                        <LottieView
+                                            ref={this.ref}
+                                            source={require("../lottie/search_empty.json")}
+                                            loop={true}
+                                            autoPlay={true}
+                                            speed={1.5}
+                                        // style={{ alignSelf: "center" }}
+                                        />
+                                    </View>
+                                </>
+                            )
+                            :
+                            (
+                                <>
+                                    {this.state.favorite_meal.map((item, index) =>
 
-                                                        numberOfLines={1}
-                                                        style={[styles.mealNAME, { color: COLORS.white, }]}>
-                                                        {item.name}
-                                                    </Text>
-                                                    <Text style={[styles.mealNAME, { fontSize: 15 }]}>
-                                                        المكونات
-                                                    </Text>
+                                        item.view ? (
+                                            <View style={styles.meal_view}>
+                                                <Image
+                                                    source={item.Image}
+                                                    style={styles.meal_IMAGE}
+                                                />
+                                                <View style={{ width: width / 1.8 }}>
+                                                    <View style={{ width: width / 2 }}>
+                                                        <Text
 
-                                                    <Text
-                                                        numberOfLines={1}
-                                                        style={[styles.mealNAME, { fontSize: 15 }]}>
-                                                        {item.components}
-                                                    </Text>
+                                                            numberOfLines={1}
+                                                            style={[styles.mealNAME, { color: COLORS.white, }]}>
+                                                            {item.name}
+                                                        </Text>
+                                                        <Text style={[styles.mealNAME, { fontSize: 15 }]}>
+                                                            المكونات
+                                                        </Text>
+
+                                                        <Text
+                                                            numberOfLines={1}
+                                                            style={[styles.mealNAME, { fontSize: 15 }]}>
+                                                            {item.components}
+                                                        </Text>
+                                                    </View>
+                                                    <TouchableOpacity style={{ margin: MARGIN.xxsMargin }}
+                                                        onPress={() =>
+                                                            this.UnLike(index)
+                                                        }
+                                                    >
+                                                        <Ionicons name={'heart-dislike'} size={25} color={COLORS.orange} />
+
+                                                    </TouchableOpacity>
                                                 </View>
-                                                <TouchableOpacity style={{ margin: MARGIN.xxsMargin }}
-                                                    onPress={() =>
-                                                        this.UnLike(index)
-                                                    }
-                                                >
-                                                    <Ionicons name={'heart-dislike'} size={25} color={COLORS.orange} />
 
-                                                </TouchableOpacity>
                                             </View>
-
-                                        </View>
-                                    )
-                                        :
-                                        null
+                                        )
+                                            :
+                                            null
 
 
+                                    )}
+                                </>
 
 
 
-                                }
+                            )
+                        }
 
-                            />
-                        )
-                    }
+                        <View style={{ height: 60 }}></View>
 
-                    <View style={{ height: 70 }}></View>
+                    </ScrollView>
 
                 </View>
             </>
@@ -239,7 +242,9 @@ const styles = StyleSheet.create({
     main: {
         backgroundColor: COLORS.pramary,
         alignItems: "center",
-        height: height
+        // height: height *1,
+        flex: 1
+
     }
     ,
     headerbar: {

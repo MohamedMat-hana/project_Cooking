@@ -78,7 +78,7 @@ export default class Search extends React.Component {
 
     search(text) {
         let list = this.state.All_meal
-        let count=0
+        let count = 0
         for (let i = 0; i < list.length; i++) {
             if (((list[i].components).toUpperCase()).includes(text.toUpperCase())) {
                 list[i].view = true
@@ -94,7 +94,7 @@ export default class Search extends React.Component {
             this.state.animation_display = true
         }
 
-    
+
         if (count != list.length) {
             this.state.animation_display = false
 
@@ -103,29 +103,29 @@ export default class Search extends React.Component {
 
 
         this.setState({ All_meal: list })
-        count=0
+        count = 0
     }
 
     render() {
         return (
             <>
-             <View style={{flex:1,backgroundColor:COLORS.pramary}}>
+                <View style={{ flex: 1, backgroundColor: COLORS.pramary }}>
 
-            </View>  
-                       <View style={styles.headerbar}>
-                <Text style={styles.textheader}>
-                البحث
-                </Text>
-            </View>
+                </View>
+                <View style={styles.headerbar}>
+                    <Text style={styles.textheader}>
+                        البحث
+                    </Text>
+                </View>
 
                 {/* <Text>Search</Text> */}
-                 <View style={styles.main}>
+                <View style={styles.main}>
 
                     <View style={styles.SearchView}>
                         <TextInput
                             underlineStyle={{ width: 0 }}
                             style={styles.searchInput}
-                            
+
                             placeholder={"البحث عن الاكلات بالمكونات...                                          "}
                             placeholderTextColor={COLORS.grayFont}
                             value={this.state.SearchKey}
@@ -143,51 +143,10 @@ export default class Search extends React.Component {
 
 
                     </View>
+                    <ScrollView showsVerticalScrollIndicator={false}>
 
-
-                     {/* <ScrollView
-                        showsVerticalScrollIndicator={false}
-                    > */}
-                        {/* <FlatList
-                            data={this.state.All_meal}
-                            renderItem={({ item, index }) =>
-                                item.view ? (
-                                    <View style={styles.mealView}>
-                                        <Image source={item.Image}
-                                            style={styles.mealIMAGE}
-                                        />
-                                        <View>
-                                            <Text
-
-                                                numberOfLines={1}
-                                                style={[styles.mealNAME, { color: COLORS.white, }]}>
-                                                {item.name}
-                                            </Text>
-                                            <Text style={[styles.mealNAME, { fontSize: 15 }]}>
-                                                المكونات
-                                            </Text>
-
-                                            <Text
-                                                numberOfLines={1}
-                                                style={[styles.mealNAME, { fontSize: 15 }]}>
-                                                {item.components}
-                                            </Text>
-                                        </View>
-
-                                    </View>
-                                )
-                                    :
-                                    null
-
-                            }
-
-
-
-                        />
-                        <View style={{height:55}}></View> */}
-                    {/* </ScrollView> */}
-                     {this.state.animation_display?(
-                    <>
+                        {this.state.animation_display ? (
+                            <>
                                 <View style={{ alignItems: "center", justifyContent: "center", alignSelf: "center", width: width, height: height / 1.5 }}>
                                     <LottieView
                                         ref={this.ref}
@@ -199,52 +158,56 @@ export default class Search extends React.Component {
                                     />
                                 </View>
                             </>
-                            ):
+                        ) :
                             (
-                                <FlatList
-                                showsVerticalScrollIndicator={false}
-                                data={this.state.All_meal}
-                                renderItem={({ item, index }) =>
-                                    item.view ? (
-                                        <TouchableOpacity style={styles.mealView}>
-                                            <Image source={item.Image}
-                                                style={styles.mealIMAGE}
-                                            />
-                                            <View>
-                                                <Text
-        
-                                                    numberOfLines={1}
-                                                    style={[styles.mealNAME, { color: COLORS.white, }]}>
-                                                    {item.name}
-                                                </Text>
-                                                <Text style={[styles.mealNAME, { fontSize: 15 }]}>
-                                                    المكونات
-                                                </Text>
-        
-                                                <Text
-                                                    numberOfLines={1}
-                                                    style={[styles.mealNAME, { fontSize: 15 }]}>
-                                                    {item.components}
-                                                </Text>
-                                            </View>
-        
-                                        </TouchableOpacity>
-                                    )
-                                        :
-                                        null
-        
-                                }
-        
-        
-        
-                            />
+                                <>
+                                    {this.state.All_meal.map((item, index) =>
+
+                                        item.view ? (
+                                            <TouchableOpacity style={styles.mealView}>
+                                                <Image source={item.Image}
+                                                    style={styles.mealIMAGE}
+                                                />
+                                                <View>
+                                                    <Text
+
+                                                        numberOfLines={1}
+                                                        style={[styles.mealNAME, { color: COLORS.white, }]}>
+                                                        {item.name}
+                                                    </Text>
+                                                    <Text style={[styles.mealNAME, { fontSize: 15 }]}>
+                                                        المكونات
+                                                    </Text>
+
+                                                    <Text
+                                                        numberOfLines={1}
+                                                        style={[styles.mealNAME, { fontSize: 15 }]}>
+                                                        {item.components}
+                                                    </Text>
+                                                </View>
+
+                                            </TouchableOpacity>
+                                        )
+                                            :
+                                            null
+
+
+
+
+
+                                    )}
+
+                                </>
+
+
+
                             )
-                            }
-                 
-                    <View style={{ height: 55 }}></View>
- 
+                        }
+
+                        <View style={{ height: 100 }}></View>
+                    </ScrollView>
                 </View>
-             </>
+            </>
         );
     }
 }
@@ -253,7 +216,7 @@ const styles = StyleSheet.create({
     main: {
         backgroundColor: COLORS.pramary,
         alignItems: "center",
-        height: height
+        height: height,
     },
     headerbar: {
         backgroundColor: COLORS.pramary,
