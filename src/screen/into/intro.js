@@ -58,7 +58,7 @@ export default class Intro extends React.Component {
             <View
                 style={{
                     flex: 1,
-                    backgroundColor: COLORS.pramary,
+                    backgroundColor: COLORS.black,
                 }}>
                 <SafeAreaView style={styles.slide}>
                     <Image source={item.image} style={styles.image} />

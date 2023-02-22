@@ -247,8 +247,9 @@ export default function FoodCommon() {
                   <View style={styles.option_view}>
                     <TouchableOpacity
                       onPress={() => {
-
-                          navigation.navigate("Photo_page")
+                        navigation.navigate("Photo_page", {
+                          name: item
+                        })
                       }
                       }
                       style={styles.button_option}>
@@ -318,7 +319,6 @@ const styles = StyleSheet.create({
     height: height / 10,
     width: width / 1.07,
     flexDirection: "row",
-    // backgroundColor: "#f00f"
   },
   category_Box: {
     width: width / 4.5,

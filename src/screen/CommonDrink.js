@@ -718,8 +718,11 @@ export default function CommonDrink() {
                                         </View>
                                         <View style={styles.OptionBox}>
                                             <TouchableOpacity
+
                                                 onPress={() => {
-                                                    navigation.navigate("Photo_page")
+                                                    navigation.navigate("Photo_page", {
+                                                        name: item
+                                                    })
                                                 }
                                                 }
                                                 style={styles.OptionButtonBox}>
@@ -766,7 +769,14 @@ export default function CommonDrink() {
                                             <Ionicons name='md-time' style={{ alignSelf: "center" }} size={ICONSSIZE.smIcon} color={COLORS.ButtonWhite} />
                                         </View>
                                         <View style={styles.OptionBox}>
-                                            <TouchableOpacity style={styles.OptionButtonBox}>
+                                            <TouchableOpacity
+                                                onPress={() => {
+                                                    navigation.navigate("Photo_page", {
+                                                        name: item
+                                                    })
+                                                }
+                                                }
+                                                style={styles.OptionButtonBox}>
                                                 <Text style={styles.OptionTimeBox}>
                                                     الطريقة
                                                 </Text>

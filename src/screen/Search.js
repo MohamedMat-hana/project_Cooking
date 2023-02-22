@@ -28,41 +28,54 @@ export default class Search extends React.Component {
                         Image: require("../img/pizza.png"),
                         name: "باستا وايت صوص",
                         components: "مكرونه , دقيق ,حليب , ملح , فلفل اسود مكرونه , دقيق ,حليب , Pizza , فلفل اسود",
-                        view: true
+                        view: true,
+                        Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
+                        num: 1,
+
                     },
                     {
                         Image: require("../img/pizza.png"),
                         name: "pizza ranch",
                         components: "مكرونه , دقيق ,حليب , ملح , فلفل اسود مكرونه , دقيق ,حليب , ملح , فلفل اسود",
-
+                        Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معلقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه ملح ملح",
                         view: true
                     },
                     {
                         Image: require("../img/food.jpg"),
                         name: "باستا ريد صوص",
                         components: "مكرونه , دقيق ,حليب , ملح , فلفل اسود مكرونه , دقيق ,حليب , ملح , فلفل اسود",
-                        view: true
+                        view: true,
+                        Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معلقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه ملح ملح",
+
                     },
                     {
                         Image: require("../img/food2.jpg"),
                         name: "ايس كريم",
                         components: "مكرونه , دقيق ,حليب , ملح , فلفل اسود مكرونه , دقيق ,حليب , ملح , فلفل اسود",
-                        view: true
+                        view: true,
+                        Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معلقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه ملح ملح",
+
                     },
                     {
                         Image: require("../img/food3.jpg"),
                         name: "ice ",
+                        Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معلقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه ملح ملح",
+
                         components: "مكرونه , دقيق ,حليب , ملح , فلفل اسود مكرونه , دقيق ,حليب , ملح , فلفل اسود",
                         view: true
                     },
                     {
                         Image: require("../img/food2.jpg"),
+
+                        Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معلقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه ملح ملح",
                         name: "ايس كريم",
                         components: "مكرونه , دقيق ,حليب , ملح , فلفل اسود مكرونه , دقيق ,حليب , ملح , فلفل اسود",
                         view: true
                     },
                     {
                         Image: require("../img/food3.jpg"),
+
+                        Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معلقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه ملح ملح",
                         name: "ايس كريم",
                         components: "كريمه وشيكولاته",
                         view: true
@@ -164,7 +177,12 @@ export default class Search extends React.Component {
                                     {this.state.All_meal.map((item, index) =>
 
                                         item.view ? (
-                                            <TouchableOpacity style={styles.mealView}>
+                                            <TouchableOpacity style={styles.mealView}
+                                                onPress={() => {
+                                                    this.props.navigation.navigate("Photo_page", {
+                                                        name: item
+                                                    })
+                                                }}>
                                                 <Image source={item.Image}
                                                     style={styles.mealIMAGE}
                                                 />

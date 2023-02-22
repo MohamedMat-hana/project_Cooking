@@ -6,23 +6,40 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { COLORS, FONTS } from '../constants';
 import Dessert from '../screen/Dessert'
 import Drink from '../screen/Drink'
- import Favourite from '../screen/Favourite'
+import StackFav from '../screen/StackFav'
 import Search from '../screen/Search'
 import Index from '../screen/index'
+import Photo_page from '../screen/Photo_page'
 import TabHeader from '../screen/TabHeader'
- import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-// import { createStackNavigator } from '@react-navigation/stack';
+import TestSearch from '../screen/TestSearch'
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
- 
+
+const Stack = createNativeStackNavigator();
+function FoodStack({ navigation }) {
+  return (
+    <>
+      <NavigationContainer independent={true}>
+        <Stack.Navigator initialRouteName="Photo_page">
+          <Stack.Screen name="Photo_page" component={Photo_page} />
+          {/* <Stack.Screen name="FoodCommon" component={FoodCommon} /> */}
+        </Stack.Navigator>
+      </NavigationContainer>
+
+    </>
+  );
+
+}
 
 const Tab = createBottomTabNavigator();
 
 export default HomeStack = () => {
   return (
     <Tab.Navigator
-    initialRouteName={Index.Search}
+      initialRouteName={Index.Search}
       screenOptions={({ route }) => ({
-        headerShown:false,
+        headerShown: false,
         headerStyle: styles.headerbar,
         headerTitleStyle: styles.textheader,
         tabBarActiveTintColor: COLORS.orange,
@@ -46,7 +63,7 @@ export default HomeStack = () => {
         }
       })}
     >
-      
+
       <Tab.Screen
         name={Index.Common}
         component={TabHeader}
@@ -58,7 +75,7 @@ export default HomeStack = () => {
       />
       <Tab.Screen
         name={Index.Search}
-        component={Search}
+        component={TestSearch}
       />
       <Tab.Screen
         name={Index.Drink}
@@ -66,7 +83,7 @@ export default HomeStack = () => {
       />
       <Tab.Screen
         name={Index.Favourite}
-        component={Favourite}
+        component={StackFav}
       />
 
 

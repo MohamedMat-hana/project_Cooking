@@ -181,7 +181,13 @@ export default class Favorite extends React.Component {
                                     {this.state.favorite_meal.map((item, index) =>
 
                                         item.view ? (
-                                            <View style={styles.meal_view}>
+                                            <TouchableOpacity 
+                                            onPress={() => {
+                                                this.props.navigation.navigate("Photo_page", {
+                                                    name: item
+                                                })
+                                            }}
+                                            style={styles.meal_view}>
                                                 <Image
                                                     source={item.Image}
                                                     style={styles.meal_IMAGE}
@@ -214,7 +220,7 @@ export default class Favorite extends React.Component {
                                                     </TouchableOpacity>
                                                 </View>
 
-                                            </View>
+                                            </TouchableOpacity>
                                         )
                                             :
                                             null

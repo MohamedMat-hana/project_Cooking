@@ -21,8 +21,8 @@ import { ThemeProvider } from 'react-native-paper';
 
 
 export default class Photo_page extends React.Component {
-    constructor() {
-        super(); {
+    constructor(props) {
+        super(props); {
             this.state = {
                 IconFavorite: true,
                 Mokawnat: [
@@ -81,26 +81,49 @@ export default class Photo_page extends React.Component {
                     },
 
 
-                ]
+                ],
+                item: {},
             }
         }
     }
-    // <ion-icon name="ellipse"></ion-icon>
-    IconFav() {
+     IconFav() {
         let last = this.state.IconFavorite
         last = !last
+        if (last == true) {
+            console.log("true")
+        } else {
+            console.log("false")
+            // this.props.navigation.navigate("Favourite", {
+            //     name: this.state.item
+
+            // })
+
+        }
         this.setState({ IconFavorite: last })
     }
+    componentDidMount() {
+        let data = this.props.route.params.name
+        // alert(JSON.stringify(data))
+        this.setState({ item: data })
+    }
+
     render() {
         return (
             <>
                 <View style={styles.Header}>
                     <ScrollView>
                         <View style={styles.ViewImageHeader}>
-                            <ImageBackground source={require("../img/pizza.png")}
+                            <ImageBackground source={this.state.item.Image}
                                 resizeMode={"stretch"}
                                 style={styles.ImageHeader}>
-                                <TouchableOpacity>
+                                <TouchableOpacity
+                                    style={{
+                                        height: height / 10,
+                                        justifyContent: "flex-end"
+                                    }}
+                                    onPress={() => {
+                                        this.props.navigation.goBack()
+                                    }}>
                                     <Ionicons name='arrow-back-outline' size={ICONSSIZE.xxxlIcon} color={COLORS.pramary} />
                                 </TouchableOpacity>
 
@@ -109,7 +132,7 @@ export default class Photo_page extends React.Component {
                         <View style={styles.ScView}>
                             <View style={styles.FontView}>
                                 <Text style={styles.Textheader}>
-                                    بيتزا ايطالية
+                                    {this.state.item.name}
                                 </Text>
                             </View>
                             <View style={styles.ViewDetils}>
@@ -169,15 +192,15 @@ export default class Photo_page extends React.Component {
                                         </Text>
                                     </View>
                                     <View style={styles.mocaonatD}>
-                                        {this.state.Mokawnat.map((item, index) => (
+                                        {/* {this.state.item.map((item, index) => ( */}
 
-                                            <View style={styles.onetwo}>
-                                                <Ionicons name='ellipse' size={10} color={COLORS.ButtonWhite} />
-                                                <Text style={[styles.TextRow, { marginHorizontal: MARGIN.xxsMargin, textDecorationLine: "none" }]} >
-                                                    {item.Step}
-                                                </Text>
-                                            </View>
-                                        ))}
+                                        <View style={styles.onetwo}>
+                                            <Ionicons name='ellipse' size={10} color={COLORS.ButtonWhite} />
+                                            <Text style={[styles.TextRow, { marginHorizontal: MARGIN.xxsMargin, textDecorationLine: "none" }]} >
+                                                {this.state.item.components}
+                                            </Text>
+                                        </View>
+                                        {/* ))} */}
                                     </View>
                                 </View>
                                 <View style={styles.mocaonat}>
@@ -187,117 +210,30 @@ export default class Photo_page extends React.Component {
                                         </Text>
                                     </View>
                                     <View style={styles.mocaonatD}>
-                                        {this.state.Arr_Step.map((item, index) => (
+                                        {/* {this.state.item.map((item, index) => ( */}
 
-                                            <View style={styles.onetwo}>
-                                                <Text style={styles.Num} >{index+1}</Text>
-                                                <Ionicons name='ellipse' size={10} color={COLORS.orange} />
+                                        <View style={styles.onetwo}>
+                                            <Text style={styles.Num} >55</Text>
+                                            <Ionicons name='ellipse' size={10} color={COLORS.orange} />
 
-                                                <Text style={[styles.TextRow, {width:width/1.35,
-                                                 marginHorizontal: MARGIN.xxsMargin,
-                                                  textDecorationLine: "none", }]} >
-                                                    {item.Step}
-                                                </Text>
-                                            </View>
-                                        ))}
+                                            <Text style={[styles.TextRow, {
+                                                width: width / 1.35,
+                                                marginHorizontal: MARGIN.xxsMargin,
+                                                textDecorationLine: "none",
+                                            }]} >
+                                                {this.state.item.Step}
+                                            </Text>
+                                        </View>
+                                        {/* ))}  */}
                                     </View>
-                                    
+
 
                                 </View>
                             </View>
                         </View>
 
                     </ScrollView>
-                    {/* <ScrollView>
-                        <View style={styles.ViewImageHeader} >
-                            <ImageBackground source={require("../img/pizza.png")}
-                                style={styles.ImageHeader}
-                                resizeMode={"cover"} >
-                                <View style={styles.ViewIconImage}>
-                                    <TouchableOpacity onPress={() => {
-                                        this.IconFav()
-                                    }}>
-                                        <Ionicons name={this.state.IconFavorite ? 'heart-circle-outline' : "heart-dislike-circle-outline"}
-                                            size={40} color={this.state.IconFavorite ? COLORS.red : COLORS.grayICon} />
-                                    </TouchableOpacity>
-                                    <TouchableOpacity>
-                                        <Ionicons name='ios-arrow-back-circle' size={40} color={COLORS.pramary50} />
-                                    </TouchableOpacity>
-                                </View>
-                            </ImageBackground>
-                        </View>
-
-                        <View style={styles.ScView}>
-                            <View style={{
-                                backgroundColor: COLORS.ButtonWhite,
-                                // borderTopLeftRadius: RADIUS.x3lRadius,
-                                // borderTopRightRadius: RADIUS.x3lRadius,
-                                marginTop: MARGIN.xlMargin
-                            }}>
-                                <View style={styles.Detels} >
-                                    <Text style={styles.TextRow} >
-                                        وقت التحضير
-                                    </Text>
-                                    <Text style={styles.TextRow} >
-                                        وقت الطهي
-                                    </Text>
-                                    <Text style={styles.TextRow} >
-                                        مدي الصعوبة
-                                    </Text>
-
-                                </View>
-                                <View style={styles.Detels} >
-                                    <Text style={[styles.TextRow, { textDecorationLine: "none" }]} >
-                                        15 min
-                                    </Text>
-                                    <Text style={[styles.TextRow, { textDecorationLine: "none" }]} >
-                                        15 min
-                                    </Text>
-                                    <Text style={[styles.TextRow, { textDecorationLine: "none" }]} >
-                                        25 %
-                                    </Text>
-
-                                </View>
-                            </View>
-                        </View>
-
-                        <View style={styles.ViewDetels}>
-                            <Text style={styles.TextDetels}>
-                                المكونات
-                            </Text>
-                            <View style={styles.ViewDetelsText}>
-                                <Text style={styles.TextDetels}>
-                                    خضار - رز - بصل - ملح - فلفل - خيار - خضار- رز - بصل - ملح - فلفل - خيار - خضار - رز - بصل - ملح - فلفل - خيار - خضار
-                                </Text>
-
-                            </View>
-                        </View>
-                        {this.state.Arr_Step.map((item, index) => (
-                            <View style={styles.ViewSteps} >
-                                <View style={{
-                                    width: 50,
-                                    height: 50,
-                                    borderWidth: 3,
-                                    borderRadius: 100,
-                                    // padding: PADDING.mdPadding,
-                                    borderColor: COLORS.ButtonWhite,
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                    marginTop: MARGIN.xsMargin
-                                }}>
-                                    <Text style={styles.TextNum} >
-                                        {index+1}
-                                    </Text>
-                                </View>
-                                <Ionicons name='arrow-down-sharp' size={40} color={COLORS.ButtonWhite} style={{ marginTop: -10 }} />
-                                <View style={styles.ViewDetelsText}>
-                                    <Text style={styles.TextDetels}>
-                                        {item.Step}
-                                    </Text>
-                                </View>
-                            </View>
-                        ))}
-                    </ScrollView> */}
+    
 
                 </View>
             </>
@@ -319,8 +255,9 @@ const styles = StyleSheet.create({
     },
     ImageHeader: {
         width: width,
-        height: height / 3,
-        alignItems: "flex-end"
+        height: height / 2,
+        alignItems: "flex-end",
+        // justifyContent:"flex-end"
 
     },
     ScView: {
@@ -411,7 +348,7 @@ const styles = StyleSheet.create({
         // backgroundColor: COLORS.black
     },
     mocaonatD: {
-        paddingVertical:PADDING.mdPadding,
+        paddingVertical: PADDING.mdPadding,
         width: width / 1.15,
         // height: height / 8,
         alignSelf: "center",
@@ -427,24 +364,10 @@ const styles = StyleSheet.create({
         // backgroundColor: COLORS.black,
         flexDirection: "row"
     },
-    Num:{
-        fontSize:FONTS.h0,
+    Num: {
+        fontSize: FONTS.h0,
         color: COLORS.orange,
         fontFamily: 'Vazirmatn-Black'
 
     }
-    // ViewSteps: {
-    //     width: width / 1.01,
-    //     // height: height,
-    //     backgroundColor: COLORS.black50,
-    //     alignSelf: "center",
-    //     alignItems: "center",
-
-
-    // },
-    // TextNum: {
-    //     fontSize: 25,
-    //     color: COLORS.ButtonWhite,
-    //     fontWeight: "bold"
-    // }
-});
+ });

@@ -76,8 +76,8 @@ export default function Food() {
         ])
     const [IconSearch, setIconSearch] = useState(true)
     const [search, setsearch] = useState("")
-    
-    
+
+
     // constructor(props) {
     //     super(props); {
     //         this.state = {
@@ -137,7 +137,7 @@ export default function Food() {
     //         }
     //     }
     // }
-   const makesearch=(searchText)  => {
+    const makesearch = (searchText) => {
         let list = Common
         for (let i = 0; i < list.length; i++) {
             if (((list[i].name).toUpperCase()).includes(searchText.toUpperCase())) {
@@ -156,8 +156,8 @@ export default function Food() {
     //         this.setState({ Common: list })
     //     }
     // }
-//   function  GoToButton({ screenName }) {
-        const navigation = useNavigation();
+    //   function  GoToButton({ screenName }) {
+    const navigation = useNavigation();
 
     //     return (
     //         <Button
@@ -167,161 +167,168 @@ export default function Food() {
     //     );
     // }
 
-         return (
-            <>
-                <View style={{ backgroundColor: COLORS.pramary, flex: 1 }}>
-                    <ScrollView>
-                        <View style={styles.Header}>
-                            <View>
-                                <View style={{}}>
-                                </View>
+    return (
+        <>
+            <View style={{ backgroundColor: COLORS.pramary, flex: 1 }}>
+                <ScrollView>
+                    <View style={styles.Header}>
+                        <View>
+                            <View style={{}}>
+                            </View>
 
-                                {IconSearch ? (
-                                    <>
-                                        <Animatable.View
-                                            animation='slideInLeft' >
-                                            <TouchableOpacity
-                                                onPress={() => {
-                                                    // this.setState({ IconSearch: false })
-                                                    // this.fadeOut
-                                                    setIconSearch(false);
-                                                }}>
-                                                <Ionicons name='ios-search-circle' size={60} color={COLORS.orange} />
-                                            </TouchableOpacity>
-
-                                        </Animatable.View>
-                                    </>
-                                ) : (
-                                    <Animatable.View style={styles.SearchTextView}
-                                        animation='flipInY' >
-                                        <TextInput style={styles.SearchTextInput}
-                                            placeholder={'البحث عن الأكلات...'}
-                                            placeholderTextColor={COLORS.grayFont}
-                                            onChangeText={(value) => {
-                                                makesearch(value)
-                                                
-                                                setsearch( value )
-                                            }}
-                                            // onChangeText={value => {
-                                            //     setPhone(value);
-                                            //     if (onChangephone(value)) {
-                                            //       setPhoneError('');
-                                            //     }
-                                            //   }}
-                                  
-                                            value={search} />
-                                        <TouchableOpacity onPress={() => {
-                                                    setIconSearch(true);
-                                        //    this.setState({ IconSearch: true })
-                                        }}>
-
-                                            <Ionicons name='search' size={ICONSSIZE.xlIcon} color={COLORS.pramary} />
+                            {IconSearch ? (
+                                <>
+                                    <Animatable.View
+                                        animation='slideInLeft' >
+                                        <TouchableOpacity
+                                            onPress={() => {
+                                                // this.setState({ IconSearch: false })
+                                                // this.fadeOut
+                                                setIconSearch(false);
+                                            }}>
+                                            <Ionicons name='ios-search-circle' size={60} color={COLORS.orange} />
                                         </TouchableOpacity>
 
                                     </Animatable.View>
-                                )}
-                            </View>
+                                </>
+                            ) : (
+                                <Animatable.View style={styles.SearchTextView}
+                                    animation='flipInY' >
+                                    <TextInput style={styles.SearchTextInput}
+                                        placeholder={'البحث عن الأكلات...'}
+                                        placeholderTextColor={COLORS.grayFont}
+                                        onChangeText={(value) => {
+                                            makesearch(value)
 
-                            <View style={styles.BoxView}>
+                                            setsearch(value)
+                                        }}
+                                        // onChangeText={value => {
+                                        //     setPhone(value);
+                                        //     if (onChangephone(value)) {
+                                        //       setPhoneError('');
+                                        //     }
+                                        //   }}
 
-                                {Common.map((item, index) => (
-                                    item.view ? (
-                                        // <View style={styles.BoxView}>
+                                        value={search} />
+                                    <TouchableOpacity onPress={() => {
+                                        setIconSearch(true);
+                                        //    this.setState({ IconSearch: true })
+                                    }}>
 
-                                        <View style={styles.Box}>
-                                            <Image source={item.Image} style={styles.ImageTabs2}
-                                                resizeMode={"center"} />
-                                            <View style={styles.TextViewBox}>
-                                                <Text style={styles.TextBox}>
-                                                    {item.name}
-                                                </Text>
-                                            </View>
-                                            <View style={styles.TextTimeBox}>
-                                                <Text style={styles.TimeBox}>
-                                                    {item.time}
-                                                </Text>
-                                                <Ionicons name='md-time' style={{ alignSelf: "center" }} size={ICONSSIZE.smIcon} color={COLORS.ButtonWhite} />
-                                            </View>
-                                            <View style={styles.OptionBox}>
-                                                <TouchableOpacity
-                                                    onPress={() => {
-                                                        // this.props.navigation.navigate('DetelsStack',{screen:"Photo_page"})
-                                                        // this.props.navigation.navigate('DetelsStack')
-                                                        navigation.navigate("Photo_page")
-                                                    }
-                                                    }
-                                                    style={styles.OptionButtonBox}>
-                                                    <Text style={styles.OptionTimeBox}>
-                                                        الطريقة
-                                                    </Text>
-                                                </TouchableOpacity>
-                                                <TouchableOpacity style={styles.OptionButtonBox}>
-                                                    <Text style={styles.OptionTimeBox}>
-                                                        الفيديو
-                                                    </Text>
-                                                </TouchableOpacity>
+                                        <Ionicons name='search' size={ICONSSIZE.xlIcon} color={COLORS.pramary} />
+                                    </TouchableOpacity>
 
-                                            </View>
+                                </Animatable.View>
+                            )}
+                        </View>
 
+                        <View style={styles.BoxView}>
 
-                                        </View>
-                                        // </View>
-                                    ) : (null)
+                            {Common.map((item, index) => (
+                                item.view ? (
+                                    // <View style={styles.BoxView}>
 
-                                ))}
-                            </View>
-                            <View style={styles.starred}>
-                                <View style={styles.Headerstarred}>
-                                    <Text style={styles.textHeaderstarred}>
-                                        المميزة
-                                    </Text>
-                                    <Text style={styles.textHeaderstarred2}>
-                                        رؤية الكل
-                                    </Text>
-                                </View>
-                                {Common.map((item, index) => (
-                                    <View style={styles.Boxstarred}>
-                                        <View style={styles.ViewImage}>
-                                            <Image source={item.Image} resizeMode={"contain"} style={styles.Imagestarred} />
-                                        </View>
-                                        <View style={styles.BoxTextStarred}>
-                                            <Text style={[styles.textHeaderstarred, { fontSize: FONTS.h2 }]}>
+                                    <View style={styles.Box}>
+                                        <Image source={item.Image} style={styles.ImageTabs2}
+                                            resizeMode={"center"} />
+                                        <View style={styles.TextViewBox}>
+                                            <Text style={styles.TextBox}>
                                                 {item.name}
                                             </Text>
-                                            <View style={[styles.TextTimeBox, { justifyContent: "center" }]}>
-                                                <Text style={styles.TimeBox}>
-                                                    {item.time}
+                                        </View>
+                                        <View style={styles.TextTimeBox}>
+                                            <Text style={styles.TimeBox}>
+                                                {item.time}
+                                            </Text>
+                                            <Ionicons name='md-time' style={{ alignSelf: "center" }} size={ICONSSIZE.smIcon} color={COLORS.ButtonWhite} />
+                                        </View>
+                                        <View style={styles.OptionBox}>
+                                            <TouchableOpacity
+                                                onPress={() => {
+                                                    navigation.navigate("Photo_page", {
+                                                        name: item
+                                                    })
+                                                }
+                                                }
+                                                style={styles.OptionButtonBox}>
+                                                <Text style={styles.OptionTimeBox}>
+                                                    الطريقة
                                                 </Text>
-                                                <Ionicons name='md-time' style={{ alignSelf: "center" }} size={ICONSSIZE.smIcon} color={COLORS.ButtonWhite} />
-                                            </View>
-                                            <View style={styles.OptionBox}>
-                                                <TouchableOpacity style={styles.OptionButtonBox}>
-                                                    <Text style={styles.OptionTimeBox}>
-                                                        الطريقة
-                                                    </Text>
-                                                </TouchableOpacity>
-                                                <TouchableOpacity style={styles.OptionButtonBox}>
-                                                    <Text style={styles.OptionTimeBox}>
-                                                        الفيديو
-                                                    </Text>
-                                                </TouchableOpacity>
-
-                                            </View>
+                                            </TouchableOpacity>
+                                            <TouchableOpacity style={styles.OptionButtonBox}>
+                                                <Text style={styles.OptionTimeBox}>
+                                                    الفيديو
+                                                </Text>
+                                            </TouchableOpacity>
 
                                         </View>
+
+
                                     </View>
-                                ))}
+                                    // </View>
+                                ) : (null)
 
-                            </View>
+                            ))}
                         </View>
-                        <View style={{ height: 55 }}></View>
+                        <View style={styles.starred}>
+                            <View style={styles.Headerstarred}>
+                                <Text style={styles.textHeaderstarred}>
+                                    المميزة
+                                </Text>
+                                <Text style={styles.textHeaderstarred2}>
+                                    رؤية الكل
+                                </Text>
+                            </View>
+                            {Common.map((item, index) => (
+                                <View style={styles.Boxstarred}>
+                                    <View style={styles.ViewImage}>
+                                        <Image source={item.Image} resizeMode={"contain"} style={styles.Imagestarred} />
+                                    </View>
+                                    <View style={styles.BoxTextStarred}>
+                                        <Text style={[styles.textHeaderstarred, { fontSize: FONTS.h2 }]}>
+                                            {item.name}
+                                        </Text>
+                                        <View style={[styles.TextTimeBox, { justifyContent: "center" }]}>
+                                            <Text style={styles.TimeBox}>
+                                                {item.time}
+                                            </Text>
+                                            <Ionicons name='md-time' style={{ alignSelf: "center" }} size={ICONSSIZE.smIcon} color={COLORS.ButtonWhite} />
+                                        </View>
+                                        <View style={styles.OptionBox}>
+                                            <TouchableOpacity
+                                                onPress={() => {
+                                                    navigation.navigate("Photo_page", {
+                                                        name: item
+                                                    })
+                                                }
+                                                }
+                                                style={styles.OptionButtonBox}>
+                                                <Text style={styles.OptionTimeBox}>
+                                                    الطريقة
+                                                </Text>
+                                            </TouchableOpacity>
+                                            <TouchableOpacity style={styles.OptionButtonBox}>
+                                                <Text style={styles.OptionTimeBox}>
+                                                    الفيديو
+                                                </Text>
+                                            </TouchableOpacity>
 
-                    </ScrollView>
-                </View>
-            </>
-        );
-    }
- 
+                                        </View>
+
+                                    </View>
+                                </View>
+                            ))}
+
+                        </View>
+                    </View>
+                    <View style={{ height: 55 }}></View>
+
+                </ScrollView>
+            </View>
+        </>
+    );
+}
+
 const styles = StyleSheet.create({
     Header: {
         backgroundColor: COLORS.pramary,
