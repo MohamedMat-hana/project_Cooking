@@ -228,6 +228,15 @@ export default function FoodCommon() {
               </ScrollView>
             </View>
             <View style={styles.food_View}>
+              <View style={styles.Headerstarred}>
+                <Text style={styles.textHeaderstarred}>
+                  الوصفات
+                </Text>
+                <Text style={styles.textHeaderstarred2}>
+                  رؤية الكل
+                </Text>
+              </View>
+
               {Food.map((item, index) =>
 
                 <View style={styles.meal_View}>
@@ -342,6 +351,25 @@ const styles = StyleSheet.create({
     marginTop: MARGIN.xxsMargin
   }
   ,
+  Headerstarred: {
+    width: width / 1.05,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    alignSelf: "center"
+  },
+  textHeaderstarred: {
+    fontSize: FONTS.h1,
+    color: COLORS.ButtonWhite,
+    // fontWeight: "bold",
+    fontFamily: "Generator Black"
+  },
+  textHeaderstarred2: {
+    fontSize: FONTS.h5,
+    color: COLORS.gray,
+    // fontWeight: "bold",
+    fontFamily: "Generator Black"
+  },
   meal_View: {
     width: width / 2.1,
     alignItems: "center",

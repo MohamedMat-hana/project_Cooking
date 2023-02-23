@@ -134,6 +134,14 @@ export default function CommonDessert() {
                         </View>
 
                         <View style={styles.BoxView}>
+                        <View style={styles.Headerstarred}>
+                                <Text style={styles.textHeaderstarred}>
+                                    الوصفات
+                                </Text>
+                                <Text style={styles.textHeaderstarred2}>
+                                    رؤية الكل
+                                </Text>
+                            </View>
 
                             {Common.map((item, index) => (
                                 item.view ? (

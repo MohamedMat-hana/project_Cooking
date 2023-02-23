@@ -223,52 +223,64 @@ export default function Food() {
                         </View>
 
                         <View style={styles.BoxView}>
+                            <View style={styles.Headerstarred}>
+                                <Text style={styles.textHeaderstarred}>
+                                    الوصفات
+                                </Text>
+                                <Text style={styles.textHeaderstarred2}>
+                                    رؤية الكل
+                                </Text>
+                            </View>
+                            <View style={{ flexDirection: "row" }}>
+                                <ScrollView horizontal={true}>
+                                    {Common.map((item, index) => (
+                                        item.view ? (
+                                            // <View style={styles.BoxView}>
 
-                            {Common.map((item, index) => (
-                                item.view ? (
-                                    // <View style={styles.BoxView}>
+                                            <View style={styles.Box}>
+                                                <Image source={item.Image} style={styles.ImageTabs2}
+                                                    resizeMode={"center"} />
+                                                <View style={styles.TextViewBox}>
+                                                    <Text style={styles.TextBox}>
+                                                        {item.name}
+                                                    </Text>
+                                                </View>
+                                                <View style={styles.TextTimeBox}>
+                                                    <Text style={styles.TimeBox}>
+                                                        {item.time}
+                                                    </Text>
+                                                    <Ionicons name='md-time' style={{ alignSelf: "center" }} size={ICONSSIZE.smIcon} color={COLORS.ButtonWhite} />
+                                                </View>
+                                                <View style={styles.OptionBox}>
+                                                    <TouchableOpacity
+                                                        onPress={() => {
+                                                            navigation.navigate("Photo_page", {
+                                                                name: item
+                                                            })
+                                                        }
+                                                        }
+                                                        style={styles.OptionButtonBox}>
+                                                        <Text style={styles.OptionTimeBox}>
+                                                            الطريقة
+                                                        </Text>
+                                                    </TouchableOpacity>
+                                                    <TouchableOpacity style={styles.OptionButtonBox}>
+                                                        <Text style={styles.OptionTimeBox}>
+                                                            الفيديو
+                                                        </Text>
+                                                    </TouchableOpacity>
 
-                                    <View style={styles.Box}>
-                                        <Image source={item.Image} style={styles.ImageTabs2}
-                                            resizeMode={"center"} />
-                                        <View style={styles.TextViewBox}>
-                                            <Text style={styles.TextBox}>
-                                                {item.name}
-                                            </Text>
-                                        </View>
-                                        <View style={styles.TextTimeBox}>
-                                            <Text style={styles.TimeBox}>
-                                                {item.time}
-                                            </Text>
-                                            <Ionicons name='md-time' style={{ alignSelf: "center" }} size={ICONSSIZE.smIcon} color={COLORS.ButtonWhite} />
-                                        </View>
-                                        <View style={styles.OptionBox}>
-                                            <TouchableOpacity
-                                                onPress={() => {
-                                                    navigation.navigate("Photo_page", {
-                                                        name: item
-                                                    })
-                                                }
-                                                }
-                                                style={styles.OptionButtonBox}>
-                                                <Text style={styles.OptionTimeBox}>
-                                                    الطريقة
-                                                </Text>
-                                            </TouchableOpacity>
-                                            <TouchableOpacity style={styles.OptionButtonBox}>
-                                                <Text style={styles.OptionTimeBox}>
-                                                    الفيديو
-                                                </Text>
-                                            </TouchableOpacity>
-
-                                        </View>
+                                                </View>
 
 
-                                    </View>
-                                    // </View>
-                                ) : (null)
+                                            </View>
+                                            // </View>
+                                        ) : (null)
 
-                            ))}
+                                    ))}
+                                </ScrollView>
+                            </View>
+
                         </View>
                         <View style={styles.starred}>
                             <View style={styles.Headerstarred}>
@@ -400,6 +412,7 @@ const styles = StyleSheet.create({
     BoxView: {
         width: width,
         // height:height/12,
+
         backgroundColor: COLORS.pramary,
         flexDirection: "row",
         flexWrap: "wrap",
@@ -411,7 +424,7 @@ const styles = StyleSheet.create({
         width: width / 2.1,
         alignItems: "center",
         // height: height / 15,
-        marginVertical: MARGIN.xxsMargin,
+        margin : MARGIN.xsMargin,
         padding: PADDING.lgPadding,
         borderRadius: RADIUS.xxsRadius,
         backgroundColor: COLORS.pramary50
