@@ -232,9 +232,9 @@ export default function FoodCommon() {
                 <Text style={styles.textHeaderstarred}>
                   الوصفات
                 </Text>
-                <Text style={styles.textHeaderstarred2}>
+                {/* <Text style={styles.textHeaderstarred2}>
                   رؤية الكل
-                </Text>
+                </Text> */}
               </View>
 
               {Food.map((item, index) =>

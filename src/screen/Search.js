@@ -27,11 +27,13 @@ export default class Search extends React.Component {
                     {
                         Image: require("../img/pizza.png"),
                         name: "باستا وايت صوص",
-                        components: "مكرونه , دقيق ,حليب , ملح , فلفل اسود مكرونه , دقيق ,حليب , Pizza , فلفل اسود",
+                        Elta7der:'15 min',
+                        Eltahy:"15 min",
+                        Elsouba:"25",
+                        components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
                         view: true,
                         Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
-                        num: 1,
-
+ 
                     },
                     {
                         Image: require("../img/pizza.png"),

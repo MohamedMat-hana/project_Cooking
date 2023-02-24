@@ -217,7 +217,8 @@ export default class Photo_page extends React.Component {
                                             <Ionicons name='ellipse' size={10} color={COLORS.orange} />
 
                                             <Text style={[styles.TextRow, {
-                                                width: width / 1.35,
+                                                width: width / 1.49,
+                                                // backgroundColor:"#f0f",
                                                 marginHorizontal: MARGIN.xxsMargin,
                                                 textDecorationLine: "none",
                                             }]} >
