@@ -1,73 +1,175 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
-    StyleSheet,
     View,
     Text,
-    Image,
-    StatusBar,
     TouchableOpacity,
-    ImageBackground,
     Dimensions,
+    StyleSheet,
     TextInput,
     ScrollView,
+    Image
 } from 'react-native';
-import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
+import { useNavigation, NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { COLORS, PADDING, MARGIN, RADIUS, FONTS, ICONSSIZE } from '../constants/Constants'
 import Ionicons from 'react-native-vector-icons/Ionicons'
-import Octicons from 'react-native-vector-icons/Octicons'
- const { width, height } = Dimensions.get('window');
 import * as Animatable from 'react-native-animatable';
- 
+const { width, height } = Dimensions.get('window');
 
-export default class AllDrink extends React.Component {
-     constructor() {
-        super(); {
-            this.state = {
-                Common: [
-                    {
-                        Image: require("../img/pizza.png"),
-                        name: "Pizza",
-                        view: true
-                    },
-                    {
-                        Image: require("../img/burger.png"),
-                        name: "Burger",
-                        view: true
-                    },
-                    {
-                        Image: require("../img/food.jpg"),
-                        name: "Cop",
-                        view: true
-                    },
-                    {
-                        Image: require("../img/food2.jpg"),
-                        name: "ايس كريم",
-                        view: true
-                    },
-                    {
-                        Image: require("../img/food3.jpg"),
-                        name: "ايس كريم",
-                        view: true
-                    },
-                    {
-                        Image: require("../img/food4.jpg"),
-                        name: "ايس كريم",
-                        view: true
-                    },
-                    {
-                        Image: require("../img/steak_food.png"),
-                        name: "ايس كريم",
-                        view: true
-                    },
 
-                ],
-                IconSearch: true,
+export default function AllDrink() {
+    const [Food, setFood] = useState(
+        [
+            {
+                Image: require("../img/pizza.png"),
+                name: "Pizza",
+                view: true,
+                time: "30 min",
+                Elta7der: '15 min',
+                Eltahy: "15 min",
+                Elsouba: "25",
+                components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
+                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
+
+            },
+            {
+                Image: require("../img/burger.png"),
+                name: "Burger",
+                Elta7der: '15 min',
+                Eltahy: "15 min",
+                Elsouba: "25",
+                components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
+                view: true,
+                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
+                time: "30 min"
+            },
+            {
+                Image: require("../img/food.jpg"),
+                name: "Cop",
+                Elta7der: '15 min',
+                Eltahy: "15 min",
+                Elsouba: "25",
+                components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
+                view: true,
+                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
+                time: "30 min"
+            },
+            {
+                Image: require("../img/food2.jpg"),
+                name: "ايس كريم",
+                Elta7der: '15 min',
+                Eltahy: "15 min",
+                Elsouba: "25",
+                components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
+                view: true,
+                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
+                time: "30 min"
+            },
+            {
+                Image: require("../img/food3.jpg"),
+                name: "ايس كريم",
+                Elta7der: '15 min',
+                Eltahy: "15 min",
+                Elsouba: "25",
+                components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
+                view: true,
+                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
+                time: "30 min"
+            },
+            {
+                Image: require("../img/food4.jpg"),
+                name: "ايس كريم",
+                Elta7der: '15 min',
+                Eltahy: "15 min",
+                Elsouba: "25",
+                components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
+                view: true,
+                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
+                time: "30 min"
+            },
+            {
+                Image: require("../img/steak_food.png"),
+                name: "ايس كريم",
+                Elta7der: '15 min',
+                Eltahy: "15 min",
+                Elsouba: "25",
+                components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
+                view: true,
+                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
+                time: "30 min"
+            },
+            {
+                Image: require("../img/food.jpg"),
+                name: "Cop",
+                Elta7der: '15 min',
+                Eltahy: "15 min",
+                Elsouba: "25",
+                components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
+                view: true,
+                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
+                time: "30 min"
+            },
+
+        ])
+
+    const [Category, SetCategory] = useState(
+        [
+            {
+                name: "Burger",
+                img: require("../img/burgerr.png"),
+                choose: false,
+                contant: "burgeeeerrrr",
+                view: false,
 
             }
-        }
-    }
-    makesearch(searchText) {
-        let list = this.state.Common
+            ,
+            {
+                name: "Pizza",
+                img: require("../img/pizzaa.png"),
+                choose: false,
+                contant: "pizzzzzaaaa",
+                view: false,
+            }
+            ,
+            {
+                name: "Burger",
+                img: require("../img/burgerr.png"),
+                choose: false,
+                contant: "burgeeeerrrr"
+            }
+            ,
+            {
+                name: "Pizza",
+                img: require("../img/pizzaa.png"),
+                choose: false,
+                contant: "pizzzzzaaaa"
+            }
+            ,
+            {
+                name: "Burger",
+                img: require("../img/burgerr.png"),
+                choose: false,
+                contant: "burgeeeerrrr"
+            }
+            ,
+            {
+                name: "Pizza",
+                img: require("../img/pizzaa.png"),
+                choose: false,
+                contant: "pizzzzzaaaa"
+            }
+        ]
+    )
+
+    const [IconSearch, setIconSearch] = useState(true)
+    const [search, setsearch] = useState("")
+
+    // const [showView, SetshowView] = useState(true)
+    // const [Index, SetIndex] = useState(null)
+
+
+    const makesearch = (searchText) => {
+        let list = Food
         for (let i = 0; i < list.length; i++) {
             if (((list[i].name).toUpperCase()).includes(searchText.toUpperCase())) {
                 list[i].view = true
@@ -76,105 +178,52 @@ export default class AllDrink extends React.Component {
                 list[i].view = false
             }
         }
-        this.setState({ Common: list })
+        setFood(list)
     }
-    // Delete() {
-    //     let list = this.state.Common
-    //     list.view=!list.view
-    //     if (list.view==false) {
-    //         this.setState({ Common: list })
-    //     }
+
+    const return_category = (text) => {
+        return (text)
+    }
+
+    const chooseCategory = (index) => {
+        let cate = Category
+        if (cate[index].choose == false) {
+            cate[index].choose = true
+            SetshowView(false)
+            SetIndex(index)
+            return_category(cate[index].contant)
+        } else if (cate[index].choose == true) {
+
+            cate[index].choose = false
+            SetIndex(null)
+            SetshowView(true)
+            return_category(null)
+        }
+
+        SetCategory(cate)
+    }
+
+    // const show_Category_item = (index) => {
+    //   let cate = Category
+
     // }
+    const navigation = useNavigation();
 
-    render() {
-        return (
-            <>
-                <View style={styles.Header}>
-                    <View style={styles.nameStackView}>
-                        <Text style={styles.textnameStackView}>
-                            المشروبات
-                        </Text>
-                    </View>
-
-                    <ScrollView>
-                        <View style={styles.Dessercommon}>
-                            <View style={styles.DessercommonHeader}>
-                                <View style={{ flexDirection: "row" }}>
-                                    <Text style={styles.TextCommon}>
-                                    المشروبات الشائعة
-                                    </Text>
-                                    <Image source={require("../img/food33.png")} style={styles.Image} />
-                                </View>
-                                <View style={styles.Dessercommon2}>
-                                    <Ionicons name='arrow-back-circle' size={ICONSSIZE.xlIcon} color={COLORS.orange} />
-                                </View>
-                            </View>
-                            <View style={styles.DessertCommon}>
-                                <ScrollView horizontal={true}>
-                                    {this.state.Common.map((item, index) => (
-                                        <View style={styles.ButtonTabs}>
-                                            <Image source={item.Image} style={styles.ImageTabs}
-                                                resizeMode={"cover"} />
-                                            <Text style={styles.TextTabs}>
-                                                {item.name}
-                                            </Text>
-                                            <View style={styles.TabsofTabs}>
-                                                <Text style={[styles.TextTabs, { color: COLORS.black }]}>
-                                                    الخطوات
-                                                </Text>
-                                                <View style={styles.ViewBoth}>
-                                                    <TouchableOpacity style={styles.the_Two_button}>
-                                                        <Text style={[styles.TextTabs, { marginRight: MARGIN.xxsMargin }]}>
-                                                            فيديو
-                                                        </Text>
-                                                        <Octicons name='video' size={ICONSSIZE.mIcon} color={COLORS.white} />
-
-
-                                                    </TouchableOpacity>
-                                                    <TouchableOpacity style={styles.the_Two_button}>
-                                                        <Text style={styles.TextTabs}>
-                                                            الطريقة
-                                                        </Text>
-
-
-                                                    </TouchableOpacity>
-                                                </View>
-                                            </View>
-                                        </View>
-                                    ))}
-                                </ScrollView>
-                            </View>
-                        </View>
-
-
-
-
-
-
-
-
-
-
-
-
-                        {/* search */}
-
-
-                        <View style={styles.SearchView}>
-                            <View style={{ flexDirection: "row" }}>
-                                <Text style={styles.SearchTextheader}>
-                                    دور علي مشروبك
-                                </Text>
-                                <Image source={require("../img/food22.png")} style={styles.Image} />
-                            </View>
-                            {this.state.IconSearch ? (
+    return (
+        <>
+            <View style={{ backgroundColor: COLORS.pramary, flex: 1 }}>
+                <ScrollView>
+                    <View style={styles.Header}>
+                        <View>
+                            <View></View>
+                            {IconSearch ? (
                                 <>
                                     <Animatable.View
                                         animation='slideInLeft' >
                                         <TouchableOpacity
                                             onPress={() => {
-                                                this.setState({ IconSearch: false })
-                                                // this.fadeOut
+
+                                                setIconSearch(false);
                                             }}>
                                             <Ionicons name='ios-search-circle' size={60} color={COLORS.orange} />
                                         </TouchableOpacity>
@@ -184,294 +233,237 @@ export default class AllDrink extends React.Component {
                             ) : (
                                 <Animatable.View style={styles.SearchTextView}
                                     animation='flipInY' >
-                                    <TouchableOpacity onPress={() => {
-                                        this.setState({ IconSearch: true })
-                                        // this.fadeIn
-                                    }}>
-
-                                        <Ionicons name='ios-search-circle' size={ICONSSIZE.xlIcon} color={COLORS.orange} />
-                                    </TouchableOpacity>
                                     <TextInput style={styles.SearchTextInput}
-                                        placeholder={'بحث'}
-                                        placeholderTextColor={COLORS.gray}
+                                        placeholder={'البحث عن الأكلات...'}
+                                        placeholderTextColor={COLORS.grayFont}
                                         onChangeText={(value) => {
-                                            this.makesearch(value)
-                                            this.setState({ search: value })
+                                            makesearch(value)
+
+                                            setsearch(value)
                                         }}
-                                        value={this.state.search} />
+
+
+                                        value={search} />
                                     <TouchableOpacity onPress={() => {
-                                        this.setState({
-                                            search: "",
-                                        })
-                                        // this.Delete()
-                                        // this.fadeIn
+                                        setIconSearch(true);
                                     }}>
 
-                                        <Ionicons name='close-circle-outline' size={ICONSSIZE.xlIcon} color={COLORS.orange} />
+                                        <Ionicons name='search' size={ICONSSIZE.xlIcon} color={COLORS.pramary} />
                                     </TouchableOpacity>
 
                                 </Animatable.View>
                             )}
                         </View>
-                        {/* end search */}
 
+                        <View style={styles.category_View}>
+                            <ScrollView horizontal>
+                                {Category.map((Category, index) =>
+                                    <TouchableOpacity style={styles.category_Box}
+                                        onPress={() =>
+                                            chooseCategory(index)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        <View style={styles.Dessert}>
-                            <View style={styles.DessercommonHeader1}>
-                                <View style={{ flexDirection: "row" }}>
-                                    <Text style={styles.TextCommon}>
-                                        المشروبات
-                                    </Text>
-                                    <Image source={require("../img/spaghetti2.png")} style={styles.Image} />
-                                </View>
-                                <View style={styles.Dessercommon2}>
-                                    <Ionicons name='arrow-back-circle' size={ICONSSIZE.xlIcon} color={COLORS.orange} />
-                                </View>
+                                        }
+                                    >
+                                        <Image source={Category.img} style={{ width: width / 5, height: height / 12, resizeMode: "contain" }} />
+                                    </TouchableOpacity>
+                                )}
+                            </ScrollView>
+                        </View>
+                        <View style={styles.food_View}>
+                            <View style={styles.Headerstarred}>
+                                <Text style={styles.textHeaderstarred}>
+                                    الوصفات
+                                </Text>
+                                {/* <Text style={styles.textHeaderstarred2}>
+                  رؤية الكل
+                </Text> */}
                             </View>
-                            {this.state.Common.map((item, index) => (
 
-                                item.view ? (
-                                    <View style={styles.DessertMain}>
+                            {Food.map((item, index) =>
 
-                                        <Image source={item.Image} style={styles.ImageTabs2}
-                                            resizeMode={"center"} />
-                                        <Text style={styles.TextTabs2}>
+                                <View style={styles.meal_View}>
+                                    <Image source={item.Image} style={styles.meal_image}
+                                        resizeMode={"center"} />
+                                    <View style={{ width: width / 2.4, alignItems: "flex-start" }}>
+                                        <Text style={styles.meal_name}>
                                             {item.name}
                                         </Text>
-                                        <View style={styles.TabsofTabs2}>
-                                            <Text style={[styles.TextTabs2, { color: COLORS.black }]}>
-                                                الخطوات
-                                            </Text>
-                                            <View style={styles.ViewBoth2}>
-                                                <TouchableOpacity style={styles.the_Two_button2}>
-                                                    <Text style={[styles.TextTabs2, { marginRight: MARGIN.xxsMargin }]}>
-                                                        فيديو
-                                                    </Text>
-                                                    <Octicons name='video' size={ICONSSIZE.mIcon} color={COLORS.white} />
-
-
-                                                </TouchableOpacity>
-                                                <TouchableOpacity style={styles.the_Two_button2}>
-                                                    <Text style={styles.TextTabs2}>
-                                                        الطريقة
-                                                    </Text>
-
-
-                                                </TouchableOpacity>
-                                            </View>
-                                        </View>
                                     </View>
-                                ) : (null)
+                                    <View style={styles.view_time}>
+                                        <Text style={styles.text_time}>
+                                            {item.time}
+                                        </Text>
+                                        <Ionicons name='md-time' style={{ alignSelf: "center" }} size={ICONSSIZE.smIcon} color={COLORS.ButtonWhite} />
+                                    </View>
+                                    <View style={styles.option_view}>
+                                        <TouchableOpacity
+                                            onPress={() => {
+                                                navigation.navigate("Photo_page", {
+                                                    name: item
+                                                })
+                                            }
+                                            }
+                                            style={styles.button_option}>
+                                            <Text style={styles.button_text}>
+                                                الطريقة
+                                            </Text>
+                                        </TouchableOpacity>
+                                        <TouchableOpacity style={styles.button_option}>
+                                            <Text style={styles.button_text}>
+                                                الفيديو
+                                            </Text>
+                                        </TouchableOpacity>
 
-                            ))}
+                                    </View>
+
+
+                                </View>
+
+
+                            )}
+
+
                         </View>
-                    </ScrollView>
-                </View>
-            </>
-        );
-    }
+                    </View>
+                    <View style={{ height: 55 }}></View>
+                </ScrollView>
+            </View>
+
+
+        </>
+    )
+
 }
+
 
 const styles = StyleSheet.create({
     Header: {
-        backgroundColor: COLORS.black,
-        // marginTop: MARGIN.xxsMargin,
+        backgroundColor: COLORS.pramary,
         alignItems: "center",
-        height: height
+        flex: 1,
+
     },
-    nameStackView: {
-        // backgroundColor: COLORS.white,
-        width: width / 1.05,
-        height: height / 15,
-        alignItems: "flex-start",
-        justifyContent: "flex-end",
-        marginVertical: MARGIN.xsMargin
-    },
-    textnameStackView: {
-        fontSize: FONTS.h3,
-        color: COLORS.orange,
-        fontWeight: "bold"
-    },
-    SearchView: {
-        // backgroundColor: COLORS.orange50,
-        width: width / 1.05,
-        height: height / 9,
-        alignItems: "center",
-        justifyContent: "space-between",
-        marginVertical: MARGIN.xsMargin
-    },
-    SearchTextheader: {
-        fontSize: FONTS.h3,
-        color: COLORS.orange,
-        alignSelf: "flex-start"
-    },
+
     SearchTextView: {
         backgroundColor: COLORS.white,
         width: width / 1.1,
-        height: height / 17,
+        height: height / 15,
         alignItems: "center",
         justifyContent: "center",
-        borderRadius: RADIUS.lgRadius,
-        borderWidth: 2,
-        borderColor: COLORS.orange,
-        paddingHorizontal: PADDING.xsPadding,
-        fontSize: FONTS.h5,
+        borderRadius: RADIUS.smRadius,
+        marginVertical: MARGIN.xxsMargin,
         flexDirection: "row"
 
     },
     SearchTextInput: {
-        // backgroundColor: COLORS.white,
         width: width / 1.4,
         height: height / 17,
-        alignItems: "flex-end",
+        alignItems: "center",
+        alignSelf: "center",
+        color: COLORS.black,
         justifyContent: "flex-end",
-        // borderRadius: RADIUS.lgRadius,
-        // borderWidth: 2,
-        // borderColor: COLORS.orange,
+        fontFamily: "Generator Black",
         paddingHorizontal: PADDING.smPadding,
-        fontSize: FONTS.h5
-        // marginVertical: MARGIN.xsMargin
-
+        fontSize: FONTS.h4
     },
-    Dessercommon: {
-        height: height / 2.2,
-        width: width / 1.05,
-        // backgroundColor: COLORS.red
-    },
-    DessercommonHeader: {
+    category_View: {
+        height: height / 10,
+        width: width / 1.07,
         flexDirection: "row",
-        justifyContent: "space-between"
     },
-    TextCommon: {
-        fontSize: FONTS.h3,
-        color: COLORS.orange,
-        alignSelf: "flex-start"
-    },
-    Image: {
-        width: 35,
-        height: 35
-    },
-    Dessercommon2: {
-        width: width / 2,
-        // backgroundColor:COLORS.background,
-        alignItems: "flex-end"
-    },
-    DessertCommon: {
-        height: height / 2.5,
+    category_Box: {
+        width: width / 4.5,
+        height: height / 11,
+        padding: PADDING.xsPadding,
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: COLORS.pramary50,
+        marginLeft: 5,
+        borderRadius: RADIUS.xsRadius
+    }
+    ,
+    food_View: {
+        width: width,
+        backgroundColor: COLORS.pramary,
+        flexDirection: "row",
+        flexWrap: "wrap",
+        padding: PADDING.xsPadding,
+        alignItems: "center",
+        justifyContent: "space-around",
+        marginTop: MARGIN.xxsMargin
+    }
+    ,
+    Headerstarred: {
         width: width / 1.05,
-        // backgroundColor: COLORS.red
-    },
-    ButtonTabs: {
-        width: width / 1.7,
-        height: height / 2.5,
-        backgroundColor: COLORS.orange50,
-        borderRadius: RADIUS.x5lRadius,
+        flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
-        marginHorizontal: MARGIN.xsMargin,
+        alignSelf: "center"
     },
-    ImageTabs: {
-        width: width / 1.7,
+    textHeaderstarred: {
+        fontSize: FONTS.h1,
+        color: COLORS.ButtonWhite,
+        // fontWeight: "bold",
+        fontFamily: "Generator Black"
+    },
+    textHeaderstarred2: {
+        fontSize: FONTS.h5,
+        color: COLORS.gray,
+        // fontWeight: "bold",
+        fontFamily: "Generator Black"
+    },
+    meal_View: {
+        width: width / 2.1,
+        alignItems: "center",
+        marginVertical: MARGIN.xxsMargin,
+        padding: PADDING.lgPadding,
+        borderRadius: RADIUS.xxsRadius,
+        backgroundColor: COLORS.pramary50
+    },
+    meal_image: {
+        width: width / 2.4,
         height: height / 5,
-        borderTopRightRadius: RADIUS.x5lRadius,
-        borderTopLeftRadius: RADIUS.x5lRadius,
+        borderRadius: RADIUS.xxsRadius,
     },
-    TextTabs: {
-        fontSize: FONTS.h3,
+    meal_name: {
+        fontSize: FONTS.h4,
         color: COLORS.white,
-    },
-    TabsofTabs: {
-        width: width / 1.7,
-        height: height / 7,
-        backgroundColor: COLORS.gray,
-        // flexDirection: "row",
-        justifyContent: "space-around",
+        fontFamily: "Generator Black",
+        textAlign: "left"
+    }
+    ,
+    view_time: {
+        width: width / 2.4,
         alignItems: "center",
-        borderRadius: RADIUS.x5lRadius,
-    },
-    the_Two_button: {
-        backgroundColor: COLORS.orange,
-        borderRadius: RADIUS.xxlRadius,
         flexDirection: "row",
-        width: 90,
-        height: 50,
-        alignItems: 'center',
-        justifyContent: "center",
     },
-    ViewBoth: {
-        flexDirection: "row",
-        justifyContent: "space-around",
+    text_time: {
+        fontSize: FONTS.h4,
+        color: COLORS.white,
+        fontFamily: "Generator Black",
+        alignSelf: "center",
+        marginHorizontal: 2
+    }
+    ,
+    option_view: {
+        width: width / 2.4,
         alignItems: "center",
-        width: width / 2,
-    },
-    Dessert: {
-        width: width / 1.05,
-        // height: height,
-        // backgroundColor: COLORS.gray,
-        alignItems: "center"
-    },
-    DessercommonHeader1: {
+        justifyContent: "space-around",
         flexDirection: "row",
-        justifyContent: "space-between",
-        width: width / 1.05
 
     },
-    DessertMain: {
-        margin: MARGIN.smMargin,
-        width: width / 1.3,
-        height: height / 1.9,
-        backgroundColor: COLORS.grayFont,
-        justifyContent: "flex-start",
-        alignItems: "center",
-        borderRadius: RADIUS.lgRadius,
-    },
-    ImageTabs2: {
-        width: width / 1.3,
-        height: height / 2.8,
-        borderTopRightRadius: RADIUS.lgRadius,
-        borderTopLeftRadius: RADIUS.lgRadius,
-    },
-    TextTabs2: {
-        fontSize: FONTS.h3,
-        color: COLORS.white,
-    },
-    TabsofTabs2: {
-        width: width / 1.7,
-        height: height / 8,
-        backgroundColor: COLORS.gray,
-        // flexDirection: "row",
-        justifyContent: "space-around",
-        alignItems: "center",
-        borderRadius: RADIUS.x5lRadius,
-    },
-    the_Two_button2: {
+    button_option: {
+        width: width / 6,
         backgroundColor: COLORS.orange,
-        borderRadius: RADIUS.xxlRadius,
-        flexDirection: "row",
-        width: 90,
-        height: 50,
-        alignItems: 'center',
+        borderRadius: RADIUS.smRadius,
+        alignItems: "center",
         justifyContent: "center",
     },
-    ViewBoth2: {
-        flexDirection: "row",
-        justifyContent: "space-around",
-        alignItems: "center",
-        width: width / 2,
-    },
-
+    button_text: {
+        fontSize: FONTS.h5,
+        color: COLORS.white,
+        fontFamily: "Generator Black",
+        alignSelf: "center",
+        marginHorizontal: 2
+    }
 });

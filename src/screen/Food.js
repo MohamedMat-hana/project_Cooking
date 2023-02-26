@@ -26,51 +26,107 @@ export default function Food() {
         [
             {
                 Image: require("../img/pizza.png"),
-                name: "Pizza",
+                name: "باستا وايت صوص",
+                Elta7der: '15 min',
+                Eltahy: "15 min",
+                Elsouba: "25",
+                components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
                 view: true,
+                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
                 time: "30 min"
+
+
             },
             {
-                Image: require("../img/burger.png"),
-                name: "Burger",
+                Image: require("../img/pizza.png"),
+                name: "باستا وايت صوص",
+                Elta7der: '15 min',
+                Eltahy: "15 min",
+                Elsouba: "25",
+                components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
                 view: true,
+                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
                 time: "30 min"
+
+
             },
             {
-                Image: require("../img/food.jpg"),
-                name: "Cop",
+                Image: require("../img/pizza.png"),
+                name: "باستا وايت صوص",
+                Elta7der: '15 min',
+                Eltahy: "15 min",
+                Elsouba: "25",
+                components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
                 view: true,
+                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
                 time: "30 min"
+
+
             },
             {
-                Image: require("../img/food2.jpg"),
-                name: "ايس كريم",
+                Image: require("../img/pizza.png"),
+                name: "باستا وايت صوص",
+                Elta7der: '15 min',
+                Eltahy: "15 min",
+                Elsouba: "25",
+                components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
                 view: true,
+                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
                 time: "30 min"
+
+
             },
             {
-                Image: require("../img/food3.jpg"),
-                name: "ايس كريم",
+                Image: require("../img/pizza.png"),
+                name: "باستا وايت صوص",
+                Elta7der: '15 min',
+                Eltahy: "15 min",
+                Elsouba: "25",
+                components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
                 view: true,
+                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
                 time: "30 min"
+
+
             },
             {
-                Image: require("../img/food4.jpg"),
-                name: "ايس كريم",
+                Image: require("../img/pizza.png"),
+                name: "باستا وايت صوص",
+                Elta7der: '15 min',
+                Eltahy: "15 min",
+                Elsouba: "25",
+                components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
                 view: true,
+                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
                 time: "30 min"
+
+
             },
             {
-                Image: require("../img/steak_food.png"),
-                name: "ايس كريم",
+                Image: require("../img/pizza.png"),
+                name: "باستا وايت صوص",
+                Elta7der: '15 min',
+                Eltahy: "15 min",
+                Elsouba: "25",
+                components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
                 view: true,
+                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
                 time: "30 min"
+
+
             },
             {
-                Image: require("../img/food.jpg"),
-                name: "Cop",
+                Image: require("../img/pizza.png"),
+                name: "باستا وايت صوص",
+                Elta7der: '15 min',
+                Eltahy: "15 min",
+                Elsouba: "25",
+                components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
                 view: true,
+                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
                 time: "30 min"
+
+
             },
 
         ])
@@ -231,7 +287,7 @@ export default function Food() {
                                     رؤية الكل
                                 </Text>
                             </View>
-                            <View style={{ flexDirection: "row" }}>
+                            <View style={{ flexDirection: "row",width:width, }}>
                                 <ScrollView horizontal={true}>
                                     {Common.map((item, index) => (
                                         item.view ? (
@@ -287,9 +343,9 @@ export default function Food() {
                                 <Text style={styles.textHeaderstarred}>
                                     المميزة
                                 </Text>
-                                <Text style={styles.textHeaderstarred2}>
+                                {/* <Text style={styles.textHeaderstarred2}>
                                     رؤية الكل
-                                </Text>
+                                </Text> */}
                             </View>
                             {Common.map((item, index) => (
                                 <View style={styles.Boxstarred}>
@@ -418,16 +474,17 @@ const styles = StyleSheet.create({
         flexWrap: "wrap",
         padding: PADDING.xsPadding,
         alignItems: "center",
-        justifyContent: "space-around"
+        justifyContent: "space-around" ,    
     },
     Box: {
         width: width / 2.1,
         alignItems: "center",
         // height: height / 15,
-        margin : MARGIN.xsMargin,
+        margin: MARGIN.xsMargin,
         padding: PADDING.lgPadding,
         borderRadius: RADIUS.xxsRadius,
-        backgroundColor: COLORS.pramary50
+        backgroundColor: COLORS.pramary50 
+
     },
     starred: {
         width: width,

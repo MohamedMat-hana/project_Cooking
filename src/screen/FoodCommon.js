@@ -24,50 +24,91 @@ export default function FoodCommon() {
         Image: require("../img/pizza.png"),
         name: "Pizza",
         view: true,
-        time: "30 min"
+        time: "30 min",
+        Elta7der: '15 min',
+        Eltahy: "15 min",
+        Elsouba: "25",
+        components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
+         Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
+ 
       },
       {
         Image: require("../img/burger.png"),
         name: "Burger",
+        Elta7der: '15 min',
+        Eltahy: "15 min",
+        Elsouba: "25",
+        components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
         view: true,
+        Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
         time: "30 min"
-      },
+},
       {
         Image: require("../img/food.jpg"),
         name: "Cop",
+        Elta7der: '15 min',
+        Eltahy: "15 min",
+        Elsouba: "25",
+        components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
         view: true,
+        Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
         time: "30 min"
-      },
+},
       {
         Image: require("../img/food2.jpg"),
         name: "ايس كريم",
+        Elta7der: '15 min',
+        Eltahy: "15 min",
+        Elsouba: "25",
+        components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
         view: true,
+        Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
         time: "30 min"
-      },
+},
       {
         Image: require("../img/food3.jpg"),
         name: "ايس كريم",
+        Elta7der: '15 min',
+        Eltahy: "15 min",
+        Elsouba: "25",
+        components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
         view: true,
+        Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
         time: "30 min"
-      },
+},
       {
         Image: require("../img/food4.jpg"),
         name: "ايس كريم",
+        Elta7der: '15 min',
+        Eltahy: "15 min",
+        Elsouba: "25",
+        components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
         view: true,
+        Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
         time: "30 min"
-      },
+},
       {
         Image: require("../img/steak_food.png"),
         name: "ايس كريم",
+        Elta7der: '15 min',
+        Eltahy: "15 min",
+        Elsouba: "25",
+        components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
         view: true,
+        Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
         time: "30 min"
-      },
+},
       {
         Image: require("../img/food.jpg"),
         name: "Cop",
+        Elta7der: '15 min',
+        Eltahy: "15 min",
+        Elsouba: "25",
+        components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
         view: true,
+        Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
         time: "30 min"
-      },
+},
 
     ])
 
@@ -79,6 +120,7 @@ export default function FoodCommon() {
         choose: false,
         contant: "burgeeeerrrr",
         view: false,
+        
       }
       ,
       {

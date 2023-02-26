@@ -173,13 +173,13 @@ export default class Photo_page extends React.Component {
                                     </View>
                                     <View style={styles.Detels} >
                                         <Text style={[styles.TextRow, { textDecorationLine: "none" }]} >
-                                            15 min
+                                            {this.state.item.Elta7der}
                                         </Text>
                                         <Text style={[styles.TextRow, { textDecorationLine: "none" }]} >
-                                            15 min
+                                        {this.state.item.Eltahy}
                                         </Text>
                                         <Text style={[styles.TextRow, { textDecorationLine: "none" }]} >
-                                            25 %
+                                        {this.state.item.Elsouba} %
                                         </Text>
 
                                     </View>

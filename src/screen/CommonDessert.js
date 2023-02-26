@@ -27,43 +27,78 @@ export default function CommonDessert() {
             {
                 Image: require("../img/dessert3.jpg"),
                 name: "ice cream",
+                Elta7der: '15 min',
+                Eltahy: "15 min",
+                Elsouba: "25",
+                components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
                 view: true,
+                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
                 time: "30 min"
             },
             {
                 Image: require("../img/dessert4.jpg"),
                 name: "cemo",
+                Elta7der: '15 min',
+                Eltahy: "15 min",
+                Elsouba: "25",
+                components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
                 view: true,
+                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
                 time: "30 min"
             },
             {
                 Image: require("../img/dessert2.jpg"),
                 name: "moh",
+                Elta7der: '15 min',
+                Eltahy: "15 min",
+                Elsouba: "25",
+                components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
                 view: true,
+                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
                 time: "30 min"
             },
             {
                 Image: require("../img/dessert.jpg"),
                 name: "ايس كريم",
+                Elta7der: '15 min',
+                Eltahy: "15 min",
+                Elsouba: "25",
+                components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
                 view: true,
+                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
                 time: "30 min"
             },
             {
                 Image: require("../img/dessert5.jpg"),
                 name: "ايس كريم",
+                Elta7der: '15 min',
+                Eltahy: "15 min",
+                Elsouba: "25",
+                components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
                 view: true,
+                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
                 time: "30 min"
             },
             {
                 Image: require("../img/dessert3.jpg"),
                 name: "ايس كريم",
+                Elta7der: '15 min',
+                Eltahy: "15 min",
+                Elsouba: "25",
+                components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
                 view: true,
+                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
                 time: "30 min"
             },
             {
                 Image: require("../img/dessert3.jpg"),
                 name: "ايس كريم",
+                Elta7der: '15 min',
+                Eltahy: "15 min",
+                Elsouba: "25",
+                components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
                 view: true,
+                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
                 time: "30 min"
             },
 
@@ -142,6 +177,8 @@ export default function CommonDessert() {
                                     رؤية الكل
                                 </Text>
                             </View>
+                            <View style={{ flexDirection: "row",width:width, }}>
+                                <ScrollView horizontal={true}>
 
                             {Common.map((item, index) => (
                                 item.view ? (
@@ -186,15 +223,17 @@ export default function CommonDessert() {
                                 ) : (null)
 
                             ))}
+                            </ScrollView>
+                            </View>
                         </View>
                         <View style={styles.starred}>
                             <View style={styles.Headerstarred}>
                                 <Text style={styles.textHeaderstarred}>
                                     المميزة
                                 </Text>
-                                <Text style={styles.textHeaderstarred2}>
+                                {/* <Text style={styles.textHeaderstarred2}>
                                     رؤية الكل
-                                </Text>
+                                </Text> */}
                             </View>
                             {Common.map((item, index) => (
                                 <View style={styles.Boxstarred}>
@@ -311,20 +350,22 @@ const styles = StyleSheet.create({
     Box: {
         width: width / 2.1,
         alignItems: "center",
-        marginVertical: MARGIN.xxsMargin,
+        // height: height / 15,
+        margin: MARGIN.xsMargin,
         padding: PADDING.lgPadding,
         borderRadius: RADIUS.xxsRadius,
-        backgroundColor: COLORS.pramary50
+        backgroundColor: COLORS.pramary50 
     },
     starred: {
         width: width,
+
     },
     Headerstarred: {
         width: width / 1.05,
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
-        alignSelf: "center"
+        alignSelf: "center",
     },
     textHeaderstarred: {
         fontSize: FONTS.h1,
