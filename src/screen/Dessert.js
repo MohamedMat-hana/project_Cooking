@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet, Dimensions, ScrollView } from
 const { width, height } = Dimensions.get('window');
 import Photo_page from './Photo_page';
 import AllDessert from './AllDessert';
+import All from './All';
 import CommonDessert from './CommonDessert';
 import { COLORS, PADDING, MARGIN, RADIUS, FONTS, ICONSSIZE } from '../constants/Constants'
 function Dessert() {
@@ -111,7 +112,7 @@ export default function Stackscreen() {
             <Stack.Screen name="Photo_page" component={Photo_page} />
             <Stack.Screen name="Dessert" component={Dessert} />
             <Stack.Screen name="CommonDessert" component={CommonDessert} />
-
+            <Stack.Screen name="All" component={All} />
         </Stack.Navigator>
         //  </NavigationContainer>
     );

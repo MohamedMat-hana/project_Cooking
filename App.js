@@ -11,7 +11,7 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import Photo_page from './src/screen/Photo_page';
 import Navigation from './src/navigation/Navigation';
-import Home from './src/screen/Home';
+import All from './src/screen/All';
 
 
 const App = () => {
@@ -20,6 +20,7 @@ const App = () => {
       <NavigationContainer>
         <Navigation />
       </NavigationContainer>
+      {/* <All /> */}
     </>
   );
 }

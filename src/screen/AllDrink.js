@@ -347,24 +347,36 @@ const styles = StyleSheet.create({
     SearchTextView: {
         backgroundColor: COLORS.white,
         width: width / 1.1,
-        height: height / 15,
+        // height: height / 15,
         alignItems: "center",
         justifyContent: "center",
         borderRadius: RADIUS.smRadius,
         marginVertical: MARGIN.xxsMargin,
+
+        // borderWidth: 1,
+        // borderColor: COLORS.orange,
+        // paddingHorizontal: PADDING.xsPadding,
+        // fontSize: FONTS.h,
         flexDirection: "row"
 
     },
     SearchTextInput: {
+        // backgroundColor: COLORS.white,
         width: width / 1.4,
-        height: height / 17,
+        // height: height / 17,
         alignItems: "center",
         alignSelf: "center",
-        color: COLORS.black,
+        // backgroundColor:COLORS.black,
+        color: COLORS.black, 
         justifyContent: "flex-end",
         fontFamily: "Generator Black",
+        // borderRadius: RADIUS.lgRadius,
+        // borderWidth: 2,
+        // borderColor: COLORS.orange,
         paddingHorizontal: PADDING.smPadding,
         fontSize: FONTS.h4
+        // marginVertical: MARGIN.xsMargin
+
     },
     category_View: {
         height: height / 10,

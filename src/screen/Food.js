@@ -26,7 +26,7 @@ export default function Food() {
         [
             {
                 Image: require("../img/pizza.png"),
-                name: "باستا وايت صوص",
+                name: "مخلبل وايت صوص",
                 Elta7der: '15 min',
                 Eltahy: "15 min",
                 Elsouba: "25",
@@ -283,9 +283,17 @@ export default function Food() {
                                 <Text style={styles.textHeaderstarred}>
                                     الوصفات
                                 </Text>
+                                <TouchableOpacity
+                                onPress={() => {
+                                    navigation.navigate("All", {
+                                        name: Common
+                                    })
+                                }
+                                }>
                                 <Text style={styles.textHeaderstarred2}>
                                     رؤية الكل
                                 </Text>
+                                </TouchableOpacity>
                             </View>
                             <View style={{ flexDirection: "row",width:width, }}>
                                 <ScrollView horizontal={true}>
@@ -434,7 +442,7 @@ const styles = StyleSheet.create({
     SearchTextView: {
         backgroundColor: COLORS.white,
         width: width / 1.1,
-        height: height / 15,
+        // height: height / 15,
         alignItems: "center",
         justifyContent: "center",
         borderRadius: RADIUS.smRadius,
@@ -450,11 +458,11 @@ const styles = StyleSheet.create({
     SearchTextInput: {
         // backgroundColor: COLORS.white,
         width: width / 1.4,
-        height: height / 17,
+        // height: height / 17,
         alignItems: "center",
         alignSelf: "center",
-        // backgroundColor:COLORS.background,
-        color: COLORS.black,
+        // backgroundColor:COLORS.black,
+        color: COLORS.black, 
         justifyContent: "flex-end",
         fontFamily: "Generator Black",
         // borderRadius: RADIUS.lgRadius,

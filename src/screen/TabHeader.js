@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions, ScrollView } from "react-native";
 const { width, height } = Dimensions.get('window');
 import Photo_page from './Photo_page';
-
+import All from './All';
 import Food from './Food';
 import FoodCommon from './FoodCommon';
 import { COLORS, PADDING, MARGIN, RADIUS, FONTS, ICONSSIZE } from '../constants/Constants'
@@ -112,8 +112,8 @@ export default function Stackscreen() {
         >
             <Stack.Screen name="Photo_page" component={Photo_page} />
             <Stack.Screen name="TabHeader" component={TabHeader} />
-            <Stack.Screen name="FoodCommon" component={FoodCommon} />
-
+            <Stack.Screen name="All" component={All} />
+ 
         </Stack.Navigator>
         //  </NavigationContainer>
     );

@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet, Dimensions, ScrollView } from
 const { width, height } = Dimensions.get('window');
 import Photo_page from './Photo_page';
 import Favourite from './Favourite';
+import All from './All';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
  const Stack = createNativeStackNavigator();
 export default function StackFav() {
@@ -15,7 +16,7 @@ export default function StackFav() {
         >
             <Stack.Screen name="Photo_page" component={Photo_page} />
             <Stack.Screen name="Favourite" component={Favourite} />
-            {/* <Stack.Screen name="CommonDessert" component={CommonDessert} /> */}
+            <Stack.Screen name="All" component={All} />
 
         </Stack.Navigator>
         //  </NavigationContainer>

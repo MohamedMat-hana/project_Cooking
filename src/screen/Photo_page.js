@@ -86,7 +86,7 @@ export default class Photo_page extends React.Component {
             }
         }
     }
-     IconFav() {
+    IconFav() {
         let last = this.state.IconFavorite
         last = !last
         if (last == true) {
@@ -119,14 +119,17 @@ export default class Photo_page extends React.Component {
                                 <TouchableOpacity
                                     style={{
                                         height: height / 10,
-                                        justifyContent: "flex-end"
+                                        justifyContent: "flex-end",
+                                        marginRight:MARGIN.xxsMargin
                                     }}
                                     onPress={() => {
                                         this.props.navigation.goBack()
                                     }}>
-                                    <Ionicons name='arrow-back-outline' size={ICONSSIZE.xxxlIcon} color={COLORS.pramary} />
-                                </TouchableOpacity>
+                                    <View style={{ backgroundColor:COLORS.pramary50, borderRadius: RADIUS.lgRadius, justifyContent: "center" }} >
 
+                                        <Ionicons name='arrow-back-outline' size={ICONSSIZE.xxxlIcon} color={COLORS.orange} />
+                                    </View>
+                                </TouchableOpacity>
                             </ImageBackground>
                         </View>
                         <View style={styles.ScView}>
@@ -176,10 +179,10 @@ export default class Photo_page extends React.Component {
                                             {this.state.item.Elta7der}
                                         </Text>
                                         <Text style={[styles.TextRow, { textDecorationLine: "none" }]} >
-                                        {this.state.item.Eltahy}
+                                            {this.state.item.Eltahy}
                                         </Text>
                                         <Text style={[styles.TextRow, { textDecorationLine: "none" }]} >
-                                        {this.state.item.Elsouba} %
+                                            {this.state.item.Elsouba} %
                                         </Text>
 
                                     </View>
@@ -213,8 +216,8 @@ export default class Photo_page extends React.Component {
                                         {/* {this.state.item.map((item, index) => ( */}
 
                                         <View style={styles.onetwo}>
-                                            <Text style={styles.Num} >55</Text>
-                                            <Ionicons name='ellipse' size={10} color={COLORS.orange} />
+                                            {/* <Text style={styles.Num} >55</Text> */}
+                                            {/* <Ionicons name='ellipse' size={10} color={COLORS.orange} /> */}
 
                                             <Text style={[styles.TextRow, {
                                                 width: width / 1.49,
@@ -234,7 +237,7 @@ export default class Photo_page extends React.Component {
                         </View>
 
                     </ScrollView>
-    
+
 
                 </View>
             </>
@@ -371,4 +374,4 @@ const styles = StyleSheet.create({
         fontFamily: 'Vazirmatn-Black'
 
     }
- });
+});
