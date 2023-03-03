@@ -58,7 +58,7 @@ export default class Intro extends React.Component {
             <View
                 style={{
                     flex: 1,
-                    backgroundColor: COLORS.black,
+                    backgroundColor: "#040205",
                 }}>
                 <SafeAreaView style={styles.slide}>
                     <Image source={item.image} style={styles.image} />
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
     botton_styleskip: {
         // padding: 1,
         margin: 5,
-        // backgroundColor: COLORS.orange,
+        backgroundColor: COLORS.black,
         borderRadius: RADIUS.smRadius,
         width: width / 1.1,
         height: height / 18,
@@ -185,7 +185,7 @@ const styles = StyleSheet.create({
     botton_styleback: {
         // padding: 1,
         margin: 5,
-        // backgroundColor: COLORS.orange,
+        backgroundColor: COLORS.black,
         borderRadius: RADIUS.smRadius,
         width: width / 1.1,
         height: height / 18,
