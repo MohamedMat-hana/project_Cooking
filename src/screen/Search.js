@@ -161,6 +161,7 @@ export default class Search extends React.Component {
                         <TextInput
                             underlineStyle={{ width: 0 }}
                             style={styles.searchInput}
+                            
 
                             placeholder={"البحث عن الاكلات بالمكونات...                                          "}
                             placeholderTextColor={COLORS.grayFont}

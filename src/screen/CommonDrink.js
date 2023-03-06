@@ -20,6 +20,8 @@ import * as Animatable from 'react-native-animatable';
 import Photo_page from '../screen/Photo_page'
 import { useNavigation, NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import LottieView from 'lottie-react-native';
+
 
 export default function CommonDessert() {
     const [Common, setCommon] = useState(
@@ -107,18 +109,34 @@ export default function CommonDessert() {
     const [IconSearch, setIconSearch] = useState(true)
     const [search, setsearch] = useState("")
 
+    const ref = React.useRef(null)
+    const [animationDisplay, setanimationDisplay] = useState(false)
 
     const makesearch = (searchText) => {
         let list = Common
+        let count = 0
+
         for (let i = 0; i < list.length; i++) {
             if (((list[i].name).toUpperCase()).includes(searchText.toUpperCase())) {
                 list[i].view = true
             }
             else {
                 list[i].view = false
+                count++
+
             }
         }
+        if (count == list.length) {
+            setanimationDisplay(true)
+        }
+
+        // 
+        if (count != list.length) {
+            setanimationDisplay(false)
+
+        }
         setCommon(list)
+        count = 0
     }
     const navigation = useNavigation();
 
@@ -187,8 +205,22 @@ export default function CommonDessert() {
                             </View>
                             <View style={{ flexDirection: "row",width:width, }}>
                                 <ScrollView horizontal={true}>
-
-                                    {Common.map((item, index) => (
+{animationDisplay?(
+    <>
+                                        <View style={{ alignItems: "center", justifyContent: "center", alignSelf: "center", width: width, height: height / 1.8 }}>
+                                            <LottieView
+                                                ref={this.ref}
+                                                source={require("../lottie/search_empty.json")}
+                                                loop={true}
+                                                autoPlay={true}
+                                                speed={1.5}
+                                            // style={{ alignSelf: "center" }}
+                                            />
+                                        </View>
+                                    </>
+):(
+<>
+{Common.map((item, index) => (
                                         item.view ? (
 
                                             <View style={styles.Box}>
@@ -231,6 +263,9 @@ export default function CommonDessert() {
                                         ) : (null)
 
                                     ))}
+</>
+)}
+                                   
                                 </ScrollView>
                             </View>
                         </View>
@@ -243,6 +278,8 @@ export default function CommonDessert() {
                                     رؤية الكل
                                 </Text> */}
                             </View>
+
+                            
                             {Common.map((item, index) => (
                                 <View style={styles.Boxstarred}>
                                     <View style={styles.ViewImage}>

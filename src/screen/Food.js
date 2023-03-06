@@ -20,6 +20,8 @@ import * as Animatable from 'react-native-animatable';
 import Photo_page from '../screen/Photo_page'
 import { useNavigation, NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import LottieView from 'lottie-react-native';
+
 
 export default function Food() {
     const [Common, setCommon] = useState(
@@ -193,17 +195,35 @@ export default function Food() {
     //         }
     //     }
     // }
+
+    const ref = React.useRef(null)
+    const [animationDisplay, setanimationDisplay] = useState(false)
+
     const makesearch = (searchText) => {
         let list = Common
+        let count = 0
         for (let i = 0; i < list.length; i++) {
             if (((list[i].name).toUpperCase()).includes(searchText.toUpperCase())) {
                 list[i].view = true
             }
             else {
                 list[i].view = false
+                count++
             }
+
+        }
+        if (count == list.length) {
+            setanimationDisplay(true)
+        }
+
+        // 
+        if (count != list.length) {
+            setanimationDisplay(false)
+
         }
         setCommon(list)
+        count = 0
+
     }
     // Delete() {
     //     let list = this.state.Common
@@ -297,51 +317,69 @@ export default function Food() {
                             </View>
                             <View style={{ flexDirection: "row",width:width, }}>
                                 <ScrollView horizontal={true}>
-                                    {Common.map((item, index) => (
-                                        item.view ? (
-                                            // <View style={styles.BoxView}>
-
-                                            <View style={styles.Box}>
-                                                <Image source={item.Image} style={styles.ImageTabs2}
-                                                    resizeMode={"center"} />
-                                                <View style={styles.TextViewBox}>
-                                                    <Text style={styles.TextBox}>
-                                                        {item.name}
-                                                    </Text>
-                                                </View>
-                                                <View style={styles.TextTimeBox}>
-                                                    <Text style={styles.TimeBox}>
-                                                        {item.time}
-                                                    </Text>
-                                                    <Ionicons name='md-time' style={{ alignSelf: "center" }} size={ICONSSIZE.smIcon} color={COLORS.ButtonWhite} />
-                                                </View>
-                                                <View style={styles.OptionBox}>
-                                                    <TouchableOpacity
-                                                        onPress={() => {
-                                                            navigation.navigate("Photo_page", {
-                                                                name: item
-                                                            })
-                                                        }
-                                                        }
-                                                        style={styles.OptionButtonBox}>
-                                                        <Text style={styles.OptionTimeBox}>
-                                                            الطريقة
-                                                        </Text>
-                                                    </TouchableOpacity>
-                                                    <TouchableOpacity style={styles.OptionButtonBox}>
-                                                        <Text style={styles.OptionTimeBox}>
-                                                            الفيديو
-                                                        </Text>
-                                                    </TouchableOpacity>
-
-                                                </View>
-
-
+                                    {animationDisplay ? (
+                                        <>
+                                            <View style={{ alignItems: "center", justifyContent: "center", alignSelf: "center", width: width, height: height / 1.8 }}>
+                                                <LottieView
+                                                    ref={this.ref}
+                                                    source={require("../lottie/search_empty.json")}
+                                                    loop={true}
+                                                    autoPlay={true}
+                                                    speed={1.5}
+                                                // style={{ alignSelf: "center" }}
+                                                />
                                             </View>
-                                            // </View>
-                                        ) : (null)
+                                        </>
+                                    ) : (
+                                        <>
+                                            {Common.map((item, index) => (
+                                                item.view ? (
+                                                    // <View style={styles.BoxView}>
 
-                                    ))}
+                                                    <View style={styles.Box}>
+                                                        <Image source={item.Image} style={styles.ImageTabs2}
+                                                            resizeMode={"center"} />
+                                                        <View style={styles.TextViewBox}>
+                                                            <Text style={styles.TextBox}>
+                                                                {item.name}
+                                                            </Text>
+                                                        </View>
+                                                        <View style={styles.TextTimeBox}>
+                                                            <Text style={styles.TimeBox}>
+                                                                {item.time}
+                                                            </Text>
+                                                            <Ionicons name='md-time' style={{ alignSelf: "center" }} size={ICONSSIZE.smIcon} color={COLORS.ButtonWhite} />
+                                                        </View>
+                                                        <View style={styles.OptionBox}>
+                                                            <TouchableOpacity
+                                                                onPress={() => {
+                                                                    navigation.navigate("Photo_page", {
+                                                                        name: item
+                                                                    })
+                                                                }
+                                                                }
+                                                                style={styles.OptionButtonBox}>
+                                                                <Text style={styles.OptionTimeBox}>
+                                                                    الطريقة
+                                                                </Text>
+                                                            </TouchableOpacity>
+                                                            <TouchableOpacity style={styles.OptionButtonBox}>
+                                                                <Text style={styles.OptionTimeBox}>
+                                                                    الفيديو
+                                                                </Text>
+                                                            </TouchableOpacity>
+
+                                                        </View>
+
+
+                                                    </View>
+                                                    // </View>
+                                                ) : (null)
+
+                                            ))}
+                                        </>
+                                    )}
+
                                 </ScrollView>
                             </View>
 
@@ -503,7 +541,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
-        alignSelf: "center"
+        alignSelf: "center",
     },
     textHeaderstarred: {
         fontSize: FONTS.h1,
