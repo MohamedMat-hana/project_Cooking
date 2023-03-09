@@ -8,7 +8,7 @@ import {
     TextInput,
     TouchableOpacity,
     FlatList,
-    ScrollView,
+    ScrollView,AsyncStorage
 } from 'react-native';
 import { COLORS, PADDING, MARGIN, RADIUS, FONTS, ICONSSIZE } from '../constants/Constants'
 import Ionicons from 'react-native-vector-icons/Ionicons'
@@ -23,70 +23,84 @@ export default class Favorite extends React.Component {
             this.ref = React.createRef(null)
 
             this.state = {
-                favorite_meal: [
-                    {
-                        Image: require("../img/pizza.png"),
-                        name: "باستا وايت صوص",
-                        components: "مكرونه , دقيق ,حليب , ملح , فلفل اسود مكرونه , دقيق ,حليب , ملح , فلفل اسود",
-                        view: true,
-                        like: true
-                    },
-                    {
-                        Image: require("../img/pizza.png"),
-                        name: "pizza ranch",
-                        components: "مكرونه , دقيق ,حليب , ملح , فلفل اسود مكرونه , دقيق ,حليب , ملح , فلفل اسود",
+                favorite_meal: [],
+                // favorite_meal: [
+                //     {
+                //         Image: require("../img/pizza.png"),
+                //         name: "باستا وايت صوص",
+                //         components: "مكرونه , دقيق ,حليب , ملح , فلفل اسود مكرونه , دقيق ,حليب , ملح , فلفل اسود",
+                //         view: true,
+                //         like: true
+                //     },
+                //     {
+                //         Image: require("../img/pizza.png"),
+                //         name: "pizza ranch",
+                //         components: "مكرونه , دقيق ,حليب , ملح , فلفل اسود مكرونه , دقيق ,حليب , ملح , فلفل اسود",
 
-                        view: true,
-                        like: true
+                //         view: true,
+                //         like: true
 
-                    },
-                    {
-                        Image: require("../img/food.jpg"),
-                        name: "باستا ريد صوص",
-                        components: "مكرونه , دقيق ,حليب , ملح , فلفل اسود مكرونه , دقيق ,حليب , ملح , فلفل اسود",
-                        view: true,
-                        like: true
+                //     },
+                //     {
+                //         Image: require("../img/food.jpg"),
+                //         name: "باستا ريد صوص",
+                //         components: "مكرونه , دقيق ,حليب , ملح , فلفل اسود مكرونه , دقيق ,حليب , ملح , فلفل اسود",
+                //         view: true,
+                //         like: true
 
-                    },
-                    {
-                        Image: require("../img/food2.jpg"),
-                        name: "ايس كريم",
-                        components: "مكرونه , دقيق ,حليب , ملح , فلفل اسود مكرونه , دقيق ,حليب , ملح , فلفل اسود",
-                        view: true,
-                        like: true
+                //     },
+                //     {
+                //         Image: require("../img/food2.jpg"),
+                //         name: "ايس كريم",
+                //         components: "مكرونه , دقيق ,حليب , ملح , فلفل اسود مكرونه , دقيق ,حليب , ملح , فلفل اسود",
+                //         view: true,
+                //         like: true
 
-                    },
-                    {
-                        Image: require("../img/food3.jpg"),
-                        name: "ايس كريم",
-                        components: "مكرونه , دقيق ,حليب , ملح , فلفل اسود مكرونه , دقيق ,حليب , ملح , فلفل اسود",
-                        view: true,
-                        like: true
+                //     },
+                //     {
+                //         Image: require("../img/food3.jpg"),
+                //         name: "ايس كريم",
+                //         components: "مكرونه , دقيق ,حليب , ملح , فلفل اسود مكرونه , دقيق ,حليب , ملح , فلفل اسود",
+                //         view: true,
+                //         like: true
 
-                    },
-                    {
-                        Image: require("../img/food2.jpg"),
-                        name: "ايس كريم",
-                        components: "مكرونه , دقيق ,حليب , ملح , فلفل اسود مكرونه , دقيق ,حليب , ملح , فلفل اسود",
-                        view: true,
-                        like: true
+                //     },
+                //     {
+                //         Image: require("../img/food2.jpg"),
+                //         name: "ايس كريم",
+                //         components: "مكرونه , دقيق ,حليب , ملح , فلفل اسود مكرونه , دقيق ,حليب , ملح , فلفل اسود",
+                //         view: true,
+                //         like: true
 
-                    },
-                    {
-                        Image: require("../img/food3.jpg"),
-                        name: "ايس كريم",
-                        components: "مكرونه , دقيق ,حليب , ملح , فلفل اسود مكرونه , دقيق ,حليب , ملح , فلفل اسود",
-                        view: true,
-                        like: true
+                //     },
+                //     {
+                //         Image: require("../img/food3.jpg"),
+                //         name: "ايس كريم",
+                //         components: "مكرونه , دقيق ,حليب , ملح , فلفل اسود مكرونه , دقيق ,حليب , ملح , فلفل اسود",
+                //         view: true,
+                //         like: true
 
-                    },
-                ],
+                //     },
+                // ],
                 animation_display: false,
                 SearchKey: "",
             }
         }
     }
 
+    componentDidMount() {
+        this.getdata()
+    }
+    async getdata() {
+        let fav = await AsyncStorage.getItem("fav")
+        fav = JSON.parse(fav)
+        if (fav == null) {
+            fav = []
+        } else {
+            this.setState({ favorite_meal: fav })
+        }
+        
+    }
 
     search(text) {
         let list = this.state.favorite_meal
@@ -181,13 +195,13 @@ export default class Favorite extends React.Component {
                                     {this.state.favorite_meal.map((item, index) =>
 
                                         item.view ? (
-                                            <TouchableOpacity 
-                                            onPress={() => {
-                                                this.props.navigation.navigate("Photo_page", {
-                                                    name: item
-                                                })
-                                            }}
-                                            style={styles.meal_view}>
+                                            <TouchableOpacity
+                                                onPress={() => {
+                                                    this.props.navigation.navigate("Photo_page", {
+                                                        name: item
+                                                    })
+                                                }}
+                                                style={styles.meal_view}>
                                                 <Image
                                                     source={item.Image}
                                                     style={styles.meal_IMAGE}

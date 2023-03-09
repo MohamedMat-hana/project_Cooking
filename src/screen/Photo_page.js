@@ -10,6 +10,7 @@ import {
     Dimensions,
     TextInput,
     ScrollView,
+    AsyncStorage
 } from 'react-native';
 import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 import { COLORS, PADDING, MARGIN, RADIUS, FONTS, ICONSSIZE } from '../constants/Constants'
@@ -99,7 +100,35 @@ export default class Photo_page extends React.Component {
             // })
 
         }
+        this.savetofav()
         this.setState({ IconFavorite: last })
+    }
+    async savetofav() {
+        let fav = await AsyncStorage.getItem("fav")
+        fav = JSON.parse(fav)
+        let arrfav = []
+        let item = this.state.item
+        if (fav == null){
+            arrfav.push(this.state.item)
+        }else{
+
+            arrfav = fav
+            
+            for (let i = 0; i <= arrfav.length; i++) {
+
+                if (item.name != arrfav[i].name) {
+                      
+                      
+                        // arrfav.push(this.state.item)
+                    console.log(item)
+                }
+    
+            }
+
+        }
+       
+        await AsyncStorage.setItem("fav", JSON.stringify(arrfav))
+        console.log(fav)
     }
     componentDidMount() {
         let data = this.props.route.params.name
@@ -120,12 +149,12 @@ export default class Photo_page extends React.Component {
                                     style={{
                                         height: height / 10,
                                         justifyContent: "flex-end",
-                                        marginRight:MARGIN.xxsMargin
+                                        marginRight: MARGIN.xxsMargin
                                     }}
                                     onPress={() => {
                                         this.props.navigation.goBack()
                                     }}>
-                                    <View style={{ backgroundColor:COLORS.pramary50, borderRadius: RADIUS.lgRadius, justifyContent: "center" }} >
+                                    <View style={{ backgroundColor: COLORS.pramary50, borderRadius: RADIUS.lgRadius, justifyContent: "center" }} >
 
                                         <Ionicons name='arrow-back-outline' size={ICONSSIZE.xxxlIcon} color={COLORS.orange} />
                                     </View>
