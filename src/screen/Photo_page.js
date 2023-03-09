@@ -26,110 +26,110 @@ export default class Photo_page extends React.Component {
         super(props); {
             this.state = {
                 IconFavorite: true,
-                Mokawnat: [
-                    {
-                        num: 1,
-                        Step: "نص كيلو دقيق"
-                    },
-                    {
-                        num: 2,
-                        Step: "نص كيلو بصل"
-                    },
-                    {
-                        num: 3,
-                        Step: "توم"
-                    },
-                    {
-                        num: 4,
-                        Step: " ملح"
-                    },
-                    {
-                        num: 5,
-                        Step: "فلفل"
-                    },
-                    {
-                        num: 5,
-                        Step: "خيار"
-                    },
+                // Mokawnat: [
+                //     {
+                //         num: 1,
+                //         Step: "نص كيلو دقيق"
+                //     },
+                //     {
+                //         num: 2,
+                //         Step: "نص كيلو بصل"
+                //     },
+                //     {
+                //         num: 3,
+                //         Step: "توم"
+                //     },
+                //     {
+                //         num: 4,
+                //         Step: " ملح"
+                //     },
+                //     {
+                //         num: 5,
+                //         Step: "فلفل"
+                //     },
+                //     {
+                //         num: 5,
+                //         Step: "خيار"
+                //     },
 
 
-                ],
+                // ],
 
-                Arr_Step: [
-                    {
-                        num: 1,
-                        Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معلقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه ملح ملح"
-                    },
-                    {
-                        num: 2,
-                        Step: "اضف الماء و معلقه ملح"
-                    },
-                    {
-                        num: 3,
-                        Step: "اضف الماء و معلقه ملح"
-                    },
-                    {
-                        num: 4,
-                        Step: "اضف الماء و معلقه ملح"
-                    },
-                    {
-                        num: 5,
-                        Step: "اضف الماء و معلقه ملح"
-                    },
-                    {
-                        num: 5,
-                        Step: "اضف الماء و معلقه ملح"
-                    },
+                // Arr_Step: [
+                //     {
+                //         num: 1,
+                //         Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معلقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه ملح ملح"
+                //     },
+                //     {
+                //         num: 2,
+                //         Step: "اضف الماء و معلقه ملح"
+                //     },
+                //     {
+                //         num: 3,
+                //         Step: "اضف الماء و معلقه ملح"
+                //     },
+                //     {
+                //         num: 4,
+                //         Step: "اضف الماء و معلقه ملح"
+                //     },
+                //     {
+                //         num: 5,
+                //         Step: "اضف الماء و معلقه ملح"
+                //     },
+                //     {
+                //         num: 5,
+                //         Step: "اضف الماء و معلقه ملح"
+                //     },
 
 
-                ],
+                // ],
                 item: {},
             }
         }
     }
-    IconFav() {
-        let last = this.state.IconFavorite
-        last = !last
-        if (last == true) {
-            console.log("true")
-        } else {
-            console.log("false")
-            // this.props.navigation.navigate("Favourite", {
-            //     name: this.state.item
+    // IconFav() {
+    //     let last = this.state.IconFavorite
+    //     last = !last
+    //     if (last == true) {
+    //         console.log("true")
+    //     } else {
+    //         console.log("false")
+    //         // this.props.navigation.navigate("Favourite", {
+    //         //     name: this.state.item
 
-            // })
+    //         // })
 
-        }
-        this.savetofav()
-        this.setState({ IconFavorite: last })
-    }
-    async savetofav() {
-        let fav = await AsyncStorage.getItem("fav")
-        fav = JSON.parse(fav)
-        let arrfav = []
-        let item = this.state.item
-        if (fav == null){
-            arrfav.push(this.state.item)
-        }else{
+    //     }
+    //     // this.savetofav()
+    //     this.setState({ IconFavorite: last })
+    // }
+    // async savetofav() {
+    //     let fav = await AsyncStorage.getItem("fav")
+    //     fav = JSON.parse(fav)
+    //     let arrfav = []
+    //     let item = this.state.item
+    //     if (fav == null){
+    //         arrfav.push(this.state.item)
+    //     }else{
 
-            arrfav = fav
+    //         arrfav = fav
             
-            for (let i = 0; i <= arrfav.length; i++) {
+    //         for (let i = 0; i <= arrfav.length; i++) {
 
-                if (item.name != arrfav[i].name) {
+    //             if (item.name != arrfav[i].name) {
                       
                       
-                        // arrfav.push(this.state.item)
-                    console.log(item)
-                }
+    //                     // arrfav.push(this.state.item)
+    //                 console.log(item)
+    //             }
     
-            }
+    //         }
 
-        }
+    //     }
        
-        await AsyncStorage.setItem("fav", JSON.stringify(arrfav))
-        console.log(fav)
-    }
+    //     await AsyncStorage.setItem("fav", JSON.stringify(arrfav))
+    //     console.log(fav)
+    // }
     componentDidMount() {
         let data = this.props.route.params.name
         // alert(JSON.stringify(data))
@@ -173,7 +173,7 @@ export default class Photo_page extends React.Component {
                                     marginTop: -MARGIN.smMargin,
                                     alignSelf: "center",
                                 }}>
-                                    <TouchableOpacity
+                                    <View
                                         style={{
                                             width: 50,
                                             height: 50,
@@ -181,14 +181,14 @@ export default class Photo_page extends React.Component {
                                             borderRadius: RADIUS.lgRadius,
                                             alignItems: "center",
                                             justifyContent: "center",
-                                            backgroundColor: COLORS.pramary
+                                            // backgroundColor: COLORS.pramary
                                         }} onPress={() => {
                                             this.IconFav()
                                             // this.props.navigation.navigate('Common')
                                         }}>
-                                        <Ionicons name={this.state.IconFavorite ? 'heart-outline' : "heart"}
-                                            size={40} color={COLORS.orange} />
-                                    </TouchableOpacity>
+                                        {/* <Ionicons name={this.state.IconFavorite ? 'heart-outline' : "heart"}
+                                            size={40} color={COLORS.orange} /> */}
+                                    </View>
                                 </View>
                                 <View style={styles.FirstDetels}>
                                     <View style={styles.Detels} >
@@ -264,7 +264,9 @@ export default class Photo_page extends React.Component {
                                 </View>
                             </View>
                         </View>
+<View style={{height:50}}>
 
+</View>
                     </ScrollView>
 
 

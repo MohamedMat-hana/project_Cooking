@@ -81,10 +81,10 @@ export default HomeStack = () => {
         name={Index.Drink}
         component={Drink}
       />
-      <Tab.Screen
+      {/* <Tab.Screen
         name={Index.Favourite}
         component={StackFav}
-      />
+      /> */}
 
 
 
