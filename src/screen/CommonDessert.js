@@ -20,6 +20,8 @@ import * as Animatable from 'react-native-animatable';
 import Photo_page from '../screen/Photo_page'
 import { useNavigation, NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import LottieView from 'lottie-react-native';
+
 
 export default function CommonDessert() {
     const [Common, setCommon] = useState(
@@ -107,18 +109,34 @@ export default function CommonDessert() {
     const [IconSearch, setIconSearch] = useState(true)
     const [search, setsearch] = useState("")
 
+    const ref = React.useRef(null)
+    const [animationDisplay, setanimationDisplay] = useState(false)
 
     const makesearch = (searchText) => {
         let list = Common
+        let count = 0
+
         for (let i = 0; i < list.length; i++) {
             if (((list[i].name).toUpperCase()).includes(searchText.toUpperCase())) {
                 list[i].view = true
             }
             else {
                 list[i].view = false
+                count++
+
             }
         }
+        if (count == list.length) {
+            setanimationDisplay(true)
+        }
+
+        // 
+        if (count != list.length) {
+            setanimationDisplay(false)
+
+        }
         setCommon(list)
+        count = 0
     }
     const navigation = useNavigation();
 
@@ -169,69 +187,87 @@ export default function CommonDessert() {
                         </View>
 
                         <View style={styles.BoxView}>
-                        <View style={styles.Headerstarred}>
+                            <View style={styles.Headerstarred}>
                                 <Text style={styles.textHeaderstarred}>
                                     الوصفات
                                 </Text>
                                 <TouchableOpacity
-                                onPress={() => {
-                                    navigation.navigate("All", {
-                                        name: Common
-                                    })
-                                }
-                                }>
-                                <Text style={styles.textHeaderstarred2}>
-                                    رؤية الكل
-                                </Text>
+                                    onPress={() => {
+                                        navigation.navigate("All", {
+                                            name: Common
+                                        })
+                                    }
+                                    }>
+                                    <Text style={styles.textHeaderstarred2}>
+                                        رؤية الكل
+                                    </Text>
                                 </TouchableOpacity>
                             </View>
-                            <View style={{ flexDirection: "row",width:width, }}>
+                            <View style={{ flexDirection: "row", width: width, }}>
                                 <ScrollView horizontal={true}>
+                                    {animationDisplay ? (
+                                        <>
+                                            <View style={{ alignItems: "center", justifyContent: "center", alignSelf: "center", width: width, height: height / 1.8 }}>
+                                                <LottieView
+                                                    ref={this.ref}
+                                                    source={require("../lottie/search_empty.json")}
+                                                    loop={true}
+                                                    autoPlay={true}
+                                                    speed={1.5}
+                                                // style={{ alignSelf: "center" }}
+                                                />
+                                            </View>
+                                        </>
+                                    ) : (
+                                        <>
+                                            {Common.map((item, index) => (
+                                                item.view ? (
 
-                            {Common.map((item, index) => (
-                                item.view ? (
+                                                    <View style={styles.Box}>
+                                                        <Image source={item.Image} style={styles.ImageTabs2}
+                                                            resizeMode={"center"} />
+                                                        <View style={styles.TextViewBox}>
+                                                            <Text style={styles.TextBox}>
+                                                                {item.name}
+                                                            </Text>
+                                                        </View>
+                                                        <View style={styles.TextTimeBox}>
+                                                            <Text style={styles.TimeBox}>
+                                                                {item.time}
+                                                            </Text>
+                                                            <Ionicons name='md-time' style={{ alignSelf: "center" }} size={ICONSSIZE.smIcon} color={COLORS.ButtonWhite} />
+                                                        </View>
+                                                        <View style={styles.OptionBox}>
+                                                            <TouchableOpacity
+                                                                onPress={() => {
+                                                                    navigation.navigate("Photo_page", {
+                                                                        name: item
+                                                                    })
+                                                                }
+                                                                }
+                                                                style={styles.OptionButtonBox}>
+                                                                <Text style={styles.OptionTimeBox}>
+                                                                    الطريقة
+                                                                </Text>
+                                                            </TouchableOpacity>
+                                                            <TouchableOpacity style={styles.OptionButtonBox}>
+                                                                <Text style={styles.OptionTimeBox}>
+                                                                    الفيديو
+                                                                </Text>
+                                                            </TouchableOpacity>
 
-                                    <View style={styles.Box}>
-                                        <Image source={item.Image} style={styles.ImageTabs2}
-                                            resizeMode={"center"} />
-                                        <View style={styles.TextViewBox}>
-                                            <Text style={styles.TextBox}>
-                                                {item.name}
-                                            </Text>
-                                        </View>
-                                        <View style={styles.TextTimeBox}>
-                                            <Text style={styles.TimeBox}>
-                                                {item.time}
-                                            </Text>
-                                            <Ionicons name='md-time' style={{ alignSelf: "center" }} size={ICONSSIZE.smIcon} color={COLORS.ButtonWhite} />
-                                        </View>
-                                        <View style={styles.OptionBox}>
-                                            <TouchableOpacity
-                                                onPress={() => {
-                                                    navigation.navigate("Photo_page", {
-                                                        name: item
-                                                    })
-                                                }
-                                                }
-                                                style={styles.OptionButtonBox}>
-                                                <Text style={styles.OptionTimeBox}>
-                                                    الطريقة
-                                                </Text>
-                                            </TouchableOpacity>
-                                            <TouchableOpacity style={styles.OptionButtonBox}>
-                                                <Text style={styles.OptionTimeBox}>
-                                                    الفيديو
-                                                </Text>
-                                            </TouchableOpacity>
-
-                                        </View>
+                                                        </View>
 
 
-                                    </View>
-                                ) : (null)
+                                                    </View>
+                                                ) : (null)
 
-                            ))}
-                            </ScrollView>
+                                            ))}
+                                        </>
+                                    )
+                                    }
+
+                                </ScrollView>
                             </View>
                         </View>
                         <View style={styles.starred}>
@@ -346,7 +382,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         alignSelf: "center",
         // backgroundColor:COLORS.black,
-        color: COLORS.black, 
+        color: COLORS.black,
         justifyContent: "flex-end",
         fontFamily: "Generator Black",
         // borderRadius: RADIUS.lgRadius,
@@ -374,7 +410,7 @@ const styles = StyleSheet.create({
         margin: MARGIN.xsMargin,
         padding: PADDING.lgPadding,
         borderRadius: RADIUS.xxsRadius,
-        backgroundColor: COLORS.pramary50 
+        backgroundColor: COLORS.pramary50
     },
     starred: {
         width: width,

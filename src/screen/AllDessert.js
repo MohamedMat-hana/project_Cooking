@@ -15,6 +15,7 @@ import { COLORS, PADDING, MARGIN, RADIUS, FONTS, ICONSSIZE } from '../constants/
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import * as Animatable from 'react-native-animatable';
 const { width, height } = Dimensions.get('window');
+import LottieView from 'lottie-react-native';
 
 
 export default function AllDessert() {
@@ -25,49 +26,65 @@ export default function AllDessert() {
                 Image: require("../img/dessert3.jpg"),
                 name: "ice cream",
                 view: true,
-                time: "30 min"
+                time: "30 min",
+                categortType: 1
+
             },
             {
                 Image: require("../img/dessert4.jpg"),
                 name: "cemo",
                 view: true,
-                time: "30 min"
+                time: "30 min",
+                categortType: 1
+
             },
             {
                 Image: require("../img/dessert2.jpg"),
                 name: "moh",
                 view: true,
-                time: "30 min"
+                time: "30 min",
+                categortType: 2
+
             },
             {
                 Image: require("../img/dessert.jpg"),
                 name: "ايس كريم",
                 view: true,
-                time: "30 min"
+                time: "30 min",
+                categortType: 2
+
             },
             {
                 Image: require("../img/dessert5.jpg"),
                 name: "ايس كريم",
                 view: true,
-                time: "30 min"
+                time: "30 min",
+                categortType: 2
+
             },
             {
                 Image: require("../img/dessert3.jpg"),
                 name: "ايس كريم",
                 view: true,
-                time: "30 min"
+                time: "30 min",
+                categortType: 3
+
             },
             {
                 Image: require("../img/dessert3.jpg"),
                 name: "ايس كريم",
                 view: true,
-                time: "30 min"
+                time: "30 min",
+                categortType: 3
+
             },
             {
                 Image: require("../img/dessert3.jpg"),
                 name: "Cop",
                 view: true,
-                time: "30 min"
+                time: "30 min",
+                categortType: 4
+
             },
 
         ])
@@ -75,6 +92,7 @@ export default function AllDessert() {
     const [Category, SetCategory] = useState(
         [
             {
+                id: 1,
                 name: "Burger",
                 img: require("../img/burgerr.png"),
                 choose: false,
@@ -83,6 +101,7 @@ export default function AllDessert() {
             }
             ,
             {
+                id: 2,
                 name: "Pizza",
                 img: require("../img/pizzaa.png"),
                 choose: false,
@@ -91,6 +110,7 @@ export default function AllDessert() {
             }
             ,
             {
+                id: 3,
                 name: "Burger",
                 img: require("../img/burgerr.png"),
                 choose: false,
@@ -98,6 +118,7 @@ export default function AllDessert() {
             }
             ,
             {
+                id: 4,
                 name: "Pizza",
                 img: require("../img/pizzaa.png"),
                 choose: false,
@@ -105,6 +126,7 @@ export default function AllDessert() {
             }
             ,
             {
+                id: 5,
                 name: "Burger",
                 img: require("../img/burgerr.png"),
                 choose: false,
@@ -112,6 +134,7 @@ export default function AllDessert() {
             }
             ,
             {
+                id: 6,
                 name: "Pizza",
                 img: require("../img/pizzaa.png"),
                 choose: false,
@@ -126,46 +149,87 @@ export default function AllDessert() {
     // const [showView, SetshowView] = useState(true)
     // const [Index, SetIndex] = useState(null)
 
+    const ref = React.useRef(null)
+    const [animationDisplay, setanimationDisplay] = useState(false)
 
     const makesearch = (searchText) => {
         let list = Food
+        let count = 0
+
         for (let i = 0; i < list.length; i++) {
             if (((list[i].name).toUpperCase()).includes(searchText.toUpperCase())) {
                 list[i].view = true
             }
             else {
                 list[i].view = false
+                count++
+
             }
         }
-        setFood(list)
-    }
-
-    const return_category = (text) => {
-        return (text)
-    }
-
-    const chooseCategory = (index) => {
-        let cate = Category
-        if (cate[index].choose == false) {
-            cate[index].choose = true
-            SetshowView(false)
-            SetIndex(index)
-            return_category(cate[index].contant)
-        } else if (cate[index].choose == true) {
-
-            cate[index].choose = false
-            SetIndex(null)
-            SetshowView(true)
-            return_category(null)
+        if (count == list.length) {
+            setanimationDisplay(true)
         }
 
-        SetCategory(cate)
+        // 
+        if (count != list.length) {
+            setanimationDisplay(false)
+
+        }
+        setFood(list)
+        count = 0
     }
 
-    // const show_Category_item = (index) => {
-    //   let cate = Category
 
-    // }
+    const [CategoryReturn, setCategoryReturn] = useState([])
+    const [showView, setshowView] = useState(true)
+    const [indexName, setindexName] = useState()
+
+    const chooseCategory = (index) => {
+        let list = Category
+        let arr = Food
+        if (list[index].choose == true) {
+            setshowView(true)
+            list[index].choose = false
+
+        }
+        else {
+
+            for (let i = 0; i < list.length; i++) {
+                list[i].choose = false
+            }
+            list[index].choose = true
+            setshowView(false)
+            var ret = []
+            for (let i = 0; i < arr.length; i++) {
+                if (list[index].id == arr[i].categortType) {
+                    //  let newObj={
+                    //   Image: arr[i].Image,
+                    //   name: arr[i].name,
+                    //   view: arr[i].view,
+                    //   time: arr[i].time,
+                    //   Elta7der: arr[i].Elta7der,
+                    //   Eltahy: arr[i].Eltahy,
+                    //   Elsouba: arr[i].Elsouba,
+                    //   components: arr[i].components,
+                    //   Step: arr[i].Step,
+
+                    //   }
+                    //   ret.push(newObj)
+                    ret.push(arr[i])
+                }
+
+            }
+            console.log(ret)
+            setCategoryReturn(ret)
+            // ret = []
+        }
+        setCategoryReturn(ret)
+        SetCategory(list)
+        setindexName(index)
+
+    }
+
+
     const navigation = useNavigation();
 
     return (
@@ -216,7 +280,7 @@ export default function AllDessert() {
                         <View style={styles.category_View}>
                             <ScrollView horizontal>
                                 {Category.map((Category, index) =>
-                                    <TouchableOpacity style={styles.category_Box}
+                                    <TouchableOpacity style={Category.choose ? styles.category_chosen_Box : styles.category_Box}
                                         onPress={() =>
                                             chooseCategory(index)
 
@@ -227,64 +291,140 @@ export default function AllDessert() {
                                 )}
                             </ScrollView>
                         </View>
-                        <View style={styles.food_View}>
-                          
-                            <View style={styles.Headerstarred}>
-                                <Text style={styles.textHeaderstarred}>
-                                    الوصفات
-                                </Text>
-                                {/* <Text style={styles.textHeaderstarred2}>
-                                    رؤية الكل
-                                </Text> */}
-                            </View>
+                        {showView ? (
+                            <View style={styles.food_View}>
 
-                            {Food.map((item, index) =>
-                                item.view ? (
-
-                                <View style={styles.meal_View}>
-                                    <Image source={item.Image} style={styles.meal_image}
-                                        resizeMode={"center"} />
-                                    <View style={{ width: width / 2.4, alignItems: "flex-start" }}>
-                                        <Text style={styles.meal_name}>
-                                            {item.name}
-                                        </Text>
-                                    </View>
-                                    <View style={styles.view_time}>
-                                        <Text style={styles.text_time}>
-                                            {item.time}
-                                        </Text>
-                                        <Ionicons name='md-time' style={{ alignSelf: "center" }} size={ICONSSIZE.smIcon} color={COLORS.ButtonWhite} />
-                                    </View>
-                                    <View style={styles.option_view}>
-                                        <TouchableOpacity
-                                            onPress={() => {
-                                                navigation.navigate("Photo_page", {
-                                                    name: item
-                                                })
-                                            }
-                                            }
-                                            style={styles.button_option}>
-                                            <Text style={styles.button_text}>
-                                                الطريقة
-                                            </Text>
-                                        </TouchableOpacity>
-                                        <TouchableOpacity style={styles.button_option}>
-                                            <Text style={styles.button_text}>
-                                                الفيديو
-                                            </Text>
-                                        </TouchableOpacity>
-
-                                    </View>
-
-
+                                <View style={styles.Headerstarred}>
+                                    <Text style={styles.textHeaderstarred}>
+                                        الوصفات
+                                    </Text>
+                                    {/* <Text style={styles.textHeaderstarred2}>
+        رؤية الكل
+    </Text> */}
                                 </View>
-                                ) : (null)
+                                {animationDisplay ? (
+                                    <>
+                                        <View style={{ alignItems: "center", justifyContent: "center", alignSelf: "center", width: width, height: height / 1.8 }}>
+                                            <LottieView
+                                                ref={this.ref}
+                                                source={require("../lottie/search_empty.json")}
+                                                loop={true}
+                                                autoPlay={true}
+                                                speed={1.5}
+                                            // style={{ alignSelf: "center" }}
+                                            />
+                                        </View>
+                                    </>
+                                ) : (
+                                    <>
+                                        {Food.map((item, index) =>
+                                            item.view ? (
+
+                                                <View style={styles.meal_View}>
+                                                    <Image source={item.Image} style={styles.meal_image}
+                                                        resizeMode={"center"} />
+                                                    <View style={{ width: width / 2.4, alignItems: "flex-start" }}>
+                                                        <Text style={styles.meal_name}>
+                                                            {item.name}
+                                                        </Text>
+                                                    </View>
+                                                    <View style={styles.view_time}>
+                                                        <Text style={styles.text_time}>
+                                                            {item.time}
+                                                        </Text>
+                                                        <Ionicons name='md-time' style={{ alignSelf: "center" }} size={ICONSSIZE.smIcon} color={COLORS.ButtonWhite} />
+                                                    </View>
+                                                    <View style={styles.option_view}>
+                                                        <TouchableOpacity
+                                                            onPress={() => {
+                                                                navigation.navigate("Photo_page", {
+                                                                    name: item
+                                                                })
+                                                            }
+                                                            }
+                                                            style={styles.button_option}>
+                                                            <Text style={styles.button_text}>
+                                                                الطريقة
+                                                            </Text>
+                                                        </TouchableOpacity>
+                                                        <TouchableOpacity style={styles.button_option}>
+                                                            <Text style={styles.button_text}>
+                                                                الفيديو
+                                                            </Text>
+                                                        </TouchableOpacity>
+
+                                                    </View>
 
 
-                            )}
+                                                </View>
+                                            ) : (null)
 
 
-                        </View>
+                                        )}
+                                    </>
+                                )
+                                }
+
+
+
+                            </View>
+                        ) : (
+                            <View style={styles.food_View}>
+                                <View style={styles.Headerstarred}>
+                                    <Text style={styles.textHeaderstarred}>
+                                        {Category[indexName].name}
+                                    </Text>
+                                    {/* <Text style={styles.textHeaderstarred2}>
+                  رؤية الكل
+                </Text> */}
+                                </View>
+                                {CategoryReturn.map((items, index) =>
+                                    <View style={styles.meal_View}>
+                                        <Image source={items.Image} style={styles.meal_image}
+                                            resizeMode={"center"} />
+                                        <View style={{ width: width / 2.4, alignItems: "flex-start" }}>
+                                            <Text style={styles.meal_name}>
+                                                {items.name}
+                                            </Text>
+                                        </View>
+                                        <View style={styles.view_time}>
+                                            <Text style={styles.text_time}>
+                                                {items.time}
+                                            </Text>
+                                            <Ionicons name='md-time' style={{ alignSelf: "center" }} size={ICONSSIZE.smIcon} color={COLORS.ButtonWhite} />
+                                        </View>
+                                        <View style={styles.option_view}>
+                                            <TouchableOpacity
+                                                onPress={() => {
+                                                    navigation.navigate("Photo_page", {
+                                                        name: items
+                                                    })
+                                                }
+                                                }
+                                                style={styles.button_option}>
+                                                <Text style={styles.button_text}>
+                                                    الطريقة
+                                                </Text>
+                                            </TouchableOpacity>
+                                            <TouchableOpacity style={styles.button_option}>
+                                                <Text style={styles.button_text}>
+                                                    الفيديو
+                                                </Text>
+                                            </TouchableOpacity>
+
+                                        </View>
+
+
+                                    </View>
+
+
+
+
+
+                                )}
+                            </View>
+                        )}
+
                     </View>
                     <View style={{ height: 55 }}></View>
                 </ScrollView>
@@ -328,7 +468,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         alignSelf: "center",
         // backgroundColor:COLORS.black,
-        color: COLORS.black, 
+        color: COLORS.black,
         justifyContent: "flex-end",
         fontFamily: "Generator Black",
         // borderRadius: RADIUS.lgRadius,
@@ -343,6 +483,7 @@ const styles = StyleSheet.create({
         height: height / 10,
         width: width / 1.07,
         flexDirection: "row",
+        marginTop: MARGIN.xxsMargin
     },
     category_Box: {
         width: width / 4.5,
@@ -351,6 +492,17 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: COLORS.pramary50,
+        marginLeft: 5,
+        borderRadius: RADIUS.xsRadius
+    }
+    ,
+    category_chosen_Box: {
+        width: width / 4.5,
+        height: height / 11,
+        padding: PADDING.xsPadding,
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: COLORS.warning,
         marginLeft: 5,
         borderRadius: RADIUS.xsRadius
     }
