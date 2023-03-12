@@ -15,166 +15,20 @@ import { COLORS, PADDING, MARGIN, RADIUS, FONTS, ICONSSIZE } from '../constants/
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import * as Animatable from 'react-native-animatable';
 const { width, height } = Dimensions.get('window');
+import LottieView from 'lottie-react-native';
 
 export default class All extends React.Component {
     constructor(props) {
         super(props); {
+            ref = React.createRef(null)
             this.state = {
                 Food: [],
                 search: "",
-
+                animationDisplay: false
             }
         }
     }
-    // export default function All() {
-    // const [Food, setFood] = useState(
-    //     [
-    //         {
-    //             Image: require("../img/pizza.png"),
-    //             name: "Pizza",
-    //             view: true,
-    //             time: "30 min",
-    //             Elta7der: '15 min',
-    //             Eltahy: "15 min",
-    //             Elsouba: "25",
-    //             components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
-    //             Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
 
-    //         },
-    //         {
-    //             Image: require("../img/burger.png"),
-    //             name: "Burger",
-    //             Elta7der: '15 min',
-    //             Eltahy: "15 min",
-    //             Elsouba: "25",
-    //             components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
-    //             view: true,
-    //             Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
-    //             time: "30 min"
-    //         },
-    //         {
-    //             Image: require("../img/food.jpg"),
-    //             name: "Cop",
-    //             Elta7der: '15 min',
-    //             Eltahy: "15 min",
-    //             Elsouba: "25",
-    //             components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
-    //             view: true,
-    //             Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
-    //             time: "30 min"
-    //         },
-    //         {
-    //             Image: require("../img/food2.jpg"),
-    //             name: "ايس كريم",
-    //             Elta7der: '15 min',
-    //             Eltahy: "15 min",
-    //             Elsouba: "25",
-    //             components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
-    //             view: true,
-    //             Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
-    //             time: "30 min"
-    //         },
-    //         {
-    //             Image: require("../img/food3.jpg"),
-    //             name: "ايس كريم",
-    //             Elta7der: '15 min',
-    //             Eltahy: "15 min",
-    //             Elsouba: "25",
-    //             components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
-    //             view: true,
-    //             Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
-    //             time: "30 min"
-    //         },
-    //         {
-    //             Image: require("../img/food4.jpg"),
-    //             name: "ايس كريم",
-    //             Elta7der: '15 min',
-    //             Eltahy: "15 min",
-    //             Elsouba: "25",
-    //             components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
-    //             view: true,
-    //             Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
-    //             time: "30 min"
-    //         },
-    //         {
-    //             Image: require("../img/steak_food.png"),
-    //             name: "ايس كريم",
-    //             Elta7der: '15 min',
-    //             Eltahy: "15 min",
-    //             Elsouba: "25",
-    //             components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
-    //             view: true,
-    //             Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
-    //             time: "30 min"
-    //         },
-    //         {
-    //             Image: require("../img/food.jpg"),
-    //             name: "Cop",
-    //             Elta7der: '15 min',
-    //             Eltahy: "15 min",
-    //             Elsouba: "25",
-    //             components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
-    //             view: true,
-    //             Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
-    //             time: "30 min"
-    //         },
-
-    //     ])
-
-    //   const [Category, SetCategory] = useState(
-    //     [
-    //       {
-    //         name: "Burger",
-    //         img: require("../img/burgerr.png"),
-    //         choose: false,
-    //         contant: "burgeeeerrrr",
-    //         view: false,
-
-    //       }
-    //       ,
-    //       {
-    //         name: "Pizza",
-    //         img: require("../img/pizzaa.png"),
-    //         choose: false,
-    //         contant: "pizzzzzaaaa",
-    //         view: false,
-    //       }
-    //       ,
-    //       {
-    //         name: "Burger",
-    //         img: require("../img/burgerr.png"),
-    //         choose: false,
-    //         contant: "burgeeeerrrr"
-    //       }
-    //       ,
-    //       {
-    //         name: "Pizza",
-    //         img: require("../img/pizzaa.png"),
-    //         choose: false,
-    //         contant: "pizzzzzaaaa"
-    //       }
-    //       ,
-    //       {
-    //         name: "Burger",
-    //         img: require("../img/burgerr.png"),
-    //         choose: false,
-    //         contant: "burgeeeerrrr"
-    //       }
-    //       ,
-    //       {
-    //         name: "Pizza",
-    //         img: require("../img/pizzaa.png"),
-    //         choose: false,
-    //         contant: "pizzzzzaaaa"
-    //       }
-    //     ]
-    //   )
-
-    //   const [IconSearch, setIconSearch] = useState(true)
-    // const [search, setsearch] = useState("")
-
-    // const [showView, SetshowView] = useState(true)
-    // const [Index, SetIndex] = useState(null)
 
     componentDidMount() {
         let data = this.props.route.params.name
@@ -182,44 +36,36 @@ export default class All extends React.Component {
         this.setState({ Food: data })
     }
 
-    makesearch = (searchText) => {
+    makesearch(searchText) {
         let list = this.state.Food
+        let count = 0
+        let ani = this.state.animationDisplay
         for (let i = 0; i < list.length; i++) {
             if (((list[i].name).toUpperCase()).includes(searchText.toUpperCase())) {
                 list[i].view = true
             }
             else {
                 list[i].view = false
+                count++
             }
         }
-        this.setState({ Food: list })
-        // setFood(list)
+        if (count == list.length) {
+            ani = true
+        }
+
+        // 
+        if (count != list.length) {
+            ani = false
+
+        }
+        this.setState({
+            Food: list,
+            animationDisplay: ani
+        })
+        count = 0
     }
 
-    //   const return_category = (text) => {
-    //     return (text)
-    //   }
 
-    //   const chooseCategory = (index) => {
-    //     let cate = Category
-    //     if (cate[index].choose == false) {
-    //       cate[index].choose = true
-    //       SetshowView(false)
-    //       SetIndex(index)
-    //       return_category(cate[index].contant)
-    //     } else if (cate[index].choose == true) {
-
-    //       cate[index].choose = false
-    //       SetIndex(null)
-    //       SetshowView(true)
-    //       return_category(null)
-    //     }
-
-    //     SetCategory(cate)
-    //   }
-
-
-    //   const navigation = useNavigation();
     render() {
         return (
             <>
@@ -273,49 +119,66 @@ export default class All extends React.Component {
                             </View>
 
                             <View style={styles.food_View}>
-
-                                {this.state.Food.map((item, index) =>
-                                    item.view ? (
-                                        <View style={styles.meal_View}>
-                                            <Image source={item.Image} style={styles.meal_image}
-                                                resizeMode={"center"} />
-                                            <View style={{ width: width / 2.4, alignItems: "flex-start" }}>
-                                                <Text style={styles.meal_name}>
-                                                    {item.name}
-                                                </Text>
-                                            </View>
-                                            <View style={styles.view_time}>
-                                                <Text style={styles.text_time}>
-                                                    {item.time}
-                                                </Text>
-                                                <Ionicons name='md-time' style={{ alignSelf: "center" }} size={ICONSSIZE.smIcon} color={COLORS.ButtonWhite} />
-                                            </View>
-                                            <View style={styles.option_view}>
-                                                <TouchableOpacity
-                                                    onPress={() => {
-                                                        this.props.navigation.navigate("Photo_page", {
-                                                            name: item
-                                                        })
-                                                    }
-                                                    }
-                                                    style={styles.button_option}>
-                                                    <Text style={styles.button_text}>
-                                                        الطريقة
-                                                    </Text>
-                                                </TouchableOpacity>
-                                                <TouchableOpacity style={styles.button_option}>
-                                                    <Text style={styles.button_text}>
-                                                        الفيديو
-                                                    </Text>
-                                                </TouchableOpacity>
-
-                                            </View>
-
-
+                                {this.state.animationDisplay ? (
+                                    <>
+                                        <View style={{ alignItems: "center", justifyContent: "center", alignSelf: "center", width: width, height: height / 1.8 }}>
+                                            <LottieView
+                                                ref={this.ref}
+                                                source={require("../lottie/search_empty.json")}
+                                                loop={true}
+                                                autoPlay={true}
+                                                speed={1.5}
+                                            // style={{ alignSelf: "center" }}
+                                            />
                                         </View>
-                                    ) : (null)
+                                    </>
+                                ) : (
+                                    <>
+                                        {this.state.Food.map((item, index) =>
+                                            item.view ? (
+                                                <View style={styles.meal_View}>
+                                                    <Image source={item.Image} style={styles.meal_image}
+                                                        resizeMode={"center"} />
+                                                    <View style={{ width: width / 2.4, alignItems: "flex-start" }}>
+                                                        <Text style={styles.meal_name}>
+                                                            {item.name}
+                                                        </Text>
+                                                    </View>
+                                                    <View style={styles.view_time}>
+                                                        <Text style={styles.text_time}>
+                                                            {item.time}
+                                                        </Text>
+                                                        <Ionicons name='md-time' style={{ alignSelf: "center" }} size={ICONSSIZE.smIcon} color={COLORS.ButtonWhite} />
+                                                    </View>
+                                                    <View style={styles.option_view}>
+                                                        <TouchableOpacity
+                                                            onPress={() => {
+                                                                this.props.navigation.navigate("Photo_page", {
+                                                                    name: item
+                                                                })
+                                                            }
+                                                            }
+                                                            style={styles.button_option}>
+                                                            <Text style={styles.button_text}>
+                                                                الطريقة
+                                                            </Text>
+                                                        </TouchableOpacity>
+                                                        <TouchableOpacity style={styles.button_option}>
+                                                            <Text style={styles.button_text}>
+                                                                الفيديو
+                                                            </Text>
+                                                        </TouchableOpacity>
 
+                                                    </View>
+
+
+                                                </View>
+                                            ) : (null)
+
+                                        )}
+                                    </>
                                 )}
+
 
 
                             </View>
@@ -404,7 +267,7 @@ const styles = StyleSheet.create({
     Headerstarred: {
         width: width / 1.05,
         flexDirection: "row",
-        marginTop:MARGIN.mdMargin,
+        marginTop: MARGIN.mdMargin,
         // backgroundColor:"#000",
         justifyContent: "space-between",
         alignItems: "center",

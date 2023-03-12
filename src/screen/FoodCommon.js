@@ -388,7 +388,13 @@ export default function FoodCommon() {
                                   الطريقة
                                 </Text>
                               </TouchableOpacity>
-                              <TouchableOpacity style={styles.button_option}>
+                              <TouchableOpacity style={styles.button_option}
+                              onPress={()=>
+                              {
+                                navigation.navigate("WbeView")
+                              }
+                              }
+                              >
                                 <Text style={styles.button_text}>
                                   الفيديو
                                 </Text>

@@ -63,6 +63,10 @@ export default HomeStack = () => {
         }
       })}
     >
+       <Tab.Screen
+        name={Index.Search}
+        component={TestSearch}
+      />
 
       <Tab.Screen
         name={Index.Common}
@@ -73,10 +77,7 @@ export default HomeStack = () => {
         name={Index.Dessert}
         component={Dessert}
       />
-      <Tab.Screen
-        name={Index.Search}
-        component={TestSearch}
-      />
+     
       <Tab.Screen
         name={Index.Drink}
         component={Drink}

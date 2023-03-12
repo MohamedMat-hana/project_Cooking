@@ -2,11 +2,13 @@ import * as React from 'react'
 import {
     View,
     StyleSheet,
-    Text
+    Text,
+    Dimensions
 } from 'react-native'
 
 import LottieView from 'lottie-react-native';
 import { COLORS, FONTS, MARGIN } from '../constants/Constants'
+const { width, height } = Dimensions.get('window');
 
 export default class Splash extends React.Component {
 
@@ -26,7 +28,7 @@ export default class Splash extends React.Component {
 
 
 
-        }, 3000)
+        }, 2100)
 
 
     }
@@ -38,11 +40,11 @@ export default class Splash extends React.Component {
 
                         <LottieView
                             ref={this.ref}
-                            source={require("../lottie/22977-cooking-at-home-character.json")}
+                            source={require("../lottie/lottie_ic_wok_s.json")}
                             loop={false}
                             autoPlay={true}
-                            speed={1.5}
-                            style={{ marginBottom: "20%" }}
+                            // speed={1.5}
+                            // style={{ }}
                         />
                     
 

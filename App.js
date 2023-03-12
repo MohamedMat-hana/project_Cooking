@@ -12,15 +12,14 @@ import { NavigationContainer } from '@react-navigation/native';
 import Photo_page from './src/screen/Photo_page';
 import Navigation from './src/navigation/Navigation';
 import All from './src/screen/All';
-
-
+import WbeView from './src/screen/WbeView';
 const App = () => {
   return (
     <>
       <NavigationContainer>
         <Navigation />
       </NavigationContainer>
-      {/* <All /> */}
+    {/* <WbeView/> */}
     </>
   );
 }

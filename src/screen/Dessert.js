@@ -100,6 +100,7 @@ const styles = StyleSheet.create({
 
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import WbeView from "./WbeView";
  const Stack = createNativeStackNavigator();
 export default function Stackscreen() {
     return (
@@ -113,6 +114,8 @@ export default function Stackscreen() {
             <Stack.Screen name="Dessert" component={Dessert} />
             <Stack.Screen name="CommonDessert" component={CommonDessert} />
             <Stack.Screen name="All" component={All} />
+            <Stack.Screen name="WbeView" component={WbeView}/>
+
         </Stack.Navigator>
         //  </NavigationContainer>
     );
