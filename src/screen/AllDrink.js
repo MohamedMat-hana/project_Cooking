@@ -22,67 +22,67 @@ export default function AllDrink() {
     const [Food, setFood] = useState(
         [
             {
-                Image: require("../img/pizza.png"),
-                name: "Pizza",
+                Image: require("../img/coklemone.jpg"),
+                name: "عصير ليمون",
                 view: true,
-                time: "30 min",
-                Elta7der: '15 min',
-                Eltahy: "15 min",
-                Elsouba: "25",
-                components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
-                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
+                time: "15 min",
+                Elta7der: '5 min',
+                Eltahy: "10 min",
+                Elsouba: "10",
+                components: "2 ليمون كبير\nماء\n2 معلقه سكر\nحفنه نعناع\nثلج\nماء بارد",
+                Step: "نقوم بعصر كمية من نعصر الليمون ثم نصب عصيره ف الخلاط\nنضع مقدار النعناع والسكر والماء البارد ونخلط ف الخلاط ثم نصب ف الكاس مع الثلج",
                 categortType: 4
 
             },
             {
-                Image: require("../img/burger.png"),
-                name: "Burger",
-                Elta7der: '15 min',
-                Eltahy: "15 min",
-                Elsouba: "25",
-                components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
+                Image: require("../img/lemonandkewe.jpeg"),
+                name: "عصير الكيوي و التوت والليمون",
+                Elta7der: '5 min',
+                Eltahy: "10 min",
+                Elsouba: "15",
+                components: "كوبين عصير كيوي بالليمون\nكوب عصير ليمون\nتوت اسود الكمية حسب الرغبه",
                 view: true,
-                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
-                time: "30 min",
+                Step: "نخلط جميع المكونات ونقدمها ونزينها بالليمون و النعناع و التوت",
+                time: "15 min",
                 categortType: 1
 
             },
             {
-                Image: require("../img/food.jpg"),
-                name: "Cop",
-                Elta7der: '15 min',
+                Image: require("../img/greepfrot.jpeg"),
+                name: "عصير الجريب فروت مع البرتقال و الليمون",
+                Elta7der: '5 min',
                 Eltahy: "15 min",
-                Elsouba: "25",
-                components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
+                Elsouba: "20",
+                components: "حبة جريب فروت\nحبة برتقال\n½ حبة ليمون اصفر\n½ حبة ليمون اخضر (ممكن الاستغناء عنة)\nسكر حسب الرغبة (انا ما استعملت السكر)",
                 view: true,
-                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
-                time: "30 min",
+                Step: "في عصارة البرتقال قومي بعصر جميع المكونات. صبي الخليط في اكواب التقديم و اضيفي السكر الي الاكواب حسب الرغبة و حركي جيداً. يقدم وبالف هنا و شفا",
+                time: "15 min",
                 categortType: 1
 
             },
             {
-                Image: require("../img/food2.jpg"),
-                name: "ايس كريم",
-                Elta7der: '15 min',
-                Eltahy: "15 min",
+                Image: require("../img/lemonandganzabl.jpeg"),
+                name: "عصير الليمون بالزنجبيل 'الصحي'",
+                Elta7der: '5 min',
+                Eltahy: "10 min",
                 Elsouba: "25",
-                components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
+                components: "3 حبات ليمون أخضر متوسطة الحجم\n1/4 كوب زنجبيل طازج مبشور\nكوب ماء بارد",
                 view: true,
-                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
-                time: "30 min",
+                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و نقشر الليمون و نقطعه بالنص و نستخرج البذور\nو نبشر الزنجبيل بعدها نضع كل المكونات بالخلاط ونخلطها لمدة خمس دقائق\n",
+                time: "15 min",
                 categortType: 1
 
             },
             {
-                Image: require("../img/food3.jpg"),
-                name: "ايس كريم",
-                Elta7der: '15 min',
-                Eltahy: "15 min",
+                Image: require("../img/lemonandorange.jpeg"),
+                name: "عصير البرتقال والليمون",
+                Elta7der: '5 min',
+                Eltahy: "20 min",
                 Elsouba: "25",
-                components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
+                components: "2 حبة برتقال\n2 حبة ليمون\n1 كوب سكر",
                 view: true,
-                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
-                time: "30 min",
+                Step: "نقشر حبات الليمون والبرتقال\nتقطع وتزال البذور\nتخلط في الخلاط الكهربائي ثم تصفى\nيعاد العصير الى الخلاط مع مكعبات الثلج\nتصب في اكواب التقديم ويقدم بارد",
+                time: "25 min",
                 categortType: 2
 
             },
@@ -361,7 +361,7 @@ export default function AllDrink() {
                                                     <View style={styles.meal_View}>
                                                         <Image source={item.Image} style={styles.meal_image}
                                                             resizeMode={"center"} />
-                                                        <View style={{ width: width / 2.4, alignItems: "flex-start" }}>
+                                                        <View style={{ width: width / 2.4,height:height/12, alignItems: "flex-start",justifyContent:"center" }}>
                                                             <Text style={styles.meal_name}>
                                                                 {item.name}
                                                             </Text>
@@ -579,6 +579,7 @@ const styles = StyleSheet.create({
     },
     meal_View: {
         width: width / 2.1,
+        // height:height/2.5,
         alignItems: "center",
         marginVertical: MARGIN.xxsMargin,
         padding: PADDING.lgPadding,
