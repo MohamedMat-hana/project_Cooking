@@ -141,9 +141,10 @@ export default class Photo_page extends React.Component {
             <>
                 <View style={styles.Header}>
                     <ScrollView>
+                        {/* <View > */}
                         <View style={styles.ViewImageHeader}>
                             <ImageBackground source={this.state.item.Image}
-                                resizeMode={"stretch"}
+                                resizeMode={"cover"}
                                 style={styles.ImageHeader}>
                                 <TouchableOpacity
                                     style={{
@@ -181,14 +182,10 @@ export default class Photo_page extends React.Component {
                                             borderRadius: RADIUS.lgRadius,
                                             alignItems: "center",
                                             justifyContent: "center",
-                                            // backgroundColor: COLORS.pramary
-                                        }} onPress={() => {
+                                         }} onPress={() => {
                                             this.IconFav()
-                                            // this.props.navigation.navigate('Common')
-                                        }}>
-                                        {/* <Ionicons name={this.state.IconFavorite ? 'heart-outline' : "heart"}
-                                            size={40} color={COLORS.orange} /> */}
-                                    </View>
+                                         }}>
+                                     </View>
                                 </View>
                                 <View style={styles.FirstDetels}>
                                     <View style={styles.Detels} >
@@ -224,16 +221,14 @@ export default class Photo_page extends React.Component {
                                         </Text>
                                     </View>
                                     <View style={styles.mocaonatD}>
-                                        {/* {this.state.item.map((item, index) => ( */}
-
+ 
                                         <View style={styles.onetwo}>
-                                            <Ionicons name='ellipse' size={10} color={COLORS.ButtonWhite} />
+                                            {/* <Ionicons name='ellipse' size={10} color={COLORS.ButtonWhite} /> */}
                                             <Text style={[styles.TextRow, { marginHorizontal: MARGIN.xxsMargin, textDecorationLine: "none" }]} >
                                                 {this.state.item.components}
                                             </Text>
                                         </View>
-                                        {/* ))} */}
-                                    </View>
+                                     </View>
                                 </View>
                                 <View style={styles.mocaonat}>
                                     <View style={styles.FontView}>
@@ -242,31 +237,27 @@ export default class Photo_page extends React.Component {
                                         </Text>
                                     </View>
                                     <View style={styles.mocaonatD}>
-                                        {/* {this.state.item.map((item, index) => ( */}
-
+ 
                                         <View style={styles.onetwo}>
-                                            {/* <Text style={styles.Num} >55</Text> */}
-                                            {/* <Ionicons name='ellipse' size={10} color={COLORS.orange} /> */}
-
+ 
                                             <Text style={[styles.TextRow, {
                                                 width: width / 1.49,
-                                                // backgroundColor:"#f0f",
-                                                marginHorizontal: MARGIN.xxsMargin,
+                                                 marginHorizontal: MARGIN.xxsMargin,
                                                 textDecorationLine: "none",
                                             }]} >
                                                 {this.state.item.Step}
                                             </Text>
                                         </View>
-                                        {/* ))}  */}
-                                    </View>
+                                     </View>
 
 
                                 </View>
                             </View>
                         </View>
-<View style={{height:50}}>
+<View style={{height:70}}>
 
 </View>
+{/* </View> */}
                     </ScrollView>
 
 
@@ -278,7 +269,7 @@ export default class Photo_page extends React.Component {
 
 const styles = StyleSheet.create({
     Header: {
-        flex: 1,
+        // flex: 1,
         backgroundColor: COLORS.pramary
     },
     ViewImageHeader: {
@@ -296,7 +287,7 @@ const styles = StyleSheet.create({
 
     },
     ScView: {
-        height: height,
+        // height: height,
         width: width,
         backgroundColor: "#6e6e6e9e",
         borderTopLeftRadius: RADIUS.xxlRadius,
@@ -316,14 +307,14 @@ const styles = StyleSheet.create({
     },
     ViewDetils: {
         width: width,
-        height: height,
+        // height: height,
         backgroundColor: COLORS.pramary,
         borderTopLeftRadius: RADIUS.xxlRadius,
         borderTopRightRadius: RADIUS.xxlRadius,
     },
     Icon: {
         width: width,
-        height: 44,
+        // height: 44,
         backgroundColor: COLORS.ButtonWhite
     },
     FirstDetels: {
@@ -338,7 +329,7 @@ const styles = StyleSheet.create({
     },
     Detels: {
         width: width,
-        height: height / 25,
+        // height: height / 25,
         // backgroundColor: COLORS.ButtonWhite,
         flexDirection: "row",
         justifyContent: "space-evenly"

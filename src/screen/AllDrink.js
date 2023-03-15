@@ -31,7 +31,7 @@ export default function AllDrink() {
                 Elsouba: "10",
                 components: "2 ليمون كبير\nماء\n2 معلقه سكر\nحفنه نعناع\nثلج\nماء بارد",
                 Step: "نقوم بعصر كمية من نعصر الليمون ثم نصب عصيره ف الخلاط\nنضع مقدار النعناع والسكر والماء البارد ونخلط ف الخلاط ثم نصب ف الكاس مع الثلج",
-                categortType: 4,
+                categortType: 2,
                 video: "https://www.youtube.com/watch?v=g0KnsicH7kU"
 
             },
@@ -45,8 +45,8 @@ export default function AllDrink() {
                 view: true,
                 Step: "نخلط جميع المكونات ونقدمها ونزينها بالليمون و النعناع و التوت",
                 time: "15 min",
-                categortType: 1,
-                video: "https://www.youtube.com/watch?v=g0KnsicH7kU"
+                categortType: 2,
+                video: "https://www.youtube.com/watch?v=3UwC4xNvk68"
 
 
             },
@@ -60,8 +60,8 @@ export default function AllDrink() {
                 view: true,
                 Step: "في عصارة البرتقال قومي بعصر جميع المكونات. صبي الخليط في اكواب التقديم و اضيفي السكر الي الاكواب حسب الرغبة و حركي جيداً. يقدم وبالف هنا و شفا",
                 time: "15 min",
-                categortType: 1,
-                video: "https://www.youtube.com/watch?v=g0KnsicH7kU"
+                categortType: 2,
+                video: "https://www.youtube.com/watch?v=4N8CVW2LcNA"
 
 
             },
@@ -75,8 +75,8 @@ export default function AllDrink() {
                 view: true,
                 Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و نقشر الليمون و نقطعه بالنص و نستخرج البذور\nو نبشر الزنجبيل بعدها نضع كل المكونات بالخلاط ونخلطها لمدة خمس دقائق\n",
                 time: "15 min",
-                categortType: 1,
-                video: "https://www.youtube.com/watch?v=g0KnsicH7kU"
+                categortType: 2,
+                video: "https://www.youtube.com/watch?v=8TIfFbO-5lI"
 
 
             },
@@ -91,64 +91,372 @@ export default function AllDrink() {
                 Step: "نقشر حبات الليمون والبرتقال\nتقطع وتزال البذور\nتخلط في الخلاط الكهربائي ثم تصفى\nيعاد العصير الى الخلاط مع مكعبات الثلج\nتصب في اكواب التقديم ويقدم بارد",
                 time: "25 min",
                 categortType: 2,
-                video: "https://www.youtube.com/watch?v=g0KnsicH7kU"
+                video: "https://www.youtube.com/watch?v=lBu65ME2WmQ"
 
 
             },
             {
-                Image: require("../img/food4.jpg"),
-                name: "ايس كريم",
-                Elta7der: '15 min',
-                Eltahy: "15 min",
-                Elsouba: "25",
-                components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
+                Image: require("../img/sahlab.jpeg"),
+                name: "سحلب",
+                Elta7der: '5 min',
+                Eltahy: "10 min",
+                Elsouba: "70",
+                components: "1/2 لتر حليب\n5 ملاعق بودرة سحلب\nملعقة سكر",
                 view: true,
-                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
-                time: "30 min",
+                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و بريق يوضع فيه الحليب وهو بارد ثم يضاف السحلب ويحرك ثم يوضع السكر\nنولع عليه النار هادئة مع التحريك لمدة 10 دقائق حتى يثقل قليلاً\nيوضع في كاس ويزين بالقرفه والفستق وبالعافيه",
+                time: "15 min",
+                categortType: 1,
+                video: "https://www.youtube.com/watch?v=fBSsdfLotpE"
+
+
+            },
+            {
+                Image: require("../img/88.jpeg"),
+                name: "Hot chocolate مشروب الشوكولاتة",
+                Elta7der: '5 min',
+                Eltahy: "20 min",
+                Elsouba: "50",
+                components: "3/4 كوب شوكولاتة بودرة\n4 اكواب حليب سائل\n1 كوب سكر\nملعقة صغيرة نشاء ذرة",
+                view: true,
+                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و توضع جميع المكونات في قدر على نار هادئة مع التقليب المستمر لكي لاتحترق الى ان تبدأ بالغليان",
+                time: "25 min",
+                categortType: 1,
+                video: "https://www.youtube.com/watch?v=38xZdDygW04"
+
+
+            },
+            {
+                Image: require("../img/55.jpeg"),
+                name: "عصير فراولة و توت ",
+                Elta7der: '5 min',
+                Eltahy: "10 min",
+                Elsouba: "25",
+                components: "1 كوب فراولة مجمده\n1/2 كوب توت مجمد\n1/2 كوب سكر\n1 كوب ماء ",
+                view: true,
+                Step: "في الخلاط : نخلط جميع المكونات ",
+                time: "15 min",
                 categortType: 2,
-                video: "https://www.youtube.com/watch?v=g0KnsicH7kU"
-
-
+                video: "https://www.youtube.com/watch?v=4uKOb4OFrVE"
             },
             {
-                Image: require("../img/steak_food.png"),
-                name: "ايس كريم",
-                Elta7der: '15 min',
-                Eltahy: "15 min",
-                Elsouba: "25",
-                components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
+                Image: require("../img/555.jpeg"),
+                name: "سموزي الفرااوله",
+                Elta7der: '5 min',
+                Eltahy: "20 min",
+                Elsouba: "30",
+                components: "كيس فراوله مجمدة\n ظرف كريم شانتيه\n سكر حسب الرغبة\n فانيليا\nحليب",
                 view: true,
-                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
-                time: "30 min",
+                Step: "نخلطهم في الخلاط ونستمتع بأحلى فراوله واذا حابنو يكون تقيل نضيف مكعبات ثلج ونخلطه",
+                time: "15 min",
                 categortType: 2,
-                video: "https://www.youtube.com/watch?v=g0KnsicH7kU"
-
-
+                video: "https://www.youtube.com/watch?v=r3Ycl293l_U"
             },
             {
-                Image: require("../img/food.jpg"),
-                name: "Cop",
-                Elta7der: '15 min',
+                Image: require("../img/tamr.jpeg"),
+                name: "مشروب التمر والحليب",
+                Elta7der: '5 min',
+                Eltahy: "10 min",
+                Elsouba: "10",
+                components: "10 حبات تمر\nكوبين حليب\nسكر\nحبة موز",
+                view: true,
+                Step: "ناتي بالخلاط الكهربائي نضع الموز التمر والحليب سكر ونخلط جيد",
+                time: "15 min",
+                categortType: 2,
+                video: "https://www.youtube.com/watch?v=pvYp6JmpP78"
+            },
+            {
+                Image: require("../img/sa.jpeg"),
+                name: "مشروب السّحلب الشتوي",
+                Elta7der: '5 min',
+                Eltahy: "15 min",
+                Elsouba: "50",
+                components: "1 كوب ماء\n3 م حليب بودرة\n2 م نشا\n2 م سكر\n1 م ص فانليا\n1 م ص قرفة\n1 م مكسرات مجروشة\n1 م ص جوز الهند",
+                view: true,
+                Step: "نضع الحليب والسكر والنشا في إناء ونحرّك جيّدا.\nيرفع على النار مع التحريك بين فترة وإخرى ويترك على النار حتى يتكثف المزيج.\nيصب في أكواب التقديم ويزيّن بالقرفة والمكسرات وجوز الهند.",
+                time: "20 min",
+                categortType: 1,
+                video: "https://www.youtube.com/watch?v=CgUTsEiF824"
+            },
+            {
+                Image: require("../img/ddh.jpeg"),
+                name: "مشروب الزنجبيل بالزعفران",
+                Elta7der: '5 min',
+                Eltahy: "10 min",
+                Elsouba: "40",
+                components: "ملعقة صغيرة زنجبيل مطحون\nسكر حسب الرغبة\nكمشة زعفران\nربع علبة حليب سائل مبخر\n لتر ماء مغلي",
+                view: true,
+                Step: "نضع الحليب والسكر والنشا في إناء ونحرّك نضع كل المقادير في براد الشاي\n نصب فوقها الماء المغلي ونتركها خمس دقائق وبالعافية",
+                time: "15 min",
+                categortType: 1,
+                video: "https://www.youtube.com/watch?v=N2XhBxidLjo"
+            },
+            {
+                Image: require("../img/dddh.jpeg"),
+                name: "موهيتو السڤن اب",
+                Elta7der: '5 min',
+                Eltahy: "5 min",
+                Elsouba: "10",
+                components: "ملعقة صغيرة زنجبيل علبة سڤن اب\nتوت مشكل حسب الرغبة\n2 نعناع طازج\nمكعبات ثلج\nنكهة حسب الرغبة\nفراولة مقطعة",
+                view: true,
+                Step: "بالكاس ثلج و نكهة\nنضيف النعناع و التوت\nنضع السڤن اب و نقدمه بااارد",
+                time: "10 min",
+                categortType: 2,
+                video: "https://www.youtube.com/watch?v=2t1IXAe4li4"
+            },
+            {
+                Image: require("../img/ffth.jpeg"),
+                name: "عصير التفاح والكيوي والموز والعنب",
+                Elta7der: '10 min',
+                Eltahy: "10 min",
+                Elsouba: "40",
+                components: "1 تفاح اخضر\n1 موز\n1 كيوي\n½ كوب من العنب اخضر\n1 كوب من الحليب الطازج\n1 ملعقه من العسل",
+                view: true,
+                Step:"اول نقطلع التفاح ونقطع الموز ونقطع الكيوي انضيفهم في الخلاط\nانضيف 1كوب الحليب طازج انضيف 1ملعقه العسل وانخلطه في امكانك تضيفي الماء ان حبيتي وايقدم بارد في العافية",
+                time: "20 min",
+                categortType: 2,
+                video: "https://www.youtube.com/watch?v=SXPOHoGuU5Y"
+            },
+            {
+                Image: require("../img/dgkth.jpeg"),
+                name: "عصير افوكادو",
+                Elta7der: '5 min',
+                Eltahy: "10 min",
+                Elsouba: "25",
+                components: "2 حبات افوكادو\n2 حبات موز\nكاستين حليب\nعسل على الحسب تحلية\nثلج",
+                view: true,
+                Step:"في الخلاط أضيف جميع المكونات واخلطهم جيدا واصب على الكاسات وتقدم بالهناء والشفاء ",
+                time: "15 min",
+                categortType: 2,
+                video: "https://www.youtube.com/watch?v=UbvKV3SACe4"
+            },
+            {
+                Image: require("../img/ddddddth.jpeg"),
+                name: "عصير البطيخ",
+                Elta7der: '5 min',
+                Eltahy: "5 min",
+                Elsouba: "20",
+                components: "1/2 بطيخه\n كوب ثلج",
+                view: true,
+                Step:"نخلص البطيخ في الخلاط\nنضعه الثلج في الاكواب ونضيف عصير البطيخ عليه",
+                time: "10 min",
+                categortType: 2,
+                video: "https://www.youtube.com/watch?v=ZYoh_n549y0"
+            },
+            {
+                Image: require("../img/flkfoth.jpeg"),
+                name: "عصير الرمان والتوت ",
+                Elta7der: '5 min',
+                Eltahy: "10 min",
+                Elsouba: "25",
+                components: "2 حبة من الرمان\n1/2 كاس من التوت او عصير توت\nماء بارد\n2 ظرف سكر سيتفيا\n1 ملعقة كبيره ماء الورد او الزهر",
+                view: true,
+                Step:"اول نقشر الرمان ونشيل الحبوب وانضيف في الخلاط انضيف حبات توت نص كوب وانضيف الماء بارد\nانضيف السكر 2ظرف ستيفيا و1ملعقة ماء الورد او الزهر بمكانكم تضيفون السكر العادي حبيت يكون العصير الصحي وانصفيه ويكون بارد ",
+                time: "15 min",
+                categortType: 2,
+                video: "https://www.youtube.com/shorts/12m0aMEPYnI"
+            },
+            {
+                Image: require("../img/6545th.jpeg"),
+                name: "مشروب الكركديه",
+                Elta7der: '5 min',
+                Eltahy: "10 min",
+                Elsouba: "60",
+                components: "كوب ونصف من زهورات الكركديه\nكوب سكر\nملعقه ماء الورد\nليتر ماء ساخن للنقع\nعند التقديم\nمكعبات ثلج وبعض الزهورات المغسوله\nمكعبات ثلج",
+                view: true,
+                Step:"تغسل زهورات الكركديه لازالة الاتربه ونحضر باقي المكونات ونضع زهورات الكركديه المغسوله بوعاء ونضع عليها السكر وماء الورد\nنصب عليها لتر ماء مغلي وننقعها ساعتين ونضعها بالثلاج احط منه مكعبات ابرزها في الفريزر عشان تكون مكعبات ثلج استخدمها اثناء التقديم واطلع الكركديه من الثلاجه واصفيه واضع مكعبات الثلج في كاس التقديم واسكب عليها مشروب الكركديه",
+                time: "15 min",
+                categortType: 1,
+                video: "https://www.youtube.com/watch?v=GnzaI9oXVLQ"
+            },
+            {
+                Image: require("../img/dsdth.jpeg"),
+                name: "عصير موز بالفرولة",
+                Elta7der: '5 min',
+                Eltahy: "15 min",
+                Elsouba: "20",
+                components:"6 حبات فراولة\n2 حبة موز\nكوب حليب\nثلج مجروش\n2 م ك ايسكريم ڤانيلا\nعسل او سكر حسب الرغبة",
+                view: true,
+                Step:"اخلط جميع المكونات في الخلاط واقدمه باكواب وبالعافية",
+                time: "20 min",
+                categortType: 2,
+                video: "https://www.youtube.com/watch?v=xOkfvKtvPdY"
+            },
+            {
+                Image: require("../img/xxth.jpeg"),
+                name: "عصير التين الشوكي والفراولة",
+                Elta7der: '5 min',
+                Eltahy: "15 min",
+                Elsouba: "40",
+                components:"5 حبات تين الشوكي\n2 م سكر\n6 حبات فراولة\n1 م عصير ليمون\n5 مكعبات ثلج",
+                view: true,
+                Step:"تقشر حبة التين وتعصر في تلخلاط الكهربائيوتصقى من البذور ويعاد في الخلاط\nيضاف الفراولة والسكر والثلج وتعصر معا",
+                time: "20 min",
+                categortType: 2,
+                video: "https://www.youtube.com/watch?v=xdA88hQZ3Mc"
+            },
+            {
+                Image: require("../img/vvth.jpeg"),
+                name: "موهيتو الفراولة",
+                Elta7der: '5 min',
+                Eltahy: "15 min",
+                Elsouba: "40",
+                components:"100 جرام فراولة مجمده او طازجة و يفضل طازجه\n1/4 حزمه نعناع\nليمونه مقطعه ارباع\nسيروب الفراولة او نكهة فراوله او فيمتو\nسفن اب او مياه معدنيه\nملعقة سكر",
+                view: true,
+                Step:"نضع الفراوله مع النعناع مع الليمون مع السكر في هاون و نقوم بهرسهم مع بعض حتى تنزل موية الفراوله مع الليمون و النعناع\n نضع في جك العصير. سيروب الفراوله. مع مكونات الخطوه الاولى كاملة\n ونضع عليها المياه المعدنيه. او سفن اب حسب الكميه المرغوب فيها و بالعافيه.",
+                time: "20 min",
+                categortType: 2,
+                video: "https://www.youtube.com/watch?v=43MyQOYyofs"
+            },
+            {
+                Image: require("../img/txch.jpeg"),
+                name: "عصير مانجا",
+                Elta7der: '5 min',
                 Eltahy: "15 min",
                 Elsouba: "25",
-                components: "مكرونه \n, دقيق\n ,حليب , ملح \n1- فلفل اسود مكرونه\n - دقيق \n-حليب , \nPizza , \nفلفل اسود",
+                components:"3 حبات من ثمرة المانجو\nكوب ماء\nسكر او عسل حسب الرغبة",
                 view: true,
-                Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
-                time: "30 min",
-                categortType: 3,
-                video: "https://www.youtube.com/watch?v=g0KnsicH7kU"
-
-
+                Step:"جميع المكونات في الخلاط وبالعافية",
+                time: "20 min",
+                categortType: 2,
+                video: "https://www.youtube.com/watch?v=NVDt5Mb77Mw"
             },
-
+            {
+                Image: require("../img/ddssth.jpeg"),
+                name: "عصير الافوكادو والمانجا",
+                Elta7der: '5 min',
+                Eltahy: "15 min",
+                Elsouba: "25",
+                components:"1 افوكادو\n1 مانجا\nربع كوب لوز\nملعقتين عسل\n3 اكواب حليب",
+                view: true,
+                Step:"نقطع الفواكه\nنضيف جميع المكونات و نخلط و يقدم باردا و بالعافية",
+                time: "20 min",
+                categortType: 2,
+                video: "https://www.youtube.com/watch?v=Y2azMnxKDnI"
+            },
+            {
+                Image: require("../img/tdvh.jpeg"),
+                name: "عصير المانجا والفراولة",
+                Elta7der: '5 min',
+                Eltahy: "15 min",
+                Elsouba: "25",
+                components:"كوبين فراولة مجمدة مقطعة\nكوب مانجا مجمدة\n1/3 كوب عصير البرتقال",
+                view: true,
+                Step:"تُخلط جميع المكونات في الخلاط ثم تُقدم في كأس وبالعافية مقدما ",
+                time: "20 min",
+                categortType: 2,
+                video: "https://www.youtube.com/watch?v=9ePJjmJdVNg"
+            },
+            {
+                Image: require("../img/bdcxvth.jpeg"),
+                name: "عصير مانجا وجوافه",
+                Elta7der: '5 min',
+                Eltahy: "15 min",
+                Elsouba: "25",
+                components:"3 مانجو زاكيه\n3 جوافه\n١ افوكادو مستويه\n2 كاس حليب\n1 كاس ماء\n1 ظريف كريم شانتيه(دريم ويب)\nسكر حسب الرغبه",
+                view: true,
+                Step:"نخلط جميع المكونات بالخلاط ونتحكم بسمك العصير اذا تحبوا اخف زيدوا ماء ونصفيه جيدا من بذور الجوافه\nيوضع بالثلاجه لوقت التقديم. وبالعااافيه",
+                time: "20 min",
+                categortType: 2,
+                video: "https://www.youtube.com/watch?v=KiRJHtwGez8"
+            },
+            {
+                Image: require("../img/tvvvvh.jpeg"),
+                name: "هوت شوكلت الاوريو",
+                Elta7der: '5 min',
+                Eltahy: "15 min",
+                Elsouba: "25",
+                components:"كوب ونص حليب\nمغلف اوريو مكسر فيه 4 حبات\nملعقة اكل شوكولاته بالجيكيه او جالكسي او نوتيلا او نسكويك حسب المتوفر\nملعقه صغيرة نسكافيه",
+                view: true,
+                Step:"نخلط جميع المقادير\nنضعها على النار مع التحريك المستمر لحد مايثقل قوامها ونقدمها",
+                time: "20 min",
+                categortType: 2,
+                video: "https://www.youtube.com/watch?v=8TpU14ll1I8"
+            },
+            {
+                Image: require("../img/aasth.jpeg"),
+                name: "قهوة اسبريسو",
+                Elta7der: '5 min',
+                Eltahy: "10 min",
+                Elsouba: "25",
+                components:"4 ملاعق كبيرة (40 جم) قهوة مطحونة\n 2 كوب (500 مل) ماء مغلي\n وعاء به مكبس للقهوة (وعاء كبس القهوة)",
+                view: true,
+                Step:"ضعي القهوة في الوعاء، ثم صبي الماء المغلي، واتركيه جانبًا لمدة أربع دقائق.\n اضغطي على المكبس لأسفل حتى يمنع القهوة من التحرك، ويثبتها في الأسفل. صبي الإسبريسو في أكواب التقديم، وقدميها ساخنة",
+                time: "20 min",
+                categortType: 1,
+                video: "https://www.youtube.com/watch?v=TpZ2uVtMoVU"
+            },
+            {
+                Image: require("../img/5f086508b8d56.jpg"),
+                name: "القهوة التركي بالشوكولاتة",
+                Elta7der: '5 min',
+                Eltahy: "15 min",
+                Elsouba: "40",
+                components:"⅔ كوب (166.6 مل) ماء\n. ½ 1 ملعقة كبيرة (15 جم) قهوة تركي\n. ملعقة صغيرة (5 جم) كاكاو\n. ملعقة صغيرة (5 جم) شوكولاتة مبشورة\n. سكر حسب الرغبة",
+                view: true,
+                Step:"ضعي الماء والقهوة والكاكاو والسكر والشوكولاتة في كنكة (ركوة)، وقلبي المكونات حتى تذوب\n. ضعي القهوة على نار هادئة، حتى تقترب من الغليان\n. ارفعي القهوة عن النار حتى تهدأ قليلًا، ثم أعيديها مرة أخرى حتى تظهر فقاعات على أطراف الكنكة، ويصبح لها وجه\n. ارفعي القهوة عن النار، وصبيها في الفناجين، وقدميها ساخنة",
+                time: "20 min",
+                categortType: 1,
+                video: "https://www.youtube.com/watch?v=zftgNcNZpgA"
+            },
+            {
+                Image: require("../img/5f0865f6dccdc.jpg"),
+                name: "الكابتشينو",
+                Elta7der: '5 min',
+                Eltahy: "15 min",
+                Elsouba: "25",
+                components:"¼ كوب (37.5 جم) قهوة سريعة الذوبان\n. ¼ كوب (50 جم) سكر\n. 3 ملاعق كبيرة (45 مل) ماء.\n كوب (250 مل) حليب خالي الدسم\n. كاكاو وقرفة للزينة",
+                view: true,
+                Step:"ضعي السكر والقهوة والماء في وعاء كبير، واخفقيها بالمضرب اليدوي لمدة ثلاث إلى خمس دقائق، حتى يتكون لديكِ خليط ناعم كالكريمة\n. ضعي الحليب على نار متوسطة، واخفقيه باستمرار حتى يغلي، وتتكون لديكِ رغوة كثيفة. وزعي الكابتشينو على كوبين، ثم وزعي الحليب بالرغوة الخاصة به، وقلبيه برفق حتى تمتزج المكونات، ثم قدميه. زيني الكابتشينو ببودرة الكاكاو والقرفة",
+                time: "20 min",
+                categortType: 1,
+                video: "https://www.youtube.com/watch?v=hiUSTyAeTSI"
+            },{
+                Image: require("../img/5f0867c5bc87c.jpg"),
+                name: "اللاتيه",
+                Elta7der: '5 min',
+                Eltahy: "15 min",
+                Elsouba: "25",
+                components:"¼ كوب (37.5 جم) قهوة سريعة الذوبان\n. ¾ كوب (180 مل) ماء\n. ¾ كوب (180 مل) حليب",
+                view: true,
+                Step:"على نار متوسطة، ضعي القهوة والماء، واتركيهما حتى يغلي الخليط\n. على نار متوسطة، سخني الحليب، وقلبي باستمرار بالمضرب اليدوي، حتى يغلي وتتكون رغوة\n. صبي الحليب والقهوة في الأكواب بكميات متساوية، وقدميها ساخنة مع السكر",
+                time: "20 min",
+                categortType: 1,
+                video: "https://www.youtube.com/watch?v=as0hCOWyWcs"
+            },
+            {
+                Image: require("../img/5f086849804b5.jpg"),
+                name: "موكا فرابتشينو المثلج",
+                Elta7der: '5 min',
+                Eltahy: "15 min",
+                Elsouba: "25",
+                components:"كوب (200 جم) ثلج\n. ¾ كوب (185 مل) ماء\n. ½ 1 كوب (375 مل) حليب\n. 9 ملاعق كبيرة (112.5 جم) رقائق شوكولاتة (شيبس)\n. 9 ملاعق كبيرة (135 مل) صوص شوكولاتة\n. 3 ملاعق صغيرة (15 جم) قهوة سريعة الذوبان\n. 2 ملعقة صغيرة (10 جم) فانيليا سائلة\n. كريمة مخفوقة للتزيين.",
+                view: true,
+                Step:"أذيبي القهوة في الماء، ثم ضعيها في الخلاط الكهربائي\n. أضيفي الثلج وست ملاعق من صوص الشوكولاتة، والحليب، ورقائق الشوكولاتة، والفانيليا، واخفقي لمدة دقيقة\n. زيني أكواب التقديم من الداخل بباقي صوص الشوكولاتة، ثم صبي الفرابتشينو، وزينيه من الأعلى بالكريمة المخفوقة وصوص الشوكولاتة",
+                time: "20 min",
+                categortType: 2,
+                video: "https://www.youtube.com/watch?v=1wW6PS1S9gE"
+            },
+            {
+                Image: require("../img/5f086a082e0f1.jpg"),
+                name: "كراميل فرابتشينو المثلج",
+                Elta7der: '5 min',
+                Eltahy: "15 min",
+                Elsouba: "25",
+                components:"كوب (200 جم) ثلج\n. ¾ كوب (180 مل) ماء\n. ¾ كوب (180 مل) حليب مكثف ومحلى\n. ½ 1 كوب (375 مل) حليب\n. 9 ملاعق كبيرة (135 مل) صوص كراميل\n. 2 ملعقة صغيرة (10 جم) قهوة سريعة الذوبان",
+                view: true,
+                Step:"أذيبي القهوة في الماء، ثم ضعيها في الخلاط الكهربائي\n. أضيفي الثلج والحليب المكثف وست ملاعق من الكراميل والحليب، واخفقي لمدة دقيقة\n. زيني أكواب التقديم من الداخل بباقي صوص الكراميل، ثم صبي الفرابتشينو، وقدميه",
+                time: "20 min",
+                categortType: 2,
+                video: "https://www.youtube.com/watch?v=qi7QxVSwtuw"
+            },
         ])
 
     const [Category, SetCategory] = useState(
         [
             {
                 id: 1,
-                name: "Burger",
-                img: require("../img/burgerr.png"),
+                name: "مشروبات ساخنه",
+                img: require("../img/hot.png"),
                 choose: false,
                 contant: "burgeeeerrrr",
                 view: false,
@@ -156,44 +464,13 @@ export default function AllDrink() {
             ,
             {
                 id: 2,
-                name: "Pizza",
-                img: require("../img/pizzaa.png"),
+                name: "مشروبات بارده",
+                img: require("../img/ddkdth.png"),
                 choose: false,
                 contant: "pizzzzzaaaa",
                 view: false,
             }
-            ,
-            {
-                id: 3,
-                name: "Burger",
-                img: require("../img/burgerr.png"),
-                choose: false,
-                contant: "burgeeeerrrr"
-            }
-            ,
-            {
-                id: 4,
-                name: "Pizza",
-                img: require("../img/pizzaa.png"),
-                choose: false,
-                contant: "pizzzzzaaaa"
-            }
-            ,
-            {
-                id: 5,
-                name: "Burger",
-                img: require("../img/burgerr.png"),
-                choose: false,
-                contant: "burgeeeerrrr"
-            }
-            ,
-            {
-                id: 6,
-                name: "Pizza",
-                img: require("../img/pizzaa.png"),
-                choose: false,
-                contant: "pizzzzzaaaa"
-            }
+           
         ]
     )
 
@@ -376,7 +653,7 @@ export default function AllDrink() {
                                                     <View style={styles.meal_View}>
                                                         <Image source={item.Image} style={styles.meal_image}
                                                             resizeMode={"cover"} />
-                                                        <View style={{ width: width / 2.4, height: height / 12, alignItems: "flex-start", justifyContent: "center" }}>
+                                                        <View style={{ width: width / 2.4, height: height / 12,alignItems: "flex-start", justifyContent: "center" }}>
                                                             <Text style={styles.meal_name}>
                                                                 {item.name}
                                                             </Text>
@@ -443,8 +720,8 @@ export default function AllDrink() {
                                 {CategoryReturn.map((items, index) =>
                                     <View style={styles.meal_View}>
                                         <Image source={items.Image} style={styles.meal_image}
-                                            resizeMode={"center"} />
-                                        <View style={{ width: width / 2.4, alignItems: "flex-start" }}>
+                                            resizeMode={"cover"} />
+                                                        <View style={{ width: width / 2.4, height: height / 12,alignItems: "flex-start", justifyContent: "center" }}>
                                             <Text style={styles.meal_name}>
                                                 {items.name}
                                             </Text>
@@ -543,7 +820,10 @@ const styles = StyleSheet.create({
     },
     category_View: {
         height: height / 10,
-        width: width / 1.07,
+        width: width / 2,
+        alignItems:"center",
+        alignSelf:"flex-start",
+        // backgroundColor:"#000",
         flexDirection: "row",
         marginTop: MARGIN.xxsMargin
     },
