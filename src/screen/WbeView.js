@@ -7,9 +7,14 @@ export default class WbeView extends React.Component {
     constructor(props) {
         super(props); {
             this.state = {
-
+                item: {},
             }
         }
+    }
+    componentDidMount() {
+        let data = this.props.route.params.name
+        // alert(JSON.stringify(data))
+        this.setState({ item: data })
     }
 
 
@@ -17,7 +22,7 @@ export default class WbeView extends React.Component {
     render() {
         return (
             <>
-                <WebView source={{ uri: 'https://lottiefiles.com/101799-cook-in-a-wok' }} />
+                <WebView source={{ uri: this.state.item.video }} />
             </>
         )
 

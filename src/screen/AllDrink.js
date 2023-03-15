@@ -31,7 +31,8 @@ export default function AllDrink() {
                 Elsouba: "10",
                 components: "2 ليمون كبير\nماء\n2 معلقه سكر\nحفنه نعناع\nثلج\nماء بارد",
                 Step: "نقوم بعصر كمية من نعصر الليمون ثم نصب عصيره ف الخلاط\nنضع مقدار النعناع والسكر والماء البارد ونخلط ف الخلاط ثم نصب ف الكاس مع الثلج",
-                categortType: 4
+                categortType: 4,
+                video: "https://www.youtube.com/watch?v=g0KnsicH7kU"
 
             },
             {
@@ -44,7 +45,9 @@ export default function AllDrink() {
                 view: true,
                 Step: "نخلط جميع المكونات ونقدمها ونزينها بالليمون و النعناع و التوت",
                 time: "15 min",
-                categortType: 1
+                categortType: 1,
+                video: "https://www.youtube.com/watch?v=g0KnsicH7kU"
+
 
             },
             {
@@ -57,7 +60,9 @@ export default function AllDrink() {
                 view: true,
                 Step: "في عصارة البرتقال قومي بعصر جميع المكونات. صبي الخليط في اكواب التقديم و اضيفي السكر الي الاكواب حسب الرغبة و حركي جيداً. يقدم وبالف هنا و شفا",
                 time: "15 min",
-                categortType: 1
+                categortType: 1,
+                video: "https://www.youtube.com/watch?v=g0KnsicH7kU"
+
 
             },
             {
@@ -70,7 +75,9 @@ export default function AllDrink() {
                 view: true,
                 Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و نقشر الليمون و نقطعه بالنص و نستخرج البذور\nو نبشر الزنجبيل بعدها نضع كل المكونات بالخلاط ونخلطها لمدة خمس دقائق\n",
                 time: "15 min",
-                categortType: 1
+                categortType: 1,
+                video: "https://www.youtube.com/watch?v=g0KnsicH7kU"
+
 
             },
             {
@@ -83,7 +90,9 @@ export default function AllDrink() {
                 view: true,
                 Step: "نقشر حبات الليمون والبرتقال\nتقطع وتزال البذور\nتخلط في الخلاط الكهربائي ثم تصفى\nيعاد العصير الى الخلاط مع مكعبات الثلج\nتصب في اكواب التقديم ويقدم بارد",
                 time: "25 min",
-                categortType: 2
+                categortType: 2,
+                video: "https://www.youtube.com/watch?v=g0KnsicH7kU"
+
 
             },
             {
@@ -96,7 +105,9 @@ export default function AllDrink() {
                 view: true,
                 Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
                 time: "30 min",
-                categortType: 2
+                categortType: 2,
+                video: "https://www.youtube.com/watch?v=g0KnsicH7kU"
+
 
             },
             {
@@ -109,7 +120,9 @@ export default function AllDrink() {
                 view: true,
                 Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
                 time: "30 min",
-                categortType: 2
+                categortType: 2,
+                video: "https://www.youtube.com/watch?v=g0KnsicH7kU"
+
 
             },
             {
@@ -122,7 +135,9 @@ export default function AllDrink() {
                 view: true,
                 Step: "اضف الماء و معلقه ملح اضف الماء و معلقه ملح اضف الماء و معل\nقه اضف الماء و معلقه ملحاضف الماء و معلقه ملحاضف الماء و معلقه\n ملح ملح",
                 time: "30 min",
-                categortType: 3
+                categortType: 3,
+                video: "https://www.youtube.com/watch?v=g0KnsicH7kU"
+
 
             },
 
@@ -360,8 +375,8 @@ export default function AllDrink() {
                                                 item.view ? (
                                                     <View style={styles.meal_View}>
                                                         <Image source={item.Image} style={styles.meal_image}
-                                                            resizeMode={"center"} />
-                                                        <View style={{ width: width / 2.4,height:height/12, alignItems: "flex-start",justifyContent:"center" }}>
+                                                            resizeMode={"cover"} />
+                                                        <View style={{ width: width / 2.4, height: height / 12, alignItems: "flex-start", justifyContent: "center" }}>
                                                             <Text style={styles.meal_name}>
                                                                 {item.name}
                                                             </Text>
@@ -385,7 +400,13 @@ export default function AllDrink() {
                                                                     الطريقة
                                                                 </Text>
                                                             </TouchableOpacity>
-                                                            <TouchableOpacity style={styles.button_option}>
+                                                            <TouchableOpacity onPress={() => {
+                                                                navigation.navigate("WbeView", {
+                                                                    name: item
+                                                                })
+                                                            }
+                                                            }
+                                                                style={styles.button_option}>
                                                                 <Text style={styles.button_text}>
                                                                     الفيديو
                                                                 </Text>
