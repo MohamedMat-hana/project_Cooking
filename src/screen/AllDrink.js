@@ -410,7 +410,8 @@ export default function AllDrink() {
                 time: "20 min",
                 categortType: 1,
                 video: "https://www.youtube.com/watch?v=hiUSTyAeTSI"
-            },{
+            },
+            {
                 Image: require("../img/5f0867c5bc87c.jpg"),
                 name: "اللاتيه",
                 Elta7der: '5 min',
