@@ -27,16 +27,64 @@ export default function CommonDessert() {
     const [Common, setCommon] = useState(
         [
             {
+                Image: require("../img/vvthd.jpeg"),
+                name: "ايس كوفي",
+                Elta7der: '5 min',
+                Eltahy: "15 min",
+                Elsouba: "25",
+                components: "قهوة\nحليب\nثلج\nسكر حسب الرغبة",
+                view: true,
+                Step: "نسوي القهوة ونحطو في الثلاجة\nنحط الحليب ونحطو في الثلاجة\nنطحن الثلج",
+                time: "20 min",
+                video: "https://www.youtube.com/watch?v=mPD16YKE3Q4"
+            },
+            {
+                Image: require("../img/ramadan.jpeg"),
+                name: "تمر هندي",
+                Elta7der: '20 min',
+                Eltahy: "1 day",
+                Elsouba: "60",
+                components: "½ باكيت تمر هندي\n3 اكواب سكر\nملون طعام\nماء ورد",
+                view: true,
+                Step: "بفرط التمر بماي وبخليه يغلي على النار\nبخلية ليلة كاملة بلبراد.الي مستعجلة تخليه ساعتين\nبحضر الماء مع السكر..بعد مايذوب السكر بحط ملون الطعام\nبحط ماء ورد وبصفي التمر في مصفاه\nبصفيه واضيفه على الماء والسكر الي حضرتن",
+                time: "24 h 20 min",
+                video: "https://www.youtube.com/watch?v=OrLjSOBGtto"
+            },
+            {
+                Image: require("../img/camar.jpeg"),
+                name: "قمر الدين",
+                Elta7der: '5 min',
+                Eltahy: "10",
+                Elsouba: "20",
+                components: "كيس واحد من القمر الدين\n4 ملاعق سكر",
+                view: true,
+                Step: "ننقع القمرالدين في زبدية كبيرة بماء ساخن مع اضافة السكر.\nبعد ساعتين بذراع الخلاط نخلط المحتوى\nبعد ماصار الخليط مخلوط بالكامل\nنضعه في جك خاص بالعصير ونضعه بالثلاجة حتى يبرد ويصبح جاهز للشرب",
+                time: "15 min",
+                video: "https://www.youtube.com/watch?v=fcyTQmjSMWE"
+            },
+            {
+                Image: require("../img/5ha.jpeg"),
+                name: "الخروب",
+                Elta7der: '5 min',
+                Eltahy: "10",
+                Elsouba: "20",
+                components: "2 كوب خروب مجروش\n1 كوب سكر\nلتر ونصف ماء\n نقطة من ماء الورد",
+                view: true,
+                Step: "يوضع الخروب والسكر على النار مع التقليب حتى يتكرمل ويصبح لونه ذهبي\nيوضع الماء على الخروب ويترك على النار لمده ربع ساعة حتى ينضح وبعدها يترد ليبرد\nويصفى في دورق (قارورة) ويوضع عليه نقطة ماء الود ويبرد في الثلاجه",
+                time: "15 min",
+                video: "https://www.youtube.com/watch?v=RMTw5TsrKP8"
+            },
+            {
                 Image: require("../img/5f0865f6dccdc.jpg"),
                 name: "الكابتشينو",
                 Elta7der: '5 min',
                 Eltahy: "15 min",
                 Elsouba: "25",
-                components:"¼ كوب (37.5 جم) قهوة سريعة الذوبان\n. ¼ كوب (50 جم) سكر\n. 3 ملاعق كبيرة (45 مل) ماء.\n كوب (250 مل) حليب خالي الدسم\n. كاكاو وقرفة للزينة",
+                components: "¼ كوب (37.5 جم) قهوة سريعة الذوبان\n. ¼ كوب (50 جم) سكر\n. 3 ملاعق كبيرة (45 مل) ماء.\n كوب (250 مل) حليب خالي الدسم\n. كاكاو وقرفة للزينة",
                 view: true,
-                Step:"ضعي السكر والقهوة والماء في وعاء كبير، واخفقيها بالمضرب اليدوي لمدة ثلاث إلى خمس دقائق، حتى يتكون لديكِ خليط ناعم كالكريمة\n. ضعي الحليب على نار متوسطة، واخفقيه باستمرار حتى يغلي، وتتكون لديكِ رغوة كثيفة. وزعي الكابتشينو على كوبين، ثم وزعي الحليب بالرغوة الخاصة به، وقلبيه برفق حتى تمتزج المكونات، ثم قدميه. زيني الكابتشينو ببودرة الكاكاو والقرفة",
+                Step: "ضعي السكر والقهوة والماء في وعاء كبير، واخفقيها بالمضرب اليدوي لمدة ثلاث إلى خمس دقائق، حتى يتكون لديكِ خليط ناعم كالكريمة\n. ضعي الحليب على نار متوسطة، واخفقيه باستمرار حتى يغلي، وتتكون لديكِ رغوة كثيفة. وزعي الكابتشينو على كوبين، ثم وزعي الحليب بالرغوة الخاصة به، وقلبيه برفق حتى تمتزج المكونات، ثم قدميه. زيني الكابتشينو ببودرة الكاكاو والقرفة",
                 time: "20 min",
-                 video: "https://www.youtube.com/watch?v=hiUSTyAeTSI"
+                video: "https://www.youtube.com/watch?v=hiUSTyAeTSI"
             },
             {
                 Image: require("../img/aasth.jpeg"),
@@ -44,11 +92,11 @@ export default function CommonDessert() {
                 Elta7der: '5 min',
                 Eltahy: "10 min",
                 Elsouba: "25",
-                components:"4 ملاعق كبيرة (40 جم) قهوة مطحونة\n 2 كوب (500 مل) ماء مغلي\n وعاء به مكبس للقهوة (وعاء كبس القهوة)",
+                components: "4 ملاعق كبيرة (40 جم) قهوة مطحونة\n 2 كوب (500 مل) ماء مغلي\n وعاء به مكبس للقهوة (وعاء كبس القهوة)",
                 view: true,
-                Step:"ضعي القهوة في الوعاء، ثم صبي الماء المغلي، واتركيه جانبًا لمدة أربع دقائق.\n اضغطي على المكبس لأسفل حتى يمنع القهوة من التحرك، ويثبتها في الأسفل. صبي الإسبريسو في أكواب التقديم، وقدميها ساخنة",
+                Step: "ضعي القهوة في الوعاء، ثم صبي الماء المغلي، واتركيه جانبًا لمدة أربع دقائق.\n اضغطي على المكبس لأسفل حتى يمنع القهوة من التحرك، ويثبتها في الأسفل. صبي الإسبريسو في أكواب التقديم، وقدميها ساخنة",
                 time: "20 min",
-                 video: "https://www.youtube.com/watch?v=TpZ2uVtMoVU"
+                video: "https://www.youtube.com/watch?v=TpZ2uVtMoVU"
             },
             {
                 Image: require("../img/coklemone.jpg"),
@@ -60,7 +108,7 @@ export default function CommonDessert() {
                 Elsouba: "10",
                 components: "2 ليمون كبير\nماء\n2 معلقه سكر\nحفنه نعناع\nثلج\nماء بارد",
                 Step: "نقوم بعصر كمية من نعصر الليمون ثم نصب عصيره ف الخلاط\nنضع مقدار النعناع والسكر والماء البارد ونخلط ف الخلاط ثم نصب ف الكاس مع الثلج",
-                 video: "https://www.youtube.com/watch?v=g0KnsicH7kU"
+                video: "https://www.youtube.com/watch?v=g0KnsicH7kU"
 
             },
             {
@@ -92,7 +140,7 @@ export default function CommonDessert() {
                 video: "https://www.youtube.com/watch?v=38xZdDygW04"
 
 
-            },{
+            }, {
                 Image: require("../img/555.jpeg"),
                 name: "سموزي الفرااوله",
                 Elta7der: '5 min',
@@ -104,7 +152,7 @@ export default function CommonDessert() {
                 time: "15 min",
                 categortType: 2,
                 video: "https://www.youtube.com/watch?v=r3Ycl293l_U"
-            },{
+            }, {
                 Image: require("../img/dddh.jpeg"),
                 name: "موهيتو السڤن اب",
                 Elta7der: '5 min',
@@ -125,7 +173,7 @@ export default function CommonDessert() {
                 Elsouba: "60",
                 components: "كوب ونصف من زهورات الكركديه\nكوب سكر\nملعقه ماء الورد\nليتر ماء ساخن للنقع\nعند التقديم\nمكعبات ثلج وبعض الزهورات المغسوله\nمكعبات ثلج",
                 view: true,
-                Step:"تغسل زهورات الكركديه لازالة الاتربه ونحضر باقي المكونات ونضع زهورات الكركديه المغسوله بوعاء ونضع عليها السكر وماء الورد\nنصب عليها لتر ماء مغلي وننقعها ساعتين ونضعها بالثلاج احط منه مكعبات ابرزها في الفريزر عشان تكون مكعبات ثلج استخدمها اثناء التقديم واطلع الكركديه من الثلاجه واصفيه واضع مكعبات الثلج في كاس التقديم واسكب عليها مشروب الكركديه",
+                Step: "تغسل زهورات الكركديه لازالة الاتربه ونحضر باقي المكونات ونضع زهورات الكركديه المغسوله بوعاء ونضع عليها السكر وماء الورد\nنصب عليها لتر ماء مغلي وننقعها ساعتين ونضعها بالثلاج احط منه مكعبات ابرزها في الفريزر عشان تكون مكعبات ثلج استخدمها اثناء التقديم واطلع الكركديه من الثلاجه واصفيه واضع مكعبات الثلج في كاس التقديم واسكب عليها مشروب الكركديه",
                 time: "15 min",
                 categortType: 1,
                 video: "https://www.youtube.com/watch?v=GnzaI9oXVLQ"
@@ -136,9 +184,9 @@ export default function CommonDessert() {
                 Elta7der: '5 min',
                 Eltahy: "15 min",
                 Elsouba: "20",
-                components:"6 حبات فراولة\n2 حبة موز\nكوب حليب\nثلج مجروش\n2 م ك ايسكريم ڤانيلا\nعسل او سكر حسب الرغبة",
+                components: "6 حبات فراولة\n2 حبة موز\nكوب حليب\nثلج مجروش\n2 م ك ايسكريم ڤانيلا\nعسل او سكر حسب الرغبة",
                 view: true,
-                Step:"اخلط جميع المكونات في الخلاط واقدمه باكواب وبالعافية",
+                Step: "اخلط جميع المكونات في الخلاط واقدمه باكواب وبالعافية",
                 time: "20 min",
                 categortType: 2,
                 video: "https://www.youtube.com/watch?v=xOkfvKtvPdY"
@@ -149,9 +197,9 @@ export default function CommonDessert() {
                 Elta7der: '5 min',
                 Eltahy: "15 min",
                 Elsouba: "40",
-                components:"⅔ كوب (166.6 مل) ماء\n. ½ 1 ملعقة كبيرة (15 جم) قهوة تركي\n. ملعقة صغيرة (5 جم) كاكاو\n. ملعقة صغيرة (5 جم) شوكولاتة مبشورة\n. سكر حسب الرغبة",
+                components: "⅔ كوب (166.6 مل) ماء\n. ½ 1 ملعقة كبيرة (15 جم) قهوة تركي\n. ملعقة صغيرة (5 جم) كاكاو\n. ملعقة صغيرة (5 جم) شوكولاتة مبشورة\n. سكر حسب الرغبة",
                 view: true,
-                Step:"ضعي الماء والقهوة والكاكاو والسكر والشوكولاتة في كنكة (ركوة)، وقلبي المكونات حتى تذوب\n. ضعي القهوة على نار هادئة، حتى تقترب من الغليان\n. ارفعي القهوة عن النار حتى تهدأ قليلًا، ثم أعيديها مرة أخرى حتى تظهر فقاعات على أطراف الكنكة، ويصبح لها وجه\n. ارفعي القهوة عن النار، وصبيها في الفناجين، وقدميها ساخنة",
+                Step: "ضعي الماء والقهوة والكاكاو والسكر والشوكولاتة في كنكة (ركوة)، وقلبي المكونات حتى تذوب\n. ضعي القهوة على نار هادئة، حتى تقترب من الغليان\n. ارفعي القهوة عن النار حتى تهدأ قليلًا، ثم أعيديها مرة أخرى حتى تظهر فقاعات على أطراف الكنكة، ويصبح لها وجه\n. ارفعي القهوة عن النار، وصبيها في الفناجين، وقدميها ساخنة",
                 time: "20 min",
                 categortType: 1,
                 video: "https://www.youtube.com/watch?v=zftgNcNZpgA"
@@ -162,9 +210,9 @@ export default function CommonDessert() {
                 Elta7der: '5 min',
                 Eltahy: "15 min",
                 Elsouba: "25",
-                components:"كوبين فراولة مجمدة مقطعة\nكوب مانجا مجمدة\n1/3 كوب عصير البرتقال",
+                components: "كوبين فراولة مجمدة مقطعة\nكوب مانجا مجمدة\n1/3 كوب عصير البرتقال",
                 view: true,
-                Step:"تُخلط جميع المكونات في الخلاط ثم تُقدم في كأس وبالعافية مقدما ",
+                Step: "تُخلط جميع المكونات في الخلاط ثم تُقدم في كأس وبالعافية مقدما ",
                 time: "20 min",
                 categortType: 2,
                 video: "https://www.youtube.com/watch?v=9ePJjmJdVNg"
@@ -175,9 +223,9 @@ export default function CommonDessert() {
                 Elta7der: '5 min',
                 Eltahy: "15 min",
                 Elsouba: "25",
-                components:"3 مانجو زاكيه\n3 جوافه\n١ افوكادو مستويه\n2 كاس حليب\n1 كاس ماء\n1 ظريف كريم شانتيه(دريم ويب)\nسكر حسب الرغبه",
+                components: "3 مانجو زاكيه\n3 جوافه\n١ افوكادو مستويه\n2 كاس حليب\n1 كاس ماء\n1 ظريف كريم شانتيه(دريم ويب)\nسكر حسب الرغبه",
                 view: true,
-                Step:"نخلط جميع المكونات بالخلاط ونتحكم بسمك العصير اذا تحبوا اخف زيدوا ماء ونصفيه جيدا من بذور الجوافه\nيوضع بالثلاجه لوقت التقديم. وبالعااافيه",
+                Step: "نخلط جميع المكونات بالخلاط ونتحكم بسمك العصير اذا تحبوا اخف زيدوا ماء ونصفيه جيدا من بذور الجوافه\nيوضع بالثلاجه لوقت التقديم. وبالعااافيه",
                 time: "20 min",
                 categortType: 2,
                 video: "https://www.youtube.com/watch?v=KiRJHtwGez8"
@@ -270,80 +318,85 @@ export default function CommonDessert() {
                                     الوصفات
                                 </Text>
                                 <TouchableOpacity
-                                onPress={() => {
-                                    navigation.navigate("All", {
-                                        name: Common
-                                    })
-                                }
-                                }>
-                                <Text style={styles.textHeaderstarred2}>
-                                    رؤية الكل
-                                </Text>
+                                    onPress={() => {
+                                        navigation.navigate("All", {
+                                            name: Common
+                                        })
+                                    }
+                                    }>
+                                    <Text style={styles.textHeaderstarred2}>
+                                        رؤية الكل
+                                    </Text>
                                 </TouchableOpacity>
                             </View>
-                            <View style={{ flexDirection: "row",width:width, }}>
+                            <View style={{ flexDirection: "row", width: width, }}>
                                 <ScrollView horizontal={true}>
-{animationDisplay?(
-    <>
-                                        <View style={{ alignItems: "center", justifyContent: "center", alignSelf: "center", width: width, height: height / 1.8 }}>
-                                            <LottieView
-                                                ref={this.ref}
-                                                source={require("../lottie/search_empty.json")}
-                                                loop={true}
-                                                autoPlay={true}
-                                                speed={1.5}
-                                            // style={{ alignSelf: "center" }}
-                                            />
-                                        </View>
-                                    </>
-):(
-<>
-{Common.map((item, index) => (
-                                        item.view ? (
-
-                                            <View style={styles.Box}>
-                                                <Image source={item.Image} style={styles.ImageTabs2}
-                                                    resizeMode={"center"} />
-                                                <View style={styles.TextViewBox}>
-                                                    <Text style={styles.TextBox}>
-                                                        {item.name}
-                                                    </Text>
-                                                </View>
-                                                <View style={styles.TextTimeBox}>
-                                                    <Text style={styles.TimeBox}>
-                                                        {item.time}
-                                                    </Text>
-                                                    <Ionicons name='md-time' style={{ alignSelf: "center" }} size={ICONSSIZE.smIcon} color={COLORS.ButtonWhite} />
-                                                </View>
-                                                <View style={styles.OptionBox}>
-                                                    <TouchableOpacity
-                                                        onPress={() => {
-                                                            navigation.navigate("Photo_page", {
-                                                                name: item
-                                                            })
-                                                        }
-                                                        }
-                                                        style={styles.OptionButtonBox}>
-                                                        <Text style={styles.OptionTimeBox}>
-                                                            الطريقة
-                                                        </Text>
-                                                    </TouchableOpacity>
-                                                    <TouchableOpacity style={styles.OptionButtonBox}>
-                                                        <Text style={styles.OptionTimeBox}>
-                                                            الفيديو
-                                                        </Text>
-                                                    </TouchableOpacity>
-
-                                                </View>
-
-
+                                    {animationDisplay ? (
+                                        <>
+                                            <View style={{ alignItems: "center", justifyContent: "center", alignSelf: "center", width: width, height: height / 1.8 }}>
+                                                <LottieView
+                                                    ref={this.ref}
+                                                    source={require("../lottie/search_empty.json")}
+                                                    loop={true}
+                                                    autoPlay={true}
+                                                    speed={1.5}
+                                                // style={{ alignSelf: "center" }}
+                                                />
                                             </View>
-                                        ) : (null)
+                                        </>
+                                    ) : (
+                                        <>
+                                            {Common.map((item, index) => (
+                                                item.view ? (
 
-                                    ))}
-</>
-)}
-                                   
+                                                    <View style={styles.Box}>
+                                                        <Image source={item.Image} style={styles.ImageTabs2}
+                                                            resizeMode={"cover"} />
+                                                        <View style={styles.TextViewBox}>
+                                                            <Text style={styles.TextBox}>
+                                                                {item.name}
+                                                            </Text>
+                                                        </View>
+                                                        <View style={styles.TextTimeBox}>
+                                                            <Text style={styles.TimeBox}>
+                                                                {item.time}
+                                                            </Text>
+                                                            <Ionicons name='md-time' style={{ alignSelf: "center" }} size={ICONSSIZE.smIcon} color={COLORS.ButtonWhite} />
+                                                        </View>
+                                                        <View style={styles.OptionBox}>
+                                                            <TouchableOpacity
+                                                                onPress={() => {
+                                                                    navigation.navigate("Photo_page", {
+                                                                        name: item
+                                                                    })
+                                                                }
+                                                                }
+                                                                style={styles.OptionButtonBox}>
+                                                                <Text style={styles.OptionTimeBox}>
+                                                                    الطريقة
+                                                                </Text>
+                                                            </TouchableOpacity>
+                                                            <TouchableOpacity onPress={() => {
+                                                                navigation.navigate("WbeView", {
+                                                                    name: item
+                                                                })
+                                                            }
+                                                            } style={styles.OptionButtonBox}>
+                                                                <Text style={styles.OptionTimeBox}>
+                                                                    الفيديو
+                                                                </Text>
+                                                            </TouchableOpacity>
+
+                                                        </View>
+
+
+                                                    </View>
+                                                ) : (null)
+
+                                            ))}
+                                        </>
+                                    )}
+
                                 </ScrollView>
                             </View>
                         </View>
@@ -357,16 +410,18 @@ export default function CommonDessert() {
                                 </Text> */}
                             </View>
 
-                            
+
                             {Common.map((item, index) => (
                                 <View style={styles.Boxstarred}>
                                     <View style={styles.ViewImage}>
-                                        <Image source={item.Image} resizeMode={"contain"} style={styles.Imagestarred} />
+                                        <Image source={item.Image} resizeMode={"cover"} style={styles.Imagestarred} />
                                     </View>
                                     <View style={styles.BoxTextStarred}>
-                                        <Text style={[styles.textHeaderstarred, { fontSize: FONTS.h2 }]}>
-                                            {item.name}
-                                        </Text>
+                                        <View style={{ width: width / 2, alignItems: "center" }}>
+                                            <Text style={[styles.textHeaderstarred, { fontSize: FONTS.h2 }]}>
+                                                {item.name}
+                                            </Text>
+                                        </View>
                                         <View style={[styles.TextTimeBox, { justifyContent: "center" }]}>
                                             <Text style={styles.TimeBox}>
                                                 {item.time}
@@ -386,7 +441,12 @@ export default function CommonDessert() {
                                                     الطريقة
                                                 </Text>
                                             </TouchableOpacity>
-                                            <TouchableOpacity style={styles.OptionButtonBox}>
+                                            <TouchableOpacity onPress={() => {
+                                                navigation.navigate("WbeView", {
+                                                    name: item
+                                                })
+                                            }
+                                            } style={styles.OptionButtonBox}>
                                                 <Text style={styles.OptionTimeBox}>
                                                     الفيديو
                                                 </Text>
@@ -461,7 +521,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         alignSelf: "center",
         // backgroundColor:COLORS.black,
-        color: COLORS.black, 
+        color: COLORS.black,
         justifyContent: "flex-end",
         fontFamily: "Generator Black",
         // borderRadius: RADIUS.lgRadius,
@@ -486,6 +546,7 @@ const styles = StyleSheet.create({
         width: width / 2.1,
         alignItems: "center",
         // height: height / 15,
+        justifyContent: "space-around",
         margin: MARGIN.xsMargin,
         padding: PADDING.lgPadding,
         borderRadius: RADIUS.xxsRadius,
@@ -535,7 +596,7 @@ const styles = StyleSheet.create({
     },
     BoxTextStarred: {
         width: width / 1.9,
-        height: height / 6,
+        // height: height / 6,
         alignSelf: "center",
         alignItems: "center",
         justifyContent: "space-between",
