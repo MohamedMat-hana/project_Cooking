@@ -654,7 +654,7 @@ export default function AllDrink() {
                                                     <View style={styles.meal_View}>
                                                         <Image source={item.Image} style={styles.meal_image}
                                                             resizeMode={"cover"} />
-                                                        <View style={{ width: width / 2.4, height: height / 12, alignItems: "flex-start", justifyContent: "center" }}>
+                                                        <View style={{ width: width / 2.4, height: height / 12, alignItems: "center", justifyContent: "center" }}>
                                                             <Text style={styles.meal_name}>
                                                                 {item.name}
                                                             </Text>
@@ -722,7 +722,7 @@ export default function AllDrink() {
                                     <View style={styles.meal_View}>
                                         <Image source={items.Image} style={styles.meal_image}
                                             resizeMode={"cover"} />
-                                        <View style={{ width: width / 2.4, height: height / 12, alignItems: "flex-start", justifyContent: "center" }}>
+                                                        <View style={{ width: width / 2.4, height: height / 12, alignItems: "center", justifyContent: "center" }}>
                                             <Text style={styles.meal_name}>
                                                 {items.name}
                                             </Text>

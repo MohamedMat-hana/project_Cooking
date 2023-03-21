@@ -138,8 +138,8 @@ export default class All extends React.Component {
                                             item.view ? (
                                                 <View style={styles.meal_View}>
                                                     <Image source={item.Image} style={styles.meal_image}
-                                                        resizeMode={"center"} />
-                                                    <View style={{ width: width / 2.4, alignItems: "flex-start" }}>
+                                                        resizeMode={"cover"} />
+                                                        <View style={{ width: width / 2.4, height: height / 12, alignItems: "center", justifyContent: "center" }}>
                                                         <Text style={styles.meal_name}>
                                                             {item.name}
                                                         </Text>
