@@ -113,20 +113,20 @@ export default class Photo_page extends React.Component {
     //     }else{
 
     //         arrfav = fav
-            
+
     //         for (let i = 0; i <= arrfav.length; i++) {
 
     //             if (item.name != arrfav[i].name) {
-                      
-                      
+
+
     //                     // arrfav.push(this.state.item)
     //                 console.log(item)
     //             }
-    
+
     //         }
 
     //     }
-       
+
     //     await AsyncStorage.setItem("fav", JSON.stringify(arrfav))
     //     console.log(fav)
     // }
@@ -182,10 +182,10 @@ export default class Photo_page extends React.Component {
                                             borderRadius: RADIUS.lgRadius,
                                             alignItems: "center",
                                             justifyContent: "center",
-                                         }} onPress={() => {
+                                        }} onPress={() => {
                                             this.IconFav()
-                                         }}>
-                                     </View>
+                                        }}>
+                                    </View>
                                 </View>
                                 <View style={styles.FirstDetels}>
                                     <View style={styles.Detels} >
@@ -221,14 +221,14 @@ export default class Photo_page extends React.Component {
                                         </Text>
                                     </View>
                                     <View style={styles.mocaonatD}>
- 
+
                                         <View style={styles.onetwo}>
                                             {/* <Ionicons name='ellipse' size={10} color={COLORS.ButtonWhite} /> */}
                                             <Text style={[styles.TextRow, { marginHorizontal: MARGIN.xxsMargin, textDecorationLine: "none" }]} >
                                                 {this.state.item.components}
                                             </Text>
                                         </View>
-                                     </View>
+                                    </View>
                                 </View>
                                 <View style={styles.mocaonat}>
                                     <View style={styles.FontView}>
@@ -237,27 +237,29 @@ export default class Photo_page extends React.Component {
                                         </Text>
                                     </View>
                                     <View style={styles.mocaonatD}>
- 
+
                                         <View style={styles.onetwo}>
- 
+
                                             <Text style={[styles.TextRow, {
                                                 width: width / 1.49,
-                                                 marginHorizontal: MARGIN.xxsMargin,
+                                                marginHorizontal: MARGIN.xxsMargin,
                                                 textDecorationLine: "none",
                                             }]} >
                                                 {this.state.item.Step}
                                             </Text>
                                         </View>
-                                     </View>
+                                    </View>
 
 
                                 </View>
                             </View>
                         </View>
-<View style={{height:70}}>
+                        <View style={{
+                            height: 70, backgroundColor: COLORS.pramary
+                        }}>
 
-</View>
-{/* </View> */}
+                        </View>
+                        {/* </View> */}
                     </ScrollView>
 
 
