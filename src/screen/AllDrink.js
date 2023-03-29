@@ -107,12 +107,10 @@ export default function AllDrink() {
                 time: "15 min",
                 categortType: 1,
                 video: "https://www.youtube.com/watch?v=fBSsdfLotpE"
-
-
             },
             {
                 Image: require("../img/88.jpeg"),
-                name: "Hot chocolate مشروب الشوكولاتة",
+                name: "هوت شوكلت",
                 Elta7der: '5 min',
                 Eltahy: "20 min",
                 Elsouba: "50",

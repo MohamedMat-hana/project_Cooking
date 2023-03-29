@@ -22,7 +22,7 @@ export default function AllDessert() {
     const [Food, setFood] = useState(
         [
             {
-                categortType: 1,
+                categortType: 3,
                 Image: require("../img/cccth.jpeg"),
                 name: "بسبوسة محشيه",
                 Elta7der: '5 min',
@@ -47,7 +47,8 @@ export default function AllDessert() {
                 Step: "ندخل البف باستري بالفرن على درجة حراره ١٨٠ من تحت حتى تأخذ اللون الذهبي ثم من الاعلى ثم نطلعها ونتركهاا تبرد وبعد ماتبرد نقصصها ااتقطيع صغير (ملاحظة البف يتحمر بسرعه اذا كان الفرن مسبق التشغيل) ثم يتم توزيع البف باستري بصينيه او صواني فخار كميةمتوسطة حتى نضع خليط المكسرات ونضع الباقي من البف باستري\nنأخذ (خليط المكسرات) بقلايه ونذوب الزبدة ونحمر المكسرات عليهاا بعد ماتتحمّر المكسرات مع الزبدة نضيف الجوز الهند بعدهاا اوزع خليط المسكرات على البف اللي وزعته بالصواني ثم نرجع نضع باقي البف باستري\nنخلط الحليب - مع القشطة - وحليب النستله المحلى مع بعض ثم نضعه على النار حتى تغلي ونصبة في على البف باستري الموزع بالتساوي ونسيقه فيه\nنخلط القشطة والدريم ويب والحليب مع بعض الى ان تتجانس ونوزعه على الوجه\nثم نضع الصينية داخل الفرن من الأعلى فقــط للتحمير وتأخذ التغطيه اللون الذهبي ",
                 time: "50 min",
                 video: "https://www.youtube.com/watch?v=PHPZllvsypo"
-            }, {
+            }, 
+            {
                 categortType: 1,
                 Image: require("../img/t2h.jpeg"),
                 name: "كوكيز بدون زبدة وسكر",
@@ -348,7 +349,7 @@ export default function AllDessert() {
                 video: "https://www.youtube.com/watch?v=0pya1bnNreM"
             },
             {
-                categortType: 1,
+                categortType: 5,
                 Image: require("../img/4536415th.jpeg"),
                 name: "قطايف بالجوز",
                 Elta7der: '5 min',
@@ -361,7 +362,7 @@ export default function AllDessert() {
                 video: "https://www.youtube.com/watch?v=tbTWQ2TRtCI"
             },
             {
-                categortType: 1,
+                categortType: 4,
                 Image: require("../img/460631a884f126b2d66155b0b20e3a72_w750_h500.jpg"),
                 name: "كنافة بالقشطة",
                 Elta7der: '10 min',
@@ -374,7 +375,7 @@ export default function AllDessert() {
                 video: "https://www.youtube.com/watch?v=GbOL_oMyENg"
             },
             {
-                categortType: 1,
+                categortType: 4,
                 Image: require("../img/cf82378b48898b67305548b733e72ea7_w750_h500.jpeg"),
                 name: "كنافة بالمهلبية",
                 Elta7der: '10 min',
@@ -400,7 +401,7 @@ export default function AllDessert() {
                 video: "https://www.youtube.com/watch?v=uz1r7fhg9A8"
             },
             {
-                categortType: 1,
+                categortType: 5,
                 Image: require("../img/691d959bb2492c326a797797dc29831b_w750_h500.jpg"),
                 name: "عجينة القطايف",
                 Elta7der: '5 min',
@@ -452,7 +453,7 @@ export default function AllDessert() {
                 video: "https://www.youtube.com/watch?v=gS1z3NxSgcU"
             },
             {
-                categortType: 1,
+                categortType: 3,
                 Image: require("../img/346ab9e3701f79656efa95b2edb95ced_w750_h500.jpg"),
                 name: "بسبوسة اللوز",
                 Elta7der: '5 min',
@@ -504,7 +505,7 @@ export default function AllDessert() {
                 video: "https://www.youtube.com/watch?v=deU9YNjljOo"
             },
             {
-                categortType: 1,
+                categortType: 5,
                 Image: require("../img/a6364eeb31782120e481f574dcdfb6f1_w750_h500.jpg"),
                 name: "قطايف مقلي بالجبن",
                 Elta7der: '10 min',
@@ -556,7 +557,7 @@ export default function AllDessert() {
                 video: "https://www.youtube.com/watch?v=6QVmtVgYluU"
             },
             {
-                categortType: 1,
+                categortType: 4,
                 Image: require("../img/6ee204c5e7eb449d46886057bfd8fdaa_w750_h500.jpg"),
                 name: "كنافة بالمكسرات",
                 Elta7der: '10 min',
@@ -569,7 +570,7 @@ export default function AllDessert() {
                 video: "https://www.youtube.com/watch?v=wpjyQyf-Mh8"
             },
             {
-                categortType: 1,
+                categortType: 5,
                 Image: require("../img/flkth.jpeg"),
                 name: "القطايف بالمكسرات",
                 Elta7der: '5 min',
@@ -582,7 +583,7 @@ export default function AllDessert() {
                 video: "https://www.youtube.com/watch?v=sEzUAeiuFZ0"
             },
             {
-                categortType: 1,
+                categortType: 5,
                 Image: require("../img/dd850b85666ae50c645ad350edae99b7_w750_h500.jpg"),
                 name: "قطايف بالفستق الحلبي",
                 Elta7der: '10 min',
@@ -634,7 +635,7 @@ export default function AllDessert() {
                 video: "https://www.youtube.com/watch?v=iMclG8Jt36E"
             },
             {
-                categortType: 1,
+                categortType: 4,
                 Image: require("../img/884972e5a924823e4c6fa80c6b6ddf3b_w750_h500.jpg"),
                 name: "كنافة بالمانجو",
                 Elta7der: '10 min',
@@ -672,8 +673,64 @@ export default function AllDessert() {
                 time: "35 min",
                 video: "https://www.youtube.com/watch?v=xOYp_CWgk7E"
             },
+            {
+                categortType: 1,
+                Image: require("../img/kas.jpg"),
+                name: "كاسترد بالفراولة",
+                Elta7der: '5 min',
+                Eltahy: "30 min",
+                Elsouba: "30",
+                components: "- بودرة الكاسترد الجاهزة : 6 ملاعق كبيرة\n- حليب : 7 اكواب (سائل)\n- بسكويت الشاي السادة : عبوة (مكسّر)\n- الفراولة : كوب (حبات)\n- سكر : نصف كوب\n- جوز الهند : 3 ملاعق كبيرة",
+                view: true,
+                Step: "في قدر على النار، ذوّبي الكاسترد مع الحليب والسكر حتى يغلي ويثخن قوامه.\nأضيفي البسكويت على الكاسترد، ثم أضيفي الفراولة، وجوز الهند.\nاسكبي الكاسترد في أكواب التقديم، وزينيه بالفراولة بحسب الرغبة، واتركيه حتى يبرد بالثلاجة، وقدميه",
+                time: "35 min",
+                video: "https://www.youtube.com/watch?v=5P2pjh4a-9Y"
+            },
+            {
+                categortType: 2,
+                Image: require("../img/82b4a96f27f086db1d3ac4ee4d097872_w750_h500.jpg"),
+                name: "مهلبية بالكاسترد",
+                Elta7der: '5 min',
+                Eltahy: "50 min",
+                Elsouba: "35",
+                components: "- حليب : 4 اكواب\n- البيض : 6 حبات\n- صفار البيض : 2 حبة\n- سكر : نصف كوب\n- الفانيليا : نصف ملعقة صغيرة",
+                view: true,
+                Step: "1. قومي بتشغيل الفرن على درجة حرارة 200.\n2. سخني الحليب في وعاء على نار متوسطة الحرارة مدّة خمس دقائق دون أن يغلي.\n3. أبعدي الحليب عن النار، ثمّ اتركيه جانباً حتى يبرد.\n4. أضيفي الفانيلا  إلى الحليب وامزجيه جيداً.\n5. ضعي كلاً من: البيض وصفار البيض في وعاء وامزجهما جيداً بواسطة الشوكة، يجب عدم استخدام الخفاقة الكهربائية.\n6. أضيفي الحليب إلى خليط البيض تدريجياً مع استمرار الخفق بواسطة الشوكة.\n7. صفي خليط الكاسترد من خلال مصفاة، واسكبيه في صينية فرن بعمق خمس سنتيمترات على الأقل.\n8. جهزي صينية فرن بحجم أكبر، وضعي منشفة وسطها، وثبتي صينية خليط الكاسترد فوق المنشفة، ثمّ اسكبي الماء الساخن في الصينية الكبيرة حتى يصل لمنتصفها.\n9. اخفضي درجة حرارة الفرن إلى 160 مئوية، وضعي الصينية في الفرن مدة 40 - 45 دقيقة.\n10. أخرجي الصينية من الفرن واتركي الكاسترد حتى يبرد، ثمّ احفظيه في البراد مدّة أربع ساعات على الأقل قبل التقديم حتى يبرد تماماً.",
+                time: "55 min",
+                video: "https://www.youtube.com/watch?v=zsBZs7SXNPE"
+            },
 
-        ])
+            {
+                categortType: 3,
+                Image: require("../img/602bfa39ff9bc5bb11b5f4d0f41c5c54_w750_h500.jpg"),
+                name: "بسبوسة بالهيل",
+                Elta7der: '5 min',
+                Eltahy: "50 min",
+                Elsouba: "35",
+                components: "- سميد خشن : 2 كوب\n- طحين : كوب\n- لبن زبادي : 2 كوب\n- بيكنج بودر : 2 ملعقة صغيرة\n- الزيت النباتي : ربع كوب\n- ملح : ربع ملعقة صغيرة\n- هيل : ملعقة صغيرة (مطحون)\n- البيض : 1 حبة\n- سكر : نصف كوب\n- قطر : 2 كوب (شيرة)\n- الفانيليا : ملعقة صغيرة",
+                view: true,
+                Step: "اخلطي البيضة مع الفانيلا والسكر والزيت حتى يصبح المزيج ناعماً ومتجانساً.\nأضيفي اللبن الزبادي.\nأضيفي الطحين والسميد والملح والبيكنج باودر والهيل المطحون وقلبي المزيج جيداً حتى تتجانس المكونات.\nادهني صينية الفرن بالقليل من الطحينة.\nصبي مزيج البسبوسة في الصينية وأدخليها الفرن على حرارة 170 درجة لمدة 20 دقيقة حتى تنضج وتتحمر.\nأخرجي الصينية من الفرن ووزعي القطر البارد عليها واتركيها لتبرد لمدة 10 – 15 دقيقة.\nقطعيها وقدميها دافئة أو باردة حسب الرغبة.",
+                time: "55 min",
+                video: "https://www.youtube.com/watch?v=NavbHtGCyaE"
+            },
+
+
+            // {
+            //     categortType: 1,
+            //     Image: require("../img/"),
+            //     name: "",
+            //     Elta7der: '5 min',
+            //     Eltahy: "30 min",
+            //     Elsouba: "20",
+            //     components: "",
+            //     view: true,
+            //     Step: "",
+            //     time: "35 min",
+            //     video: ""
+            // },
+
+        ]
+        )
 
     const [Category, SetCategory] = useState(
         [
@@ -682,7 +739,7 @@ export default function AllDessert() {
                 name: "حلويات شرقيه",
                 img: require("../img/burgerr.png"),
                 choose: false,
-                contant: "burgeeeerrrr",
+                // contant: "",
                 view: false,
             },
             {
@@ -690,10 +747,36 @@ export default function AllDessert() {
                 name: "مهلبية",
                 img: require("../img/pizzaa.png"),
                 choose: false,
-                contant: "pizzzzzaaaa",
+                // contant: "pizzzzzaaaa",
                 view: false,
             },
+            {
+                id: 3,
+                name: "بسبوسة",
+                img: require("../img/basbosapreview.png"),
+                choose: false,
+                // contant: "pizzzzzaaaa",
+                view: false,
+            },
+            {
+                id: 4,
+                name: "كنافة",
+                img: require("../img/pizzaa.png"),
+                choose: false,
+                // contant: "pizzzzzaaaa",
+                view: false,
+            },
+            {
+                id: 5,
+                name: "قطايف",
+                img: require("../img/pizzaa.png"),
+                choose: false,
+                // contant: "pizzzzzaaaa",
+                view: false,
+            },
+
         ]
+
     )
 
     const [IconSearch, setIconSearch] = useState(true)
@@ -839,7 +922,7 @@ export default function AllDessert() {
 
                                         }
                                     >
-                                        <Image source={Category.img} style={{ width: width / 5, height: height / 12, resizeMode: "contain" }} />
+                                        <Image source={Category.img} style={{ width: width / 5, height: height / 12,borderRadius:5, resizeMode: "contain" }} />
                                     </TouchableOpacity>
                                 )}
                             </ScrollView>
@@ -1034,10 +1117,14 @@ const styles = StyleSheet.create({
     },
     category_View: {
         height: height / 10,
-        width: width / 1.07,
+        width: width / 1,
+        alignItems: "center",
+        alignSelf: "flex-start",
+        // backgroundColor:"#000",
         flexDirection: "row",
         marginTop: MARGIN.xxsMargin
     },
+
     category_Box: {
         width: width / 4.5,
         height: height / 11,
@@ -1047,8 +1134,7 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.pramary50,
         marginLeft: 5,
         borderRadius: RADIUS.xsRadius
-    }
-    ,
+    },
     category_chosen_Box: {
         width: width / 4.5,
         height: height / 11,
