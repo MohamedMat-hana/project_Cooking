@@ -20,9 +20,12 @@ const App = () => {
         <Navigation />
       </NavigationContainer>
     {/* <WbeView/> */}
+    
     </>
   );
 }
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+ 
+});
 
 export default App;
