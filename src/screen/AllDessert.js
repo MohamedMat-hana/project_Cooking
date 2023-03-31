@@ -749,8 +749,8 @@ export default function AllDessert() {
         [
             {
                 id: 1,
-                name: "حلويات شرقيه",
-                img: require("../img/burgerr.png"),
+                name: "حلويات شرقية",
+                img: require("../img/shar.png"),
                 choose: false,
                 // contant: "",
                 view: false,
@@ -758,7 +758,7 @@ export default function AllDessert() {
             {
                 id: 2,
                 name: "مهلبية",
-                img: require("../img/pizzaa.png"),
+                img: require("../img/cat2.png"),
                 choose: false,
                 // contant: "pizzzzzaaaa",
                 view: false,
@@ -774,7 +774,7 @@ export default function AllDessert() {
             {
                 id: 4,
                 name: "كنافة",
-                img: require("../img/pizzaa.png"),
+                img: require("../img/konafapreview.png"),
                 choose: false,
                 // contant: "pizzzzzaaaa",
                 view: false,
@@ -782,7 +782,7 @@ export default function AllDessert() {
             {
                 id: 5,
                 name: "قطايف",
-                img: require("../img/pizzaa.png"),
+                img: require("../img/kataefpreview.png"),
                 choose: false,
                 // contant: "pizzzzzaaaa",
                 view: false,
@@ -996,7 +996,13 @@ export default function AllDessert() {
                                                                 الطريقة
                                                             </Text>
                                                         </TouchableOpacity>
-                                                        <TouchableOpacity style={styles.button_option}>
+                                                        <TouchableOpacity
+                                                      onPress={() => {
+                                                        navigation.navigate("WbeView", {
+                                                            name: item
+                                                        })
+                                                    }
+                                                    } style={styles.button_option}>
                                                             <Text style={styles.button_text}>
                                                                 الفيديو
                                                             </Text>
@@ -1055,7 +1061,13 @@ export default function AllDessert() {
                                                     الطريقة
                                                 </Text>
                                             </TouchableOpacity>
-                                            <TouchableOpacity style={styles.button_option}>
+                                            <TouchableOpacity
+                                            onPress={() => {
+                                                navigation.navigate("WbeView", {
+                                                    name: items
+                                                })
+                                            }
+                                            } style={styles.button_option}>
                                                 <Text style={styles.button_text}>
                                                     الفيديو
                                                 </Text>

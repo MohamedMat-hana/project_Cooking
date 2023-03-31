@@ -8,7 +8,7 @@ import {
     TouchableOpacity,
     ImageBackground,
     Dimensions,
-    TextInput,
+    BackHandler,
     ScrollView,
     AsyncStorage
 } from 'react-native';
@@ -87,53 +87,25 @@ export default class Photo_page extends React.Component {
             }
         }
     }
-    // IconFav() {
-    //     let last = this.state.IconFavorite
-    //     last = !last
-    //     if (last == true) {
-    //         console.log("true")
-    //     } else {
-    //         console.log("false")
-    //         // this.props.navigation.navigate("Favourite", {
-    //         //     name: this.state.item
-
-    //         // })
-
-    //     }
-    //     // this.savetofav()
-    //     this.setState({ IconFavorite: last })
-    // }
-    // async savetofav() {
-    //     let fav = await AsyncStorage.getItem("fav")
-    //     fav = JSON.parse(fav)
-    //     let arrfav = []
-    //     let item = this.state.item
-    //     if (fav == null){
-    //         arrfav.push(this.state.item)
-    //     }else{
-
-    //         arrfav = fav
-
-    //         for (let i = 0; i <= arrfav.length; i++) {
-
-    //             if (item.name != arrfav[i].name) {
-
-
-    //                     // arrfav.push(this.state.item)
-    //                 console.log(item)
-    //             }
-
-    //         }
-
-    //     }
-
-    //     await AsyncStorage.setItem("fav", JSON.stringify(arrfav))
-    //     console.log(fav)
-    // }
+    
     componentDidMount() {
         let data = this.props.route.params.name
         // alert(JSON.stringify(data))
         this.setState({ item: data })
+        this.backHandler = BackHandler.addEventListener(
+            "hardwareBackPress",
+            this.backAction
+        );
+
+    }
+    backAction = () => {
+
+        this.props.navigation.navigate('HomeStack')
+        return true;
+    };
+
+    componentWillUnmount() {
+        this.backHandler.remove();
     }
 
     render() {

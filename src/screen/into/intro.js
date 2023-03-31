@@ -8,8 +8,8 @@ import {
     SafeAreaView,
     TouchableOpacity,
     ImageBackground,
-    Dimensions
-
+    Dimensions,
+    AsyncStorage
 } from 'react-native';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
@@ -48,9 +48,16 @@ export default class Intro extends React.Component {
     constructor() {
         super(); {
             this.state = {
-                showRealApp: false
+                showRealApp: false,
+                login: 0
+
             }
         }
+    }
+    async store_Count() {
+        await AsyncStorage.setItem("login", '1')
+        this.props.navigation.navigate("HomeStack")
+
     }
 
     _renderItem = ({ item }) => {
@@ -87,7 +94,7 @@ export default class Intro extends React.Component {
         return (
             <TouchableOpacity style={styles.botton_style}
                 onPress={() => {
-                    this.props.navigation.navigate('HomeStack');
+                    this.store_Count();
                 }}
             >
                 <Text style={styles.text_style}>تم</Text>

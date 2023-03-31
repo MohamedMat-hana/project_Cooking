@@ -1028,7 +1028,7 @@ export default function FoodCommon() {
       {
         id: 7,
         name: "ٌفطائر ومعجنات",
-        img: require("../img/pizzaa.png"),
+        img: require("../img/djfdthremovebg.png"),
         choose: false,
       }
     ]

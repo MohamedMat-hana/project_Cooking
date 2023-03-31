@@ -656,7 +656,13 @@ export default function Food() {
                                                                     الطريقة
                                                                 </Text>
                                                             </TouchableOpacity>
-                                                            <TouchableOpacity style={styles.OptionButtonBox}>
+                                                            <TouchableOpacity 
+                                                            onPress={() => {
+                                                                navigation.navigate("WbeView", {
+                                                                    name: item
+                                                                })
+                                                            }
+                                                            }style={styles.OptionButtonBox}>
                                                                 <Text style={styles.OptionTimeBox}>
                                                                     الفيديو
                                                                 </Text>
@@ -714,7 +720,12 @@ export default function Food() {
                                                     الطريقة
                                                 </Text>
                                             </TouchableOpacity>
-                                            <TouchableOpacity style={styles.OptionButtonBox}>
+                                            <TouchableOpacity onPress={() => {
+                                                navigation.navigate("WbeView", {
+                                                    name: item
+                                                })
+                                            }
+                                            } style={styles.OptionButtonBox}>
                                                 <Text style={styles.OptionTimeBox}>
                                                     الفيديو
                                                 </Text>

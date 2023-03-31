@@ -7,7 +7,8 @@ import {
     StyleSheet,
     TextInput,
     ScrollView,
-    Image
+    Image,
+    BackHandler
 } from 'react-native';
 // import { useNavigation, NavigationContainer } from '@react-navigation/native';
 // import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -34,6 +35,12 @@ export default class All extends React.Component {
         let data = this.props.route.params.name
         // alert(JSON.stringify(data))
         this.setState({ Food: data })
+        this.backHandler = BackHandler.addEventListener(
+            "hardwareBackPress",
+            this.backAction
+        );
+
+
     }
 
     makesearch(searchText) {
@@ -65,6 +72,16 @@ export default class All extends React.Component {
         count = 0
     }
 
+
+    backAction = () => {
+
+        this.props.navigation.navigate('HomeStack')
+        return true;
+    };
+
+    componentWillUnmount() {
+        this.backHandler.remove();
+    }
 
     render() {
         return (
@@ -163,7 +180,13 @@ export default class All extends React.Component {
                                                                 الطريقة
                                                             </Text>
                                                         </TouchableOpacity>
-                                                        <TouchableOpacity style={styles.button_option}>
+                                                        <TouchableOpacity 
+                                                        onPress={() => {
+                                                            this.props.navigation.navigate("WbeView", {
+                                                                name: item
+                                                            })
+                                                        }
+                                                        }style={styles.button_option}>
                                                             <Text style={styles.button_text}>
                                                                 الفيديو
                                                             </Text>

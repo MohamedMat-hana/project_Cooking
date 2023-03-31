@@ -3,7 +3,8 @@ import {
     View,
     StyleSheet,
     Text,
-    Dimensions
+    Dimensions,
+    AsyncStorage
 } from 'react-native'
 
 import LottieView from 'lottie-react-native';
@@ -22,15 +23,23 @@ export default class Splash extends React.Component {
         }
     }
     componentDidMount() {
+        this.get_Count()
+     }
+    async get_Count() {
+        let coun = await AsyncStorage.getItem("login")
+        // alert(coun)
         setTimeout(() => {
+            if (coun == 1) {
+                //   await AsyncStorage.setItem('login',null)
+                //   this.setState({ count: 0 })
+                this.props.navigation.navigate("HomeStack")
 
-            this.props.navigation.navigate('Intro');
+            } else {
+                //   this.setState({ count: coun })
+                this.props.navigation.navigate("Intro")
 
-
-
+            }
         }, 2100)
-
-
     }
 
     render() {
